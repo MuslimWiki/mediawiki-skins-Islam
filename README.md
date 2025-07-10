@@ -1,5 +1,7 @@
 # Islam Skin for MediaWiki
 
+[![License: GPL v3+](https://img.shields.io/badge/License-GPL%20v3%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 A modern, responsive, and accessible MediaWiki skin specifically designed for Islamic knowledge bases. Built with performance, accessibility, and internationalization in mind.
 
 ![Islam Skin Preview](.github/preview.jpg)
