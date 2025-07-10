@@ -30,36 +30,11 @@
 *.woff2 binary
 *.svg binary
 
-# Ignore path case on Windows
+# Git configuration
 [core]
     ignorecase = true
-
-# Properly handle line endings for shell scripts
-*.sh text eol=lf
-
-# Ensure files with spaces in the name work correctly
-* -text
-*.php text
-*.css text
-*.js text
-*.json text
-*.md text
-*.txt text
-*.xml text
-*.yml text
-*.yaml text
-
-# Explicitly declare binary files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.eot binary
-*.ttf binary
-*.woff binary
-*.woff2 binary
-*.svg binary
+    autocrlf = input
+    eol = lf
 
 # Prevent line ending changes in these files
 *.{cmd,[cC][mM][dD]} -text
