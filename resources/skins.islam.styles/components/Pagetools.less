@@ -1,0 +1,207 @@
+.page-actions {
+	display: flex;
+	gap: var( --space-xxs );
+	align-items: center;
+
+	// TODO: Merge this with header__item
+	&__item {
+		display: flex;
+	}
+
+	.islam-menu {
+		&__card {
+			right: ~'calc( var( --space-xs ) * -1 )'; // counteract margin
+			display: grid;
+			gap: var( --space-xs );
+			max-height: 60vh;
+			transform-origin: var( --transform-origin-offset-end ) var( --transform-origin-offset-end );
+
+			@media ( min-width: @min-width-breakpoint-desktop ) {
+				top: 100%;
+				transform-origin: var( --transform-origin-offset-end ) var( --transform-origin-offset-start );
+			}
+
+			&-content {
+				padding-block: var( --space-xs );
+			}
+		}
+	}
+
+	.islam-dropdown {
+		@media ( min-width: @min-width-breakpoint-desktop ) {
+			// Only attach dropdown menu to the button on desktop mode
+			position: relative;
+		}
+
+		&-summary {
+			display: grid;
+			place-items: center;
+			width: 2.5rem; // Same width as other buttons
+			height: 2.25rem; // Same height as other buttons
+			border-radius: var( --border-radius-medium );
+		}
+	}
+
+	// Visible page tools styles
+	> .mw-portlet {
+		ul {
+			display: flex;
+			gap: var( --space-xxs );
+		}
+
+		li > a {
+			gap: 0;
+			padding-right: var( --space-sm );
+			padding-left: var( --space-sm );
+			font-size: 0;
+			border-radius: var( --border-radius-medium );
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+		}
+	}
+
+	li {
+		margin: 0;
+	}
+
+	// Hide menu labels
+	> .islam-menu > .islam-menu__heading {
+		.mixin-islam-screen-reader-only;
+	}
+}
+
+// Language counter badge
+.islam-page-languages {
+	.islam-dropdown-summary {
+		position: relative; // So that the badge doesn't take a stroll to the far left
+
+		&::after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: block;
+			padding: 0.1em 0.4em;
+			font-size: 0.65rem;
+			content: attr( data-counter-text );
+			background: var( --color-surface-0 );
+			border-radius: var( --border-radius-pill );
+		}
+	}
+}
+
+// Edit button
+#ca-edit,
+#ca-ve-edit {
+	> a {
+		color: var( --color-inverted-primary );
+		background-color: var( --color-progressive );
+
+		&:hover {
+			background-color: var( --color-progressive--hover );
+		}
+
+		&:active {
+			background-color: var( --color-progressive--active );
+		}
+	}
+}
+
+// VE styles shouldn't be core but it is just a few lines :/
+#ca-ve-edit {
+	order: 98; // Before source edit
+}
+
+#ca-edit {
+	order: 99; // Align to last
+}
+
+// Merge two buttons together
+.client-js .islam-ve-edit-merged {
+	// Additional check to check if there are actually source edit button (#929)
+	&#ca-ve-edit:has( + #ca-edit ) {
+		> a {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+
+	&#ca-edit {
+		margin-left: ~'calc( var( --space-xxs ) * -1 )';
+		border-left: var( --border-width-base ) solid var( --color-progressive--hover );
+
+		> a {
+			gap: 0;
+			font-size: 0; // hide edit source text
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+}
+
+.client-nojs {
+	// Hide share button completely when JS is not supported
+	// Since it won't do anything
+	.islam-share {
+		display: none;
+	}
+}
+
+// To avoid more menu from overflow in narrow screen
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	.page-actions {
+		position: fixed;
+		right: 0;
+		bottom: ~'calc( var( --header-size ) + max( env( safe-area-inset-bottom ), var( --space-xs ) ) )';
+		height: var( --toolbar-size );
+		margin: var( --space-xs );
+		background: var( --color-surface-1 );
+		border: 1px solid var( --border-color-base );
+		border-radius: var( --border-radius-medium );
+		box-shadow: var( --box-shadow-drop-xx-large );
+
+		:not( .islam-menu__card ) .mw-list-item {
+			--size-icon: 1rem;
+		}
+
+		> .mw-portlet li > a {
+			height: var( --toolbar-size );
+		}
+
+		&__item {
+			position: unset;
+		}
+
+		.islam-menu__card {
+			bottom: 100%;
+			/* Fix card width issue when the page tool bar is narrow */
+			width: max-content;
+		}
+	}
+
+	.islam-page-languages .islam-dropdown-summary::after {
+		// Blend with background
+		background: var( --color-surface-1 );
+	}
+}
+
+@media ( min-width: @min-width-breakpoint-desktop ) {
+	.page-actions {
+		> .mw-portlet {
+			li > a {
+				gap: var( --space-xs );
+				font-size: inherit;
+			}
+		}
+
+		.islam-menu__card {
+			// Expand the width on narrow screens might overflow the page
+			white-space: nowrap;
+		}
+	}
+}

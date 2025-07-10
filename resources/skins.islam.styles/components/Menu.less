@@ -1,0 +1,147 @@
+.islam-menu {
+	.mixin-islam-font-styles( 'small' );
+
+	&__card {
+		--transform-origin-offset-start: var( --space-xs );
+		--transform-origin-offset-end: ~'calc( 100% - var( --space-xs ) )';
+		margin: var( --space-xs );
+		contain: content;
+		border: var( --border-width-base ) solid var( --border-color-base );
+		border-radius: var( --border-radius-medium );
+		box-shadow: var( --box-shadow-drop-xx-large );
+		transform: scale( 0 );
+		.mixin-islam-frosted-glass( islam-menu__card-backdrop );
+
+		@supports ( user-select: none ) {
+			user-select: none;
+		}
+
+		&-content {
+			max-width: inherit;
+			max-height: inherit;
+			overflow: auto;
+			overscroll-behavior: contain;
+		}
+	}
+
+	&__heading {
+		display: block;
+		padding: var( --space-xs ) var( --space-md );
+		margin: 0;
+		color: var( --color-subtle );
+		.mixin-islam-font-styles( 'overline' );
+	}
+
+	&__content-list {
+		margin: 0;
+		list-style: none;
+	}
+
+	.mw-list-item {
+		a {
+			display: flex;
+			gap: var( --space-sm );
+			align-items: center;
+			min-height: 2.25rem;
+			padding-inline: var( --space-md );
+			font-weight: var( --font-weight-medium );
+			color: var( --color-base );
+			transition: var( --transition-hover );
+			transition-property: opacity;
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// FIXME: This should not be here
+// TODO: Convert to use core css-icon mixin
+// https://gerrit.wikimedia.org/g/mediawiki/core/+/master/resources/lib/codex/mixins/css-icon.less
+.islam-ui-icon {
+	display: block;
+	width: var( --size-icon );
+	min-width: var( --size-icon );
+	height: var( --size-icon );
+	min-height: var( --size-icon );
+	contain: strict;
+
+	@supports ( content-visibility: auto ) {
+		content-visibility: auto;
+	}
+
+	&::before {
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+
+		// Fallback for browsers that do not support mask-image
+		@supports not ( ( -webkit-mask-image: none ) or ( mask-image: none ) ) {
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+
+		@supports ( -webkit-mask-image: none ) or ( mask-image: none ) {
+			background-color: currentcolor;
+			background-image: none !important; // In case if there are other OOUI icon modules
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: center;
+			mask-position: center;
+			-webkit-mask-size: contain;
+			mask-size: contain;
+		}
+	}
+}
+
+@supports ( user-select: none ) {
+	.islam-menu__card {
+		user-select: none;
+	}
+}
+
+@supports ( content-visibility: auto ) {
+	.islam-ui-icon {
+		content-visibility: auto;
+	}
+}
+
+.mw-portlet {
+	// Hide selected item
+	.selected {
+		.mixin-islam-screen-reader-only;
+	}
+
+	// Hide empty menu
+	&-empty {
+		display: none !important;
+	}
+}
+
+// HACK: Restore view button on revision page (#845)
+// There are no good way to target revision page
+.action-view {
+	&:has( .diff ),
+	&:has( .mw-revision ) {
+		#ca-view {
+			position: relative;
+			width: auto;
+			height: auto;
+			overflow: initial;
+			white-space: unset;
+			clip-path: unset;
+		}
+	}
+}

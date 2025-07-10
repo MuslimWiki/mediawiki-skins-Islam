@@ -1,0 +1,77 @@
+/*
+ * Islam
+ *
+ * Module: mediawiki.skinning.content.media-screen
+ * Version: REL1_39
+ *
+ * Date: 2023-07-23
+ */
+
+figure[ typeof~='mw:File' ],
+figure[ typeof~='mw:File/Frameless' ],
+figure[ typeof~='mw:File/Thumb' ],
+figure[ typeof~='mw:File/Frame' ] {
+	> a:first-child {
+		display: inline-block;
+		overflow: hidden;
+
+		img,
+		source {
+			max-width: 100%;
+			height: auto;
+			contain: strict;
+			transition: var( --transition-hover );
+			transition-property: transform;
+
+			// Prevent constraining image width in tables
+			table & {
+				max-width: none;
+			}
+		}
+
+		// Add affordance to replace magnify icon
+		&:hover:not( .lazy ):not( .new ) {
+			img,
+			source {
+				transform: var( --transform-image-hover );
+			}
+		}
+	}
+}
+
+figure[ typeof~='mw:File/Thumb' ],
+figure[ typeof~='mw:File/Frame' ] {
+	> a:first-child,
+	> span:first-child {
+		display: block;
+		border-radius: var( --border-radius-base );
+	}
+
+	// Broken file styles
+	> a:first-child:not( .mw-file-description ) {
+		padding: var( --space-sm );
+		border: var( --border-width-base ) solid var( --border-color-interactive );
+
+		&:hover {
+			color: var( --color-inverted-primary );
+			background-color: var( --color-progressive--hover );
+		}
+
+		&:active {
+			color: var( --color-inverted-primary );
+			background-color: var( --color-progressive--active );
+		}
+
+		&.new {
+			border-style: dashed;
+
+			&:hover {
+				background-color: var( --color-destructive--hover );
+			}
+
+			&:active {
+				background-color: var( --color-destructive--active );
+			}
+		}
+	}
+}

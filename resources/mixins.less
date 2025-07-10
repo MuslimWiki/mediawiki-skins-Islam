@@ -1,0 +1,289 @@
+/*
+ * Islam - Mixins
+ * https://starislam.tools
+ */
+
+@import 'variables.less';
+
+.mixin-islam-opaque-background( @surface: 1 ) {
+	background: ~'oklch( var( --color-surface-@{surface}-oklch__l ) var( --color-surface-@{surface}-oklch__c ) var( --color-progressive-oklch__h ) / var( --backdrop-opacity ) )';
+
+	@supports not ( color: oklch( 100% 0 0 ) ) {
+		background: ~'hsl( var( --color-surface-@{surface}-hsl__h ), var( --color-surface-@{surface}-hsl__s ), var( --color-surface-@{surface}-hsl__l ) / var( --backdrop-opacity ) )';
+	}
+}
+
+.mixin-islam-frosted-glass-simple( @surface: 1 ) {
+	.mixin-islam-opaque-background( @surface );
+
+	@supports ( backdrop-filter: blur( 16px ) ) or ( -webkit-backdrop-filter: blur( 16px ) ) {
+		-webkit-backdrop-filter: var( --backdrop-filter-frosted-glass );
+		backdrop-filter: var( --backdrop-filter-frosted-glass );
+	}
+}
+
+/**
+ * Frosted glass effect
+ * @see https://www.joshwcomeau.com/css/backdrop-filter
+ */
+.mixin-islam-frosted-glass( @backdropClass, @surface: 1 ) {
+	.mixin-islam-opaque-background( @surface );
+
+	.@{backdropClass} {
+		position: absolute;
+		inset: 0;
+		z-index: @z-index-bottom;
+		overflow: hidden;
+		pointer-events: none;
+		transition: none !important; // cancel out card content transition
+	}
+
+	@supports ( backdrop-filter: blur( 16px ) ) or ( -webkit-backdrop-filter: blur( 16px ) ) {
+		.@{backdropClass} {
+			// Backdrop
+			&::before {
+				position: absolute;
+				inset: 0;
+				content: '';
+				background: ~'linear-gradient( to bottom, var( --color-surface-@{surface} ), transparent 50% )';
+				-webkit-backdrop-filter: var( --backdrop-filter-frosted-glass );
+				backdrop-filter: var( --backdrop-filter-frosted-glass );
+			}
+		}
+	}
+
+	@supports ( mask-image: none ) or ( -webkit-mask-image: none ) {
+		.@{backdropClass} {
+			&::before {
+				height: 200%;
+				-webkit-mask-image: linear-gradient( to bottom, #000 0% 50%, transparent 50% 100% );
+				mask-image: linear-gradient( to bottom, #000 0% 50%, transparent 50% 100% );
+			}
+		}
+	}
+}
+
+// Header card popups
+.mixin-islam-header-card( @position ) {
+	right: 0;
+	bottom: 100%;
+	left: 0;
+	max-height: var( --header-card-maxheight );
+
+	@media ( min-width: @min-width-breakpoint-tablet ) {
+		& when (@position =start) {
+			right: unset;
+		}
+
+		& when (@position =end) {
+			left: unset;
+		}
+	}
+
+	@media ( min-width: @min-width-breakpoint-desktop ) {
+		right: unset;
+		left: 100%;
+
+		& when (@position =start) {
+			top: 0;
+			bottom: unset;
+		}
+
+		& when (@position =end) {
+			bottom: 0;
+		}
+	}
+}
+
+.mixin-islam-sticky-header-element() {
+	top: var( --height-sticky-header ) !important;
+}
+
+.mixin-islam-sticky-header-background() {
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: @z-index-bottom;
+		display: block;
+		height: 100%;
+		content: '';
+		background-color: var( --color-surface-0 );
+		filter: opacity( 0.9 );
+		-webkit-backdrop-filter: var( --backdrop-filter-frosted-glass );
+		backdrop-filter: var( --backdrop-filter-frosted-glass );
+	}
+}
+
+.mixin-islam-sticky-header(@bottomBorder: true, @zIndex: true) {
+	position: -webkit-sticky;
+	position: sticky;
+	.mixin-islam-sticky-header-element;
+	.mixin-islam-sticky-header-background;
+
+	& when (@bottomBorder ) {
+		box-shadow: 0 1px 0 0 var( --border-color-base );
+	}
+
+	& when (@zIndex ) {
+		z-index: @z-index-sticky;
+	}
+}
+
+// To hide objects, but keep them accessible for screen-readers
+.mixin-islam-screen-reader-only() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	clip-path: inset( 50% );
+}
+
+// Button Styles
+.mixin-islam-button-progressive() {
+	color: var( --color-inverted-primary ) !important;
+	background-color: var( --color-progressive );
+
+	&:hover {
+		background-color: var( --color-progressive--hover );
+	}
+
+	&:active {
+		background-color: var( --color-progressive--active );
+	}
+}
+
+.mixin-islam-button-destructive() {
+	color: var( --color-inverted-fixed ) !important;
+	background-color: var( --color-destructive );
+
+	&:hover {
+		background-color: var( --color-destructive--hover );
+	}
+
+	&:active {
+		background-color: var( --color-destructive--active );
+	}
+}
+
+// This is used to override MW dark mode styles
+// if they have hardcoded value instead of CSS variable
+.mixin-islam-css-theme-clientpref-all( @prop, @value ) {
+	@{prop}: @value;
+
+	@media screen {
+		html.skin-theme-clientpref-night & {
+			@{prop}: @value;
+		}
+	}
+
+	@media screen and ( prefers-color-scheme: dark ) {
+		html.skin-theme-clientpref-os & {
+			@{prop}: @value;
+		}
+	}
+}
+
+// Transform black into given color
+// From https://stackoverflow.com/a/73390109/10624167
+.recolor(@color ) {
+	@r: red(@color ) / 255;
+	@g: green(@color ) / 255;
+	@b: blue(@color ) / 255;
+	@a: alpha(@color );
+
+	// grayscale fallback if SVG from data url is not supported
+	@lightness: lightness(@color );
+	filter: saturate( 0% ) brightness( 0% ) invert( @lightness ) opacity( @a );
+
+	// color filter
+	@svg-filter-id: 'recolor';
+	filter: url( ';data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="@{svg-filter-id}" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 @{r} 0 0 0 0 @{g} 0 0 0 0 @{b} 0 0 0 @{a} 0"/></filter></svg> #@{svg-filter-id}' );
+}
+
+.islam-cdx-mixin-link-base-overrides() {
+	// We don't want to use color-progressive for link colors
+	color: var( --color-link );
+
+	&:hover {
+		color: var( --color-link--hover );
+	}
+
+	&:active {
+		color: var( --color-link--active );
+	}
+
+	// FIX: Visited hover color is missing in MW 1.43
+	&:visited:hover {
+		color: var( --color-visited--hover );
+	}
+}
+
+// Based on Codex 2.0 typography tokens from T363845
+// TODO: Revisit when T333890 is resolved
+.mixin-islam-font-styles( @type ) {
+	& when ( @type = 'heading-1' ) {
+		font-size: var( --font-size-xxx-large );
+		font-weight: var( --font-weight-semi-bold );
+		line-height: var( --line-height-xxx-large );
+	}
+
+	& when ( @type = 'heading-2' ) {
+		font-size: var( --font-size-xx-large );
+		font-weight: var( --font-weight-semi-bold );
+		line-height: var( --line-height-xx-large );
+	}
+
+	& when ( @type = 'heading-3' ) {
+		font-size: var( --font-size-x-large );
+		font-weight: var( --font-weight-semi-bold );
+		line-height: var( --line-height-x-large );
+	}
+
+	& when ( @type = 'heading-4' ) {
+		font-size: var( --font-size-large );
+		font-weight: var( --font-weight-semi-bold );
+		line-height: var( --line-height-large );
+	}
+
+	& when ( @type = 'body' ) {
+		font-size: var( --font-size-medium );
+		// font-weight: var( --font-weight-normal ); - No need to specify
+		line-height: var( --line-height-medium );
+	}
+
+	& when ( @type = 'small' ) {
+		font-size: var( --font-size-small );
+		// font-weight: var( --font-weight-normal ); - No need to specify
+		line-height: var( --line-height-small );
+	}
+
+	& when ( @type = 'overline' ) {
+		font-family: var( --font-family-overline );
+		font-size: var( --font-size-overline );
+		font-weight: var( --font-weight-overline );
+		line-height: var( --line-height-overline );
+		text-transform: var( --text-transform-overline );
+		letter-spacing: var( --letter-spacing-overline );
+	}
+}
+
+// Used to retrofit input element into Codex styles
+.mixin-islam-cdx-input() {
+	min-height: @min-size-interactive-pointer;
+	padding: @spacing-25 @spacing-50;
+	font-size: @font-size-medium;
+	line-height: @line-height-small;
+	border-radius: @border-radius-base;
+	box-shadow: @box-shadow-inset-small @box-shadow-color-transparent;
+	transition-duration: @transition-duration-medium;
+	transition-property: @transition-property-base;
+
+	&:focus {
+		outline: @outline-base--focus;
+		border-color: @border-color-progressive--focus;
+		box-shadow: @box-shadow-inset-small @box-shadow-color-progressive--focus;
+	}
+}

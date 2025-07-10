@@ -1,0 +1,143 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:TwoColConflict
+ * Module: ext.TwoColConflict.SplitCss
+ * Version: REL1_39 5a2a947
+ *
+ * Date: 2023-01-09
+*/
+
+/* ext.TwoColConflict.Split.less */
+.mw-twocolconflict-special-your-version-header,
+.mw-twocolconflict-split-current-version-header,
+.mw-twocolconflict-split-your-version-header {
+	.mw-twocolconflict-revision-label {
+		padding: 0 5px;
+		font-weight: var( --font-weight-semi-bold );
+	}
+}
+
+.mw-twocolconflict-split-current-version-header .mw-twocolconflict-revision-label {
+	background-color: var( --background-color-warning-subtle );
+}
+
+.mw-twocolconflict-special-your-version-header .mw-twocolconflict-revision-label,
+.mw-twocolconflict-split-your-version-header .mw-twocolconflict-revision-label {
+	background-color: var( --background-color-progressive-subtle );
+}
+
+.mw-twocolconflict-split-row {
+	&.mw-twocolconflict-no-selection {
+		background-color: var( --background-color-destructive-subtle );
+		border-color: transparent;
+	}
+}
+
+.mw-twocolconflict-single-column,
+.mw-twocolconflict-split-column {
+	color: var( --color-emphasized );
+	background-color: var( --color-surface-0 );
+
+	&.mw-twocolconflict-split-add {
+		border-color: var( --background-color-progressive-subtle );
+	}
+
+	&.mw-twocolconflict-split-delete {
+		border-color: var( --background-color-warning-subtle );
+	}
+
+	&.mw-twocolconflict-split-copy {
+		background-color: var( --color-surface-2 );
+		border-color: var( --color-surface-2 );
+	}
+
+	ins.mw-twocolconflict-diffchange {
+		background-color: var( --background-color-progressive-subtle );
+	}
+
+	del.mw-twocolconflict-diffchange {
+		background-color: var( --background-color-warning-subtle );
+	}
+
+	&.mw-twocolconflict-split-unselected {
+		color: var( --color-subtle );
+
+		&.mw-twocolconflict-split-add {
+			border-color: var( --background-color-progressive-subtle );
+		}
+
+		&.mw-twocolconflict-split-delete {
+			border-color: var( --background-color-warning-subtle );
+		}
+
+		ins.mw-twocolconflict-diffchange {
+			background-color: var( --background-color-progressive-subtle );
+		}
+
+		del.mw-twocolconflict-diffchange {
+			background-color: var( --background-color-warning-subtle );
+		}
+	}
+
+	.mw-twocolconflict-split-collapsed {
+		.mw-twocolconflict-split-fade {
+			background-image: linear-gradient( transparent, var( --color-surface-2 ) );
+		}
+	}
+}
+
+.mw-twocolconflict-split-selector-label {
+	.mw-twocolconflict-no-selection & {
+		color: var( --color-destructive );
+	}
+}
+
+.mw-twocolconflict-split-selection {
+	.mw-twocolconflict-split-row.mw-twocolconflict-no-selection & > div {
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
+			border-color: var( --color-destructive );
+		}
+	}
+
+	> div:nth-child( 1 ) {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:active + span,
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
+			background: var( --background-color-warning-subtle );
+			border-color: var( --color-warning );
+		}
+	}
+
+	> div:nth-child( 2 ) {
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:checked + span,
+		.oo-ui-radioInputWidget.oo-ui-widget-enabled [ type='radio' ]:active + span,
+		.oo-ui-radioInputWidget [ type='radio' ] + span {
+			background: var( --background-color-progressive-subtle );
+			border-color: var( --color-progressive );
+		}
+	}
+}
+
+.mw-twocolconflict-copy-notice {
+	p {
+		font-size: 0.875em;
+	}
+}
+
+/* ext.TwoColConflict.Talk.styles.less */
+.mw-twocolconflict-conflicting-talk-row {
+	.mw-twocolconflict-conflicting-talk-label {
+		span {
+			font-weight: var( --font-weight-semi-bold );
+
+			.mw-twocolconflict-split-delete {
+				background-color: var( --background-color-warning-subtle );
+			}
+
+			.mw-twocolconflict-split-add {
+				background-color: var( --background-color-progressive-subtle );
+			}
+		}
+	}
+}

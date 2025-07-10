@@ -1,0 +1,34 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Wikibase
+ * Module: wikibase.client.init
+ * Version: REL1_35 7bb503b
+ *
+ * Date: 2022-05-11
+*/
+
+// Needed for more specificity
+// The original styles have a lot of important overrides in it
+// Better safe than sorry
+.skin-islam {
+	.wb-langlinks-link > a {
+		&::before {
+			filter: var( --filter-invert );
+		}
+
+		&:link,
+		&:visited {
+			color: var( --color-subtle ) !important;
+
+			&::before {
+				// Re-apply greyscale value since we use filter to override the color
+				filter: var( --filter-invert );
+			}
+		}
+
+		&:hover {
+			color: var( --color-progressive ) !important;
+		}
+	}
+}

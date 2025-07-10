@@ -1,0 +1,35 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Capiunto
+ * Module: capiunto.infobox.main
+ * Version: REL1_39 3a6d523
+ *
+ * Date: 2023-07-14
+*/
+
+@import '../../../resources/variables.less';
+
+.mw-capiunto-infobox {
+	float: none;
+	clear: none;
+	margin: 0 auto var( --space-md ) auto;
+	font-size: var( --font-size-small );
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+
+	caption,
+	&-top {
+		font-size: 1rem;
+		font-weight: var( --font-weight-semi-bold );
+	}
+
+	/* Sync with floatright styles */
+	@media ( min-width: @min-width-breakpoint-tablet ) {
+		float: right;
+		clear: right;
+		margin-left: var( --space-lg );
+	}
+}

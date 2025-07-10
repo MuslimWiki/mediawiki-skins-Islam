@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"language": "Lithuanian",
+		"language_code": "lt",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Nokeoo"
+		],
+		"note": "Standard Lithuanian language used in Lithuania."
+	},
+	"islam-prefs-talkpage": "[[mw:Skin_talk:Islam|Diskusija]]",
+	"islam-languages-toggle": "Daugiau kalbų",
+	"islam-actions-more-toggle": "Daugiau veiksmų",
+	"islam-sitestats-articles-label": "straipsniai",
+	"islam-sitestats-images-label": "failai",
+	"islam-sitestats-users-label": "naudotojai",
+	"islam-sitestats-edits-label": "keitimai",
+	"islam-page-info-copyright": "Autorinės teisės",
+	"islam-page-info-credits": "Kreditai",
+	"islam-page-info-lastmod": "Paskutinis pakeitimas",
+	"islam-footer-desc": "Redaguoti šį tekstą [[MediaWiki:Islam-footer-desc]]",
+	"islam-footer-tagline": "Redaguoti šį tekstą [[MediaWiki:Islam-footer-tagline]]",
+	"islam-action-addsection": "Pridėti temą",
+	"islam-jumptotop": "Grįžti į viršų",
+	"islam-search-fulltext": "Ieškoti puslapių, turinčių $1",
+	"islam-search-mediasearch": "Ieškoti medijos, susijusios su $1",
+	"islam-search-empty-desc": "Rašykite norėdami pradėti ieškoti",
+	"islam-search-noresults-title": "Oi! Nėra $1 rezultatų",
+	"islam-search-noresults-desc": "Galbūt išbandykite toliau pateiktas parinktis?",
+	"islam-tagline-ns-talk": "{{SUBJECTPAGENAME}} diskusijų puslapis",
+	"islam-tagline-ns-project": "Informacija apie {{SITENAME}}",
+	"islam-tagline-ns-file": "Failas {{SITENAME}}",
+	"islam-tagline-ns-mediawiki": "MediaWiki sąsajos puslapis",
+	"islam-tagline-ns-template": "Šablono puslapis",
+	"islam-tagline-ns-help": "Pagalbos puslapis",
+	"islam-tagline-ns-category": "Kategorijos puslapis"
+}

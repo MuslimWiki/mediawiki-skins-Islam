@@ -1,0 +1,27 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UniversalLanguageSelector
+ * Module: ext.uls.interface
+ * Version: MLEB 2021.12
+ *
+ * Date: 2022-05-17
+*/
+
+#uls-settings-block {
+	background-color: var( --color-surface-2 );
+	border-top-color: var( --border-color-base );
+
+	> button {
+		color: var( --color-subtle );
+
+		&:hover {
+			color: var( --color-base );
+		}
+
+		&.display-settings-block,
+		&.input-settings-block {
+			filter: var( --filter-invert );
+		}
+	}
+}

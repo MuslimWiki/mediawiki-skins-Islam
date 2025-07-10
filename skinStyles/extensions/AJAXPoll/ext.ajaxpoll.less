@@ -1,0 +1,125 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:AJAXPoll
+ * Module: ext.ajaxpoll
+ * Version: REL1_39 (8429d8d)
+ *
+ * Date: 2022-10-25
+*/
+
+.ajaxpoll {
+	/* Responsive to container */
+	width: auto;
+	padding: var( --space-xl );
+	background-color: transparent;
+	border-color: transparent;
+	border-radius: var( --border-radius-medium );
+}
+
+.ajaxpoll .ajaxpoll-question {
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+}
+
+.ajaxpoll .ajaxpoll-answer-name,
+.ajaxpoll-answer-name-revoke {
+	margin-top: var( --space-xs );
+	font-size: var( --font-size-small );
+}
+
+.ajaxpoll .ajaxpoll-hover-vote {
+	color: var( --color-inverted-fixed );
+	background: var( --color-destructive );
+}
+
+.ajaxpoll .ajaxpoll-hover-revoke {
+	background-color: var( --color-surface-2--hover );
+}
+
+.ajaxpoll .ajaxpoll-answer-vote {
+	position: relative;
+	display: grid;
+	place-content: center;
+	height: 2rem;
+	overflow: hidden;
+	font-size: var( --font-size-small );
+	background-color: var( --color-surface-3 );
+	border: 0;
+	border-top: var( --border-width-base ) solid var( --border-color-base );
+	border-bottom-right-radius: var( --border-radius-medium );
+	border-bottom-left-radius: var( --border-radius-medium );
+}
+
+.ajaxpoll .ajaxpoll-answer-vote div {
+	bottom: 0;
+	box-sizing: border-box;
+	height: auto;
+	background: var( --color-surface-2 );
+	border-right: 0;
+	border-right: var( --border-width-thick ) solid var( --border-color-base );
+}
+
+.ajaxpoll .ajaxpoll-our-vote div {
+	top: 0;
+	left: 0;
+	background-color: var( --background-color-progressive-subtle );
+	border: 0;
+	border-right: var( --border-width-thick ) solid var( --color-progressive );
+}
+
+.ajaxpoll .ajaxpoll-answer-vote span {
+	position: initial;
+	color: var( --color-subtle );
+}
+
+.ajaxpoll label {
+	display: block;
+	padding: var( --space-xs );
+	font-weight: var( --font-weight-medium );
+	cursor: pointer;
+	background-color: var( --color-surface-2 );
+	border-top-left-radius: var( --border-radius-medium );
+	border-top-right-radius: var( --border-radius-medium );
+
+	// Added active state
+	&:active {
+		background-color: var( --color-surface-2--active );
+	}
+}
+
+.ajaxpoll input {
+	display: none;
+}
+
+.ajaxpoll .ajaxpoll-checkevent {
+	color: var( --color-inverted-fixed );
+	background: var( --color-success );
+}
+
+.ajaxpoll .ajaxpoll-misc {
+	margin-bottom: 10px;
+	color: var( --color-subtle );
+}
+
+.ajaxpoll .ajaxpoll-ajax {
+	padding: var( --space-xs ) var( --space-md );
+	margin-bottom: var( --space-md );
+	font-size: var( --font-size-small );
+	background: var( --color-surface-2 );
+	border-radius: var( --border-radius-base );
+}
+
+.ajaxpoll .ajaxpoll-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: var( --space-md );
+	font-size: var( --font-size-small );
+	color: var( --color-subtle );
+}
+
+.ajaxpoll .ajaxpoll-id-info {
+	float: none;
+	color: var( --color-subtle );
+}

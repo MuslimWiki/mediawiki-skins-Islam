@@ -1,0 +1,22 @@
+{{!
+	string msg-islam-usermenu-toggle The label used by the user menu button.
+}}
+<div class="islam-userMenu islam-header__item islam-dropdown">
+	<details class="islam-dropdown-details">
+		<summary
+			class="islam-dropdown-summary" 
+			title="{{msg-islam-usermenu-toggle}}"
+			aria-details="islam-userMenu__card">
+			<span class="islam-ui-icon mw-ui-icon-wikimedia-userAvatar"></span>
+			<span>{{msg-islam-usermenu-toggle}}</span>
+		</summary>
+	</details>
+	<div id="islam-userMenu__card" class="islam-menu__card">
+		<div class="islam-menu__card-backdrop"></div>
+		<div class="islam-menu__card-content">
+			{{#data-user-info}}{{>UserInfo}}{{/data-user-info}}
+			{{#data-portlets.data-user-interface-preferences}}{{>Menu}}{{/data-portlets.data-user-interface-preferences}}
+			{{#data-portlets.data-user-menu}}{{>Menu}}{{/data-portlets.data-user-menu}}
+		</div>
+	</div>
+</div>

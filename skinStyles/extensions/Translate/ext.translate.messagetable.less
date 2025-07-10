@@ -1,0 +1,86 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Translate
+ * Module: ext.translate.messagetable
+ * Version: MLEB 2021.07
+ *
+ * Date: 2021-07-29
+*/
+
+.tux-messagelist {
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+}
+
+.tux-message-item {
+	background: var( --color-surface-0 ); // So that it is the same color as page base
+	border-bottom-color: var( --border-color-base );
+}
+
+.tux-message-item.translated,
+.tux-message-item.translated:hover,
+.tux-message-item.proofread,
+.tux-message-item.proofread:hover {
+	background-color: var( --color-surface-3 );
+}
+
+.tux-message-item:hover {
+	background-color: var( --color-surface-2--hover );
+}
+
+.tux-info {
+	background-color: var( --color-surface-3 );
+}
+
+.tux-list-translation {
+	color: var( --color-subtle );
+}
+
+.tux-messagetable-loader {
+	color: var( --color-subtle );
+	background: var( --color-surface-2 );
+	box-shadow: none;
+}
+
+.tux-action-bar {
+	color: var( --color-base );
+	background-color: var( --color-surface-1 );
+}
+
+@media screen and ( min-height: 500px ) {
+	.tux-action-bar.floating {
+		border-top-color: var( --border-color-base );
+	}
+}
+
+.tux-action-bar button {
+	background: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.tux-action-bar button:hover {
+	background: var( --color-surface-2--hover );
+}
+
+.tux-action-bar button:active,
+.tux-action-bar button.down {
+	background: var( --color-progressive );
+}
+
+.tux-action-bar button.disabled,
+.tux-action-bar button.disabled:hover {
+	color: var( --color-subtle );
+	background-color: var( --color-surface-4 );
+	border-color: var( --border-color-base );
+}
+
+.tux-message-filter-result {
+	color: var( --color-base );
+	background: var( --background-color-warning-subtle );
+	border-bottom-color: var( --border-color-base );
+}
+
+.tux-empty-list-guide {
+	color: var( --color-subtle );
+}

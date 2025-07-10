@@ -1,0 +1,34 @@
+.islam-userMenu {
+	.islam-menu__card {
+		.islam-menu__heading {
+			.mixin-islam-screen-reader-only;
+		}
+	}
+}
+
+#pt-createaccount,
+#pt-login,
+#pt-login-private,
+#pt-logout {
+	a {
+		margin: var( --space-xs );
+		border: var( --border-width-base ) solid var( --border-color-base );
+		border-radius: var( --border-radius-medium );
+	}
+
+	.islam-keyboard-hint-key {
+		display: none;
+	}
+}
+
+#pt-login {
+	a {
+		.mixin-islam-button-progressive;
+	}
+}
+
+#pt-logout {
+	a {
+		.mixin-islam-button-destructive;
+	}
+}

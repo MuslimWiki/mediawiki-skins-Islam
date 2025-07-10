@@ -1,0 +1,55 @@
+.islam-page-header {
+	position: relative;
+	z-index: @z-index-above-content;
+	padding-inline: var( --padding-page );
+	margin-top: var( --space-xl );
+
+	&-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var( --space-md );
+		align-items: center;
+		/* max-width should sync with .islam-body-container */
+		max-width: var( --width-layout );
+		padding-block: var( --space-md );
+		margin-inline: auto;
+
+		@media ( min-width: @min-width-breakpoint-desktop ) {
+			.islam-toc-enabled & {
+				max-width: var( --width-page );
+			}
+		}
+	}
+}
+
+.islam-page-heading {
+	flex-grow: 1;
+}
+
+.firstHeading-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.firstHeading {
+	margin-block: 0;
+	line-height: 2rem; /* Reduced line height to make the heading more compact */
+	overflow-wrap: break-word;
+}
+
+.mw-page-title {
+	&-namespace {
+		color: var( --color-base );
+	}
+
+	&-separator {
+		margin-right: var( --space-xxs );
+		color: var( --color-subtle );
+	}
+
+	&-parenthesis {
+		color: var( --color-subtle );
+		.mixin-islam-font-styles( 'heading-4' );
+	}
+}

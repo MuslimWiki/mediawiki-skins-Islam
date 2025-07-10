@@ -1,0 +1,144 @@
+.mask-gradient(@direction, @color1, @color2, @color3: null, @color4: null) {
+	& when (@color3 =null),
+	(@color4 =null) {
+		-webkit-mask-image: linear-gradient( @direction, @color1, @color2 );
+		mask-image: linear-gradient( @direction, @color1, @color2 );
+	}
+
+	& when not(@color3 =null),
+	not(@color4 =null) {
+		-webkit-mask-image: linear-gradient( @direction, @color1, @color2, @color3, @color4 );
+		mask-image: linear-gradient( @direction, @color1, @color2, @color3, @color4 );
+	}
+}
+
+.hideOverflowButton() {
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.showOverflowButton() {
+	z-index: @z-index-stacking-3;
+	visibility: visible;
+	pointer-events: auto;
+}
+
+// Elements enhanced by overflowElements.js
+.islam-overflow {
+	&-wrapper {
+		position: relative;
+		display: flex; /* So that it respects float elements (#878) */
+		max-width: max-content;
+
+		&:has( .islam-overflow-content > .wikitable ) {
+			margin-block: var( --space-md );
+			border-radius: var( --border-radius-medium );
+			box-shadow: var( --box-shadow-border );
+		}
+
+		&:has( .islam-overflow-content > .wikitable--fluid ) {
+			max-width: none;
+		}
+	}
+
+	&-content {
+		width: 100%;
+		overflow: auto hidden;
+
+		> .wikitable {
+			display: table;
+			max-width: none;
+			/* Handle margin and box-shadow on outer wrapper */
+			margin-block: 0;
+			overflow: initial;
+			box-shadow: none;
+		}
+
+		.islam-overflow--left > & {
+			.mask-gradient(90deg, transparent, #000 var( --overflow-gradient-size ));
+		}
+
+		.islam-overflow--right > & {
+			.mask-gradient(270deg, transparent, #000 var( --overflow-gradient-size ));
+		}
+
+		.islam-overflow--left.islam-overflow--right > & {
+			.mask-gradient(90deg, transparent, #000 var( --overflow-gradient-size ), #000 ~'calc( 100% - var( --overflow-gradient-size ) )', transparent);
+		}
+
+		&:has( .islam-overflow-content-sticky-header ) {
+			// We need to apply mask-image to hide the fixed position sticky header (#991)
+			-webkit-mask-image: linear-gradient( 90deg, #000, #000 );
+			mask-image: linear-gradient( 90deg, #000, #000 );
+		}
+
+		&-sticky-header {
+			--islam-overflow-scroll-x: 0; // default value to be overriden
+			position: fixed;
+			top: 0;
+			z-index: @z-index-above-content;
+			border-bottom: var( --border-width-base ) solid var( --border-color-base );
+			transform: ~'translate( calc( var( --islam-overflow-scroll-x ) * -1 ), var( --height-sticky-header ) )';
+			.mixin-islam-sticky-header-background;
+		}
+	}
+
+	&-nav {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		justify-content: space-between;
+		pointer-events: none;
+	}
+
+	&-navButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2rem;
+		height: 100%;
+		padding: 0;
+		appearance: none;
+		cursor: pointer;
+		background: transparent;
+		border: 0;
+		border-radius: var( --border-radius-medium );
+		.hideOverflowButton();
+
+		&::before {
+			width: 1.25rem;
+		}
+
+		&-left {
+			.islam-overflow--left & {
+				.showOverflowButton();
+			}
+
+			&::before {
+				transform: rotate( -90deg );
+			}
+		}
+
+		&-right {
+			.islam-overflow--right & {
+				.showOverflowButton();
+			}
+
+			&::before {
+				transform: rotate( 90deg );
+			}
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+	}
+}
+
+.islam-animations-ready .islam-overflow-content {
+	scroll-behavior: smooth;
+}

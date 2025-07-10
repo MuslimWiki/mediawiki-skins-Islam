@@ -1,0 +1,139 @@
+.islam-dropdown {
+	.islam-menu__card {
+		z-index: @z-index-dropdown;
+		min-width: 16rem;
+		max-width: 80vw;
+		content-visibility: hidden;
+		transition-timing-function: var( --transition-timing-function-ease-in );
+		transition-duration: var( --transition-duration-base );
+		transition-property: transform, content-visibility;
+		transition-behavior: allow-discrete;
+
+		.islam-menu__card-content {
+			opacity: 0;
+			transition-timing-function: var( --transition-timing-function-ease-in );
+			transition-duration: var( --transition-duration-base );
+			transition-property: opacity;
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	&-summary {
+		cursor: pointer;
+
+		// Icons have to use span inside label elements
+		> span:not( .islam-ui-icon ) {
+			.mixin-islam-screen-reader-only;
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+
+		// Remove Safari summary marker
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		// Reset hover styles if it is a touch device
+		// This is dumb but hover:hover overrides active states
+		@media ( hover: none ) {
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+
+	&-details {
+		+ .islam-menu__card {
+			position: absolute;
+		}
+
+		&[ open ] {
+			+ .islam-menu__card {
+				content-visibility: visible;
+				transform: none;
+				transition-timing-function: var( --transition-timing-function-ease-out );
+				transition-duration: var( --transition-duration-medium );
+
+				.islam-menu__card-content {
+					opacity: 1;
+					transition-delay: var( --transition-delay-menu );
+					transition-timing-function: var( --transition-timing-function-ease-out );
+					transition-duration: var( --transition-duration-medium );
+				}
+			}
+
+			> .islam-dropdown-summary {
+				background-color: var( --background-color-button-quiet--active );
+
+				&:hover {
+					background-color: var( --background-color-button-quiet--hover );
+				}
+			}
+		}
+	}
+
+	.islam-header__end & .islam-menu__card {
+		.mixin-islam-header-card( end );
+		transform-origin: var( --transform-origin-offset-end ) var( --transform-origin-offset-end );
+
+		@media ( min-width: @min-width-breakpoint-desktop ) {
+			transform-origin: var( --transform-origin-offset-start ) var( --transform-origin-offset-end );
+		}
+	}
+
+	@media ( max-width: @max-width-breakpoint-tablet ) {
+		.islam-menu__card {
+			max-width: ~'calc( 100vw - var( --space-xs ) * 2 )';
+		}
+
+		// Add dismiss affordnance backdrop
+		&-details {
+			&::before {
+				content: '';
+				background: var( --background-color-backdrop-light );
+				opacity: 0;
+				-webkit-backdrop-filter: blur( 2px );
+				backdrop-filter: blur( 2px );
+				transition-timing-function: var( --transition-timing-function-ease );
+				transition-duration: var( --transition-duration-base );
+				transition-property: opacity;
+			}
+
+			&[ open ] {
+				&::before {
+					position: fixed;
+					inset: 0;
+					z-index: @z-index-off-canvas-backdrop;
+					opacity: 1;
+					transition-duration: var( --transition-duration-medium );
+				}
+
+				> .islam-dropdown-summary {
+					position: relative;
+					// Slightly higher than the menu so it is not covered by the box shadow
+					z-index: @z-index-off-canvas + @z-index-stacking-1;
+				}
+
+				+ .islam-menu__card {
+					z-index: @z-index-off-canvas;
+				}
+			}
+		}
+	}
+}
+
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	/* HACK: Disable page from scolling when a dropdown menu is opened */
+	body:has( .islam-dropdown-details[ open ] ) {
+		overflow: hidden;
+	}
+}

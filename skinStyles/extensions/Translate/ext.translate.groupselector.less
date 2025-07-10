@@ -1,0 +1,51 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Translate
+ * Module: ext.translate.groupselector
+ * Version: MLEB 2021.07
+ *
+ * Date: 2021-07-29
+*/
+
+.tux-groupselector {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+/* The triangle shaped callout */
+.tux-groupselector::before {
+	border-bottom-color: var( --border-color-base );
+}
+
+.tux-groupselector::after {
+	border-bottom-color: var( --color-surface-2 );
+}
+
+.tux-groupselector__filter__search__input {
+	border-color: var( --border-color-base );
+}
+
+.tux-grouptab {
+	color: var( --color-base );
+}
+
+.tux-grouptab--selected {
+	border-bottom-color: var( --color-progressive );
+}
+
+.tux-grouplist {
+	background-color: var( --color-surface-1 );
+}
+
+.tux-grouplist__item {
+	border-bottom-color: var( --border-color-base );
+
+	&:hover {
+		background-color: var( --background-color-button-quiet--hover );
+	}
+}
+
+.grid .row .tux-grouplist__item__subgroups {
+	color: var( --color-subtle );
+}

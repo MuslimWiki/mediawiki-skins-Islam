@@ -1,0 +1,92 @@
+/**
+ * Miscellaneous styles that apply to body content
+ */
+
+.islam-body {
+	a.image {
+		display: inline-block;
+		overflow: hidden;
+		vertical-align: top; // get rid of that weird bottom gap from inline block
+
+		> img {
+			transition: var( --transition-hover );
+			transition-property: transform;
+		}
+
+		// Add affordance to replace magnify icon
+		&:hover:not( .lazy ):not( .new ) {
+			> img {
+				transform: var( --transform-image-hover );
+			}
+		}
+	}
+}
+
+/**
+ * Main page-specific styles
+ */
+.page-Main_Page.action-view {
+	// Disable sticky header
+	#islam-page-header-sticky-sentinel {
+		display: none;
+	}
+
+	// Move header to the bottom of the page
+	#content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.islam-page-header {
+		order: 9999;
+
+		&-inner {
+			justify-content: center;
+
+			@media ( min-width: @min-width-breakpoint-desktop ) {
+				border-top: var( --border-width-base ) solid var( --border-color-base );
+			}
+		}
+	}
+
+	#contentSub,
+	.islam-page-heading {
+		display: none;
+	}
+
+	.islam-body-container {
+		margin-top: var( --space-xl );
+	}
+}
+
+/**
+ * Heading HTML changes
+ * @see https://phabricator.wikimedia.org/T13555
+ * TODO: Clean up heading spacing someday
+ * TODO: This should go into one of the skinning files, revisit when we move to 1.43
+ */
+.mw-heading {
+	display: flex;
+	align-items: center;
+	margin-top: var( --space-md );
+
+	&1,
+	&2 {
+		margin-top: 3rem;
+	}
+
+	&3,
+	&4 {
+		margin-top: 2rem;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		flex-grow: 1;
+		margin: 0;
+	}
+}

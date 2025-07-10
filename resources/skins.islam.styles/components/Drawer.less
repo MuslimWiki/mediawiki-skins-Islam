@@ -1,0 +1,63 @@
+.islam-drawer {
+	&__card {
+		.mixin-islam-header-card( start );
+		transform-origin: var( --transform-origin-offset-start ) var( --transform-origin-offset-end );
+
+		@media ( min-width: @min-width-breakpoint-desktop ) {
+			transform-origin: var( --transform-origin-offset-start ) var( --transform-origin-offset-start );
+		}
+	}
+
+	&__header {
+		display: flex;
+		gap: var( --space-md );
+		align-items: center;
+		justify-content: center;
+		padding: var( --space-md );
+		border-bottom: var( --border-width-base ) solid var( --border-color-base );
+	}
+
+	// Keep aspect ratio
+	&__logo img {
+		width: auto;
+		height: 3rem;
+	}
+
+	&__siteinfo {
+		display: flex;
+		flex-direction: column;
+		gap: var( --space-xxs );
+	}
+
+	&__menu {
+		--size-icon: 1rem;
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax( 15rem, auto ) );
+		gap: var( --space-sm );
+		justify-content: center;
+		max-width: inherit;
+		padding: var( --space-xs );
+		margin-bottom: var( --space-xs );
+
+		.mw-list-item a {
+			border-radius: var( --border-radius-base );
+		}
+	}
+}
+
+@media ( min-width: @min-width-breakpoint-tablet ) {
+	.islam-drawer {
+		&__logo img {
+			// Bigger logo
+			height: 5rem;
+		}
+	}
+}
+
+@media ( min-width: @min-width-breakpoint-desktop ) {
+	.islam-drawer {
+		&__header {
+			justify-content: flex-start;
+		}
+	}
+}

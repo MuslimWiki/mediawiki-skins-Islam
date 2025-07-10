@@ -1,0 +1,169 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: ext.smw.page.styles
+ * Version: 4.0.2 (0fcdfce)
+ *
+ * Date: 2022-10-20
+*/
+
+@import '../../../resources/mixins.less';
+
+// Disable sticky header since it collides with anchor and adds no value
+#islam-page-header-sticky-sentinel {
+	display: none;
+}
+
+/* smw/ext.smw.page.css */
+/* Property page */
+.smw-property-page-content-line {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-property-page-results .header-row {
+	background-color: transparent;
+	.mixin-islam-sticky-header( false );
+}
+
+.smw-property-page-results .value-row:hover {
+	background-color: var( --background-color-button-quiet--hover );
+}
+
+.smw-property-page-results .header-row > .header-title {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-ui-pagination .page-link {
+	color: var( --color-progressive );
+	background-color: transparent;
+	border-color: var( --border-color-base );
+}
+
+.smw-ui-pagination .page-link:first-child {
+	border-top-left-radius: var( --border-radius-base );
+	border-bottom-left-radius: var( --border-radius-base );
+}
+
+.smw-ui-pagination .page-link:last-child {
+	border-top-right-radius: var( --border-radius-base );
+	border-bottom-right-radius: var( --border-radius-base );
+}
+
+.smw-ui-pagination .page-link:hover {
+	color: var( --color-progressive );
+	background-color: var( --background-color-button-quiet--hover );
+	border-color: var( --border-color-base );
+}
+
+// Added active state
+.smw-ui-pagination .page-link:active {
+	background-color: var( --background-color-button-quiet--active );
+}
+
+.smw-ui-pagination .page-link.link-disabled {
+	color: var( --color-subtle );
+	background-color: transparent;
+	border-color: var( --border-color-base );
+}
+
+.smw-ui-pagination .page-link.link-active {
+	color: var( --color-inverted-primary );
+	background-color: var( --color-progressive );
+	border-color: var( --color-progressive );
+}
+
+.smw-property-page-results .header-title {
+	padding: var( --space-xs ) 0;
+	font-size: 1.25rem;
+	color: var( --color-emphasized );
+	background-color: transparent;
+	border-bottom-color: var( --border-color-base );
+}
+
+.list-pager-value-filter input {
+	color: var( --color-base );
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-base );
+}
+
+.smw-ui-input-filter {
+	color: var( --color-progressive );
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-base );
+}
+
+.smw-ui-input-filter input {
+	color: var( --color-base ) !important;
+	border-left-color: var( --border-color-base ) !important;
+}
+
+.smw-ui-input-filter-tooltip {
+	border-left-color: var( --border-color-base );
+}
+
+.smw-property-page-results.legacy .header-title {
+	border-bottom-color: var( --border-color-base );
+}
+
+.usage-count,
+.item-count {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+	border-radius: var( --border-radius-base );
+}
+
+#tab-smw-property-value:checked + label.nav-label .usage-count,
+#tab-smw-concept-list:checked + label.nav-label .usage-count,
+#tab-smw-property-subp:checked + label.nav-label .item-count,
+#tab-smw-property-errp:checked + label.nav-label .item-count,
+#tab-smw-property-redi:checked + label.nav-label .item-count,
+#tab-smw-type-list:checked + label.nav-label .item-count,
+#tab-smw-property-spec:checked + label.nav-label .item-count {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+}
+
+#tab-smw-property-value:checked + label.nav-label .usage-count.moderate,
+#tab-smw-concept-list:checked + label.nav-label .usage-count.moderate {
+	color: var( --color-progressive );
+	background-color: var( --background-color-progressive-subtle );
+}
+
+#tab-smw-property-value:checked + label.nav-label .usage-count.high,
+#tab-smw-concept-list:checked + label.nav-label .usage-count.high {
+	color: var( --color-destructive );
+	background-color: var( --background-color-destructive-subtle );
+}
+
+/**
+ * Tabs
+ */
+.smw-property input.nav-tab:checked + label.nav-label.smw-tab-warning,
+.smw-concept input.nav-tab:checked + label.nav-label.smw-tab-warning,
+.smw-types input.nav-tab:checked + label.nav-label.smw-tab-warning {
+	border-top: 0;
+	border-bottom: var( --border-width-thick ) solid var( --color-destructive );
+}
+
+.smw-property input.nav-tab:checked + label.nav-label.smw-tab-spec,
+.smw-concept input.nav-tab:checked + label.nav-label.smw-tab-spec {
+	border-top: 0;
+	border-bottom: var( --border-width-thick ) solid var( --color-warning );
+}
+
+.smw-property input.nav-tab:checked + label#tab-label-smw-property-constraint.nav-label {
+	border-bottom: var( --border-width-thick ) solid var( --color-progressive );
+}
+
+/**
+ * Responsive settings (@see ext.smw.table)
+ */
+@media screen and ( max-width: 800px ) {
+	.smw-property-page-results .header-title:first-child,
+	.smw-property-page-results .header-row > .header-title:first-child {
+		border-bottom-color: var( --border-color-base );
+	}
+}

@@ -1,0 +1,62 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:VisualEditor
+ * Module: ext.visualEditor.mwformatting
+ * Version: REL1_39 65d89c9
+ *
+ * Date: 2023-02-06
+*/
+
+@import '../../../resources/mixins.less';
+
+// Sync with Islam font styles
+.oo-ui-menuToolGroup-tools .oo-ui-tool-name {
+	&-heading1,
+	&-heading2,
+	&-heading3,
+	&-heading4,
+	&-heading5,
+	&-heading6 {
+		.oo-ui-tool-title {
+			color: var( --color-emphasized );
+		}
+	}
+
+	&-heading1 .oo-ui-tool-title {
+		.mixin-islam-font-styles( 'heading-1' );
+	}
+
+	&-heading2 .oo-ui-tool-title {
+		.mixin-islam-font-styles( 'heading-2' );
+	}
+
+	&-heading3 .oo-ui-tool-title {
+		.mixin-islam-font-styles( 'heading-3' );
+	}
+
+	&-heading4 .oo-ui-tool-title {
+		.mixin-islam-font-styles( 'heading-4' );
+	}
+
+	&-heading5 .oo-ui-tool-title {
+		font-size: var( --font-size-medium );
+		font-weight: var( --font-weight-semi-bold );
+	}
+
+	&-heading6 .oo-ui-tool-title {
+		font-size: var( --font-size-medium );
+		font-weight: var( --font-weight-semi-bold );
+	}
+
+	&-preformatted .oo-ui-tool-title {
+		font-family: var( --font-family-monospace );
+		color: var( --color-emphasized );
+	}
+
+	&-blockquote .oo-ui-tool-title {
+		font-style: italic;
+		color: var( --color-subtle );
+		text-indent: var( --space-md );
+	}
+}

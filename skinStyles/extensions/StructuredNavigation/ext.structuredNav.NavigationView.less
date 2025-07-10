@@ -1,0 +1,49 @@
+/*
+ * Islam
+ *
+ * SkinStyles for StructuredNavigation
+ * Module: ext.structuredNav.NavigationView.styles
+ * Version: REL1_39 55e2ec0
+ *
+ * Date: 2024-09-06
+*/
+
+/* ext.structuredNav.NavigationView.less */
+.mw-structurednav-navigation-container {
+	font-size: var( --font-size-small );
+	background-color: var( --color-surface-0 );
+	border-color: var( --border-color-subtle );
+	border-radius: var( --border-radius-base );
+}
+
+.mw-structurednav-header {
+	font-size: var( --font-size-small );
+	color: var( --color-base );
+	background: var( --color-surface-3 );
+
+	// Needs higher specificity to override default skin styles
+	// for the h2 element - Samantha Nguyen
+	.mw-structurednav-header-title {
+		font-family: var( --font-family-base );
+		font-size: var( --font-size-medium );
+		font-weight: var( --font-weight-semi-bold );
+	}
+}
+
+.mw-structurednav-group-title,
+.mw-structurednav-group-content {
+	border-top-color: var( --color-surface-0 );
+}
+
+.mw-structurednav-group-title {
+	font-family: var( --font-family-base );
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-base );
+	text-align: start;
+	background: var( --color-surface-2 );
+}
+
+/* ext.structuredNav.NavigationView.separator.less */
+.mw-structurednav-group-content-item:not( :last-child )::after {
+	color: var( --color-base );
+}

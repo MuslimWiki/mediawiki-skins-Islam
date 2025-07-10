@@ -1,0 +1,79 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UniversalLanguageSelector
+ * Module: jquery.ime
+ * Version: MLEB 2021.12
+ *
+ * Date: 2022-05-17
+*/
+
+.imeselector {
+	filter: var( --filter-invert );
+}
+
+.imeselector a,
+.ime-disable {
+	color: var( --color-base );
+}
+
+.ime-setting-caret {
+	border-top-color: var( --border-color-base );
+}
+
+span.ime-disable-shortcut {
+	color: var( --color-subtle );
+}
+
+.ime-list-title,
+.ime-lang-title {
+	color: var( --color-progressive );
+	border-bottom-color: var( --color-progressive );
+}
+
+.imeselector-menu {
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}
+
+/* The triangle shaped callout */
+.imeselector-menu::before {
+	border-bottom-color: var( --border-color-base );
+}
+
+.imeselector-menu::after {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+.imeselector-menu.ime-position-top::before {
+	border-top-color: var( --border-color-base );
+}
+
+.imeselector-menu.ime-position-top::after {
+	border-top-color: var( --color-surface-1 );
+}
+
+.imeselector-menu .ime-checked {
+	filter: var( --filter-invert );
+}
+
+.imeselector-menu .ime-help-link {
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+	border-top-color: var( --border-color-base );
+}
+
+.imeselector-menu .ime-help-link > a:hover {
+	color: var( --color-base );
+	background-color: var( --color-surface-2--hover );
+}
+
+.imeselector-menu .selectable-row-item {
+	color: var( --color-base );
+}
+
+.imeselector-menu .selectable-row:hover {
+	background-color: var( --background-color-button-quiet--hover );
+}

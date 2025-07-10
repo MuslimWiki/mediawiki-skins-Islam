@@ -1,0 +1,256 @@
+.islam-toc {
+	--islam-toc-toggle-size: ~'calc( var( --line-height-small ) + var( --space-xs ) * 2 )';
+	.mixin-islam-font-styles( 'small' );
+
+	&-top {
+		.islam-ui-icon {
+			transform: rotate( 90deg );
+		}
+	}
+
+	&-contents,
+	&-list {
+		margin: 0 0 0 var( --space-xs );
+		list-style: none;
+		border-left: var( --border-width-thick ) solid var( --border-color-base );
+
+		.islam-toc-link {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+
+	&-link {
+		position: relative;
+		display: flex;
+		gap: var( --space-xs );
+		align-items: center;
+		padding: var( --space-xs );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-base );
+		text-decoration: none;
+		border-radius: var( --border-radius-base );
+
+		.islam-toc &.islam-toc-top {
+			height: 0;
+			padding-block: 0;
+			opacity: 0;
+			transition-timing-function: var( --transition-timing-function-ease-out );
+			transition-duration: var( --transition-duration-medium );
+			transition-property: opacity, height;
+		}
+
+		&:has( + .islam-toc-toggle ) {
+			/* Make space for toggle */
+			margin-right: var( --islam-toc-toggle-size );
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+
+	&-toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: none;
+		width: var( --islam-toc-toggle-size );
+		height: var( --islam-toc-toggle-size );
+		padding: 0;
+		background: transparent;
+	}
+
+	&-indicator {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		flex-shrink: 0;
+		width: var( --border-width-thick );
+		margin-block: var( --space-xs );
+		margin-left: ~'calc( var( --border-width-thick ) * -1 )';
+	}
+
+	&-text {
+		display: flex;
+		gap: var( --space-xs );
+	}
+
+	&-numb {
+		display: none;
+		color: var( --color-subtle );
+	}
+
+	&-summary {
+		color: var( --color-subtle );
+	}
+
+	&-list-item {
+		position: relative;
+
+		&--active {
+			> .islam-toc-link {
+				color: var( --color-progressive );
+
+				.islam-toc-indicator {
+					background-color: var( --color-progressive );
+				}
+			}
+		}
+	}
+}
+
+// Collapse ToC sections by default, excluding no-js
+.client-js .islam-toc {
+	.islam-toc-level-1 .islam-toc-list-item {
+		display: none;
+	}
+
+	.islam-toc-level-1.islam-toc-list-item--expanded .islam-toc-list-item {
+		display: block;
+	}
+
+	.islam-toc-toggle {
+		--size-icon: var( --font-size-x-small );
+		display: grid;
+		place-content: center;
+		cursor: pointer;
+		border-radius: var( --border-radius-base );
+
+		.islam-ui-icon {
+			&::before {
+				transform: rotate3d( 1, 0, 0, 180deg );
+				transition: var( --transition-hover );
+				transition-property: transform;
+			}
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+	}
+
+	.islam-toc-level-1.islam-toc-list-item--expanded .islam-toc-toggle .islam-ui-icon::before {
+		transform: none;
+	}
+}
+
+// Sticky header styles
+.islam-sticky-header-visible {
+	.islam-toc-top.islam-toc-link {
+		height: 2rem; // 1rem text + 1rem padding
+		padding-block: var( --space-xs );
+		opacity: 1;
+	}
+}
+
+@media ( max-width: ( @max-width-breakpoint-tablet ) ) {
+	.islam-toc {
+		position: fixed;
+		bottom: ~'calc( var( --header-size ) + max( env( safe-area-inset-bottom ), var( --space-xs ) ) )';
+		left: 0;
+		z-index: @z-index-sticky; // Keep ToC above sticky header and page action, but below site header
+		pointer-events: none; // HACK: Make background clickable
+
+		&-card {
+			// Get consistent margin
+			bottom: ~'calc( 100% - var( --space-xs ) )';
+			width: max-content;
+			// This is not bulletproof since it will get covered by page header
+			// in extremely short height. but it should be good for now
+			max-height: ~'calc( var( --header-card-maxheight ) - 8rem )';
+			padding: var( --space-xs );
+			transform-origin: var( --transform-origin-offset-start ) var( --transform-origin-offset-end );
+		}
+
+		.islam-dropdown {
+			&-summary {
+				box-sizing: border-box;
+				display: grid;
+				place-content: center;
+				width: var( --toolbar-size );
+				height: var( --toolbar-size );
+				margin: var( --space-xs );
+				pointer-events: auto; // HACK: Make button clickable
+				background-color: var( --color-surface-1 );
+				border: 1px solid var( --border-color-base );
+				border-radius: var( --border-radius-medium );
+				box-shadow: var( --box-shadow-drop-xx-large );
+
+				// The hover state colors are not great but it will do for now
+				&:hover {
+					background: ~'linear-gradient( var( --background-color-button-quiet--hover ), var( --background-color-button-quiet--hover ) ) var( --color-surface-1 )';
+				}
+
+				&:active {
+					background: ~'linear-gradient( var( --background-color-button-quiet--active ), var( --background-color-button-quiet--active ) ) var( --color-surface-1 )';
+				}
+			}
+
+			&-details[ open ] {
+				+ .islam-menu__card {
+					pointer-events: auto; // HACK: Make ToC clickable after ToC is expanded
+				}
+
+				> .islam-dropdown-summary {
+					background: ~'linear-gradient( var( --background-color-button-quiet--active ), var( --background-color-button-quiet--active ) ) var( --color-surface-1 )';
+				}
+			}
+		}
+	}
+}
+
+@media ( min-width: @min-width-breakpoint-desktop ) {
+	.islam-toc {
+		position: -webkit-sticky;
+		position: sticky;
+		top: var( --height-sticky-header );
+		max-height: ~'calc( 100vh - var( --height-sticky-header ) )';
+		padding: var( --space-xs ) 0;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+
+		.islam-menu__card {
+			position: relative;
+			min-width: auto;
+			margin: 0;
+			content-visibility: visible;
+			background: transparent;
+			border: 0;
+			border-radius: 0;
+			box-shadow: none;
+			transform: none;
+
+			.islam-menu__card-backdrop {
+				display: none;
+			}
+
+			.islam-menu__card-content {
+				opacity: 1;
+			}
+
+			.islam-ui-icon {
+				content-visibility: visible;
+			}
+		}
+
+		// Hide button in desktop viewport
+		.islam-dropdown-summary {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:TemplateData
+ * Module: ext.templateDataGenerator.editTemplatePage
+ * Version: REL1_43
+*/
+
+@import '../../../resources/mixins.less';
+
+.tdg-editscreen-main {
+	padding-bottom: var( --space-sm );
+	margin: var( --space-sm );
+	border-bottom: var( --border-width-base ) solid var( --border-color-base );
+	.mixin-islam-font-styles( 'small' );
+}
+
+.tdg-templateDataParamWidget-param {
+	&-name,
+	&-aliases,
+	&-description {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&-name {
+		font-weight: var( --font-weight-semi-bold );
+	}
+
+	&-aliases {
+		.mixin-islam-font-styles( 'small' );
+	}
+
+	&-description {
+		color: var( --color-subtle );
+	}
+
+	&-alias {
+		font-family: var( --font-family-monospace );
+		color: var( --color-emphasized );
+		background-color: var( --color-surface-2 );
+		border: var( --border-width-base ) solid var( --border-color-base );
+		border-radius: var( --border-radius-small );
+
+		&:first-child {
+			background-color: var( --color-surface-2 );
+		}
+	}
+}
+
+.tdg-templateDataParamWidget-paramList-param-description {
+	color: var( --color-subtle );
+}
+
+.tdg-languageResultWidget-otherMatch {
+	color: var( --color-subtle );
+}
+
+.tdg-languageResultWidget-highlight {
+	font-weight: var( --font-weight-semi-bold );
+}

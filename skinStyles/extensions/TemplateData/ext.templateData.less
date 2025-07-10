@@ -1,0 +1,69 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:TemplateData
+ * Module: ext.templateData
+ * Version: REL1_43
+*/
+
+@import '../../../resources/mixins.less';
+
+.mw-templatedata-doc-params {
+	caption {
+		background-color: var( --color-surface-1 );
+		border-top-left-radius: var( --border-radius-medium );
+		border-top-right-radius: var( --border-radius-medium );
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.mw-templatedata-caption {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: inherit;
+
+		// Change edit template data link into a button
+		.mw-editsection-like > a {
+			display: block;
+			padding: var( --space-xs ) var( --space-sm );
+			font-size: var( --font-size-small );
+			line-height: 1;
+			color: var( --color-emphasized );
+			text-decoration: none;
+			border: 1px solid var( --border-color-interactive );
+			border-radius: var( --border-radius-base );
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+		}
+	}
+}
+
+.mw-templatedata-doc-param-alias {
+	color: var( --color-subtle );
+}
+
+.mw-templatedata-doc-muted {
+	color: var( --color-subtle );
+}
+
+.mw-templatedata-doc-param-status-required {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.mw-templatedata-format {
+	color: var( --color-base );
+	.mixin-islam-font-styles( 'overline' );
+}
+
+.mw-templateData-template-map-list-menu-panel {
+	border-right-color: var( --border-color-base );
+}

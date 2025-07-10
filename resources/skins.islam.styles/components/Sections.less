@@ -1,0 +1,70 @@
+// Hide indicator when client is noscript
+// FIXME: On rare occasion, indicator can appear without the .islam-sections-enabled class, not sure why
+.islam-section-indicator,
+.client-nojs.islam-sections-enabled .islam-section-indicator {
+	display: none;
+}
+
+.islam-section-heading,
+.mw-editsection {
+	--size-icon: 1.125rem;
+}
+
+.islam-section {
+	&-heading {
+		display: flex;
+		align-items: center;
+
+		.mw-headline {
+			flex-grow: 1;
+		}
+
+		:is( .mw-headline, h1, h2, h3, h4, h5, h6 ) {
+			transition: var( --transition-hover );
+			transition-property: opacity;
+
+			@media ( hover: pointer ) {
+				&:hover {
+					opacity: var( --opacity-icon-base--hover );
+				}
+
+				&:active {
+					opacity: var( --opacity-icon-base--selected );
+				}
+			}
+		}
+
+		&:has( + .islam-section[ hidden ] ) {
+			.islam-section-indicator {
+				transform: rotate3d( 1, 0, 0, 180deg );
+			}
+
+			:is( .mw-headline, h1, h2, h3, h4, h5, h6 ) {
+				color: var( --color-subtle );
+			}
+		}
+	}
+}
+
+.islam-sections-enabled {
+	.islam-section {
+		&-heading {
+			cursor: pointer;
+
+			@supports ( user-select: none ) {
+				user-select: none;
+			}
+		}
+
+		&-indicator {
+			display: block;
+			order: -2;
+			width: var( --size-icon );
+			height: var( --size-icon );
+			margin-right: var( --space-sm );
+			cursor: pointer;
+			transition: var( --transition-hover );
+			transition-property: transform;
+		}
+	}
+}

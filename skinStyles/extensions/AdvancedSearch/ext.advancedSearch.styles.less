@@ -1,0 +1,127 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:AdvancedSearch
+ * Module: ext.advancedSearch.styles
+ * Version: REL1_39 3a0eed7
+ *
+ * Date: 2022-12-12
+*/
+
+@import '../../../resources/mixins.less';
+
+.mw-advancedSearch-container {
+	margin-top: var( --space-xs );
+	border-bottom: var( --border-width-base ) solid var( --border-color-base );
+}
+
+// Align with Islam label styles
+.mw-advancedSearch-searchPreview-label,
+.advancedsearch-namespacesPreview-label {
+	margin-right: var( --space-xs );
+	color: var( --color-subtle );
+	.mixin-islam-font-styles( 'overline' );
+}
+
+.mw-advancedSearch-fieldContainer {
+	max-width: none;
+	margin-top: 0;
+	background: var( --color-surface-2 );
+	border: 0;
+	border-radius: var( --border-radius-base );
+
+	fieldset {
+		margin-top: var( --space-md );
+		border-top-color: var( --border-color-base );
+	}
+
+	.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-subtle );
+		background: var( --color-surface-2 );
+	}
+}
+
+.mw-advancedSearch-expandablePane-options,
+.mw-advancedSearch-expandablePane-namespaces {
+	max-width: none;
+	padding-top: 0; // padding handled through container
+}
+
+.mw-advancedSearch-expandablePane-button {
+	&.oo-ui-widget-enabled.oo-ui-buttonWidget {
+		> .oo-ui-buttonElement-button {
+			padding-left: 0;
+			background-color: transparent;
+			border-color: transparent;
+
+			&:hover {
+				color: inherit;
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			// Added active state
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+
+			// HACK: Flip indicator when expanded
+			.oo-ui-indicator-down {
+				transition: opacity 100ms, transform 250ms ease;
+			}
+
+			&[ aria-expanded='true' ] {
+				.oo-ui-indicator-down {
+					transform: rotate3d( 1, 0, 0, 180deg );
+				}
+			}
+		}
+
+		&.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
+			background-color: transparent;
+		}
+	}
+}
+
+.mw-advancedSearch-namespace-selection-header {
+	> .mw-advancedSearch-namespace-search-in-label {
+		font-weight: var( --font-weight-semi-bold );
+	}
+}
+
+.mw-advancedSearch-namespace-selection {
+	max-width: none;
+	margin-top: 0;
+	background: var( --color-surface-2 );
+	border: 0;
+	border-radius: var( --border-radius-base );
+}
+
+.mw-advancedSearch-namespace-border {
+	border-top: var( --border-width-base ) solid var( --border-color-base );
+	border-bottom: 0;
+}
+
+.mw-advancedSearch-namespaceFilter.oo-ui-tagMultiselectWidget {
+	max-width: none;
+}
+
+.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-handle {
+	border-radius: 0 0 var( --border-radius-base ) var( --border-radius-base );
+}
+
+.mw-advancedSearch-namespaceFilter .oo-ui-tagMultiselectWidget-input .oo-ui-inputWidget-input {
+	background-color: var( --color-surface-0 );
+}
+
+.oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+	&.selected {
+		background-color: var( --background-color-progressive-subtle );
+		border-color: var( --color-progressive );
+	}
+}
+
+.oo-ui-popupWidget-popup .mw-advancedSearch-tooltip-head {
+	color: var( --color-subtle );
+}

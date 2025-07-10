@@ -1,0 +1,47 @@
+/*
+ * Islam
+ *
+ * Module: mediawiki.skinning.interface-edit-section-links
+ * Version: REL1_43
+ *
+ * Date: 2025-05-16
+*/
+
+.mw-editsection {
+	float: right; // TODO: Drop float when mw-heading change is shipped
+	display: flex;
+	align-items: center;
+	margin-left: var( --space-sm );
+	.mixin-islam-font-styles( 'small' );
+
+	@supports ( user-select: none ) {
+		user-select: none;
+	}
+
+	@supports ( -webkit-user-select: none ) {
+		-webkit-user-select: none;
+	}
+
+	.cdx-button--icon-only {
+		span:not( .islam-ui-icon ) {
+			display: none;
+		}
+	}
+}
+
+/* Correct directionality when page dir is different from site/user dir */
+.mw-content-ltr .mw-editsection,
+.mw-content-rtl .mw-content-ltr .mw-editsection {
+	/* @noflip */
+	margin-right: 0;
+	/* @noflip */
+	margin-left: var( --space-sm );
+}
+
+.mw-content-rtl .mw-editsection,
+.mw-content-ltr .mw-content-rtl .mw-editsection {
+	/* @noflip */
+	margin-right: var( --space-sm );
+	/* @noflip */
+	margin-left: 0;
+}

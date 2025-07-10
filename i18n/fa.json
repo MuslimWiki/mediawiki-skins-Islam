@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"language": "Persian (Farsi)",
+		"language_code": "fa",
+		"direction": "rtl",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Beginneruser",
+			"Darafsh",
+			"Eshagh",
+			"Jeeputer",
+			"Reza koulivand"
+		],
+		"note": "Persian (Farsi) language used in Iran and Afghanistan."
+	},
+	"islam-skin-desc": "یک پوسته مدیاویکی تمیز و واکنش‌گرا که برای [https://muslim.wiki MuslimWiki] توسعه داده شده است. دارای رابط کاربری بصری است که برای به اشتراک گذاشتن دانش اسلامی در همه دستگاه‌ها بهینه شده است.",
+	"islam.css": "/* همه کدهای سی‌اس‌اس که در این بخش قرار بگیرد برای کاربرانی که از پوستهٔ شهروند استفاده کنند بارگزاری می‌شود */",
+	"islam.js": "/ * همه کدهای جاوااسکریپتی که در اینجا قرار می‌گیرند برای کاربران پوستهٔ مدرن بارگیری می‌شود * /",
+	"islam-drawer-toggle": "تغییر منو",
+	"islam-usermenu-toggle": "تغییر منوی شخصی",
+	"islam-search-toggle": "تغییر جست‌وجو",
+	"islam-sitestats-articles-label": "مقالات",
+	"islam-sitestats-images-label": "پرونده‌ها",
+	"islam-sitestats-users-label": "کاربران",
+	"islam-sitestats-edits-label": "ویرایش‌ها",
+	"islam-footer-desc": "این متن را در مدیاویکی:Islam-footer-desc ویرایش کنید",
+	"islam-footer-tagline": "این متن را در [[MediaWiki:Islam-footer-tagline/fa]] ویرایش کنید",
+	"islam-action-addsection": "افزودن بحث",
+	"islam-jumptotop": "برگشت به بالا",
+	"islam-search-fulltext": "جستجو برای صفحه‌های دربردارندهٔ $1",
+	"islam-search-noresults-title": "او نه! نتیجه‌ای برای $1 یافت نشد",
+	"islam-tagline-ns-talk": "صفحهٔ بحث برای {{SUBJECTPAGENAME}}",
+	"islam-tagline-ns-project": "اطلاعات درباره {{SITENAME}}",
+	"islam-tagline-ns-file": "پرونده در {{SITENAME}}",
+	"islam-tagline-ns-mediawiki": "صفحهٔ رابط مدیاویکی",
+	"islam-tagline-ns-template": "صفحهٔ الگو",
+	"islam-tagline-ns-help": "صفحهٔ راهنما",
+	"islam-tagline-ns-category": "صفحهٔ رده",
+	"islam-feature-custom-font-size-standard-label": "استاندارد",
+	"islam-feature-custom-width-standard-label": "استاندارد",
+	"islam-command-palette-keyhint-actions": "کنش‌ها",
+	"islam-command-palette-keyhint-return": "بازگشت"
+}

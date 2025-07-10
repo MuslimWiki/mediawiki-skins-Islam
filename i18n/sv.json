@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"language": "Swedish",
+		"language_code": "sv",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Sabelöga",
+			"WikiPhoenix"
+		],
+		"note": "Swedish language using Latin script used in Sweden and Finland."
+	},
+	"islam-skin-desc": "Ett rent, responsivt MediaWiki-skin utvecklat för [https://muslim.wiki MuslimWiki]. Har ett intuitivt gränssnitt optimerat för att dela islamisk kunskap på alla enheter.",
+	"islam.css": "/* All CSS här kommer laddas in för användare av utseendet Islam */",
+	"islam.js": "/* All JavaScript här kommer laddas in för användare av utseendet Islam */",
+	"islam-drawer-toggle": "Visa/dölj menyn",
+	"islam-search-toggle": "Visa/dölj sök",
+	"islam-sitestats-articles-label": "artiklar",
+	"islam-sitestats-images-label": "filer",
+	"islam-sitestats-users-label": "användare",
+	"islam-sitestats-edits-label": "redigeringar",
+	"islam-footer-desc": "Redigera den här texten på [[MediaWiki:Islam-footer-desc/sv]]",
+	"islam-footer-tagline": "Redigera den här texten på [[MediaWiki:Islam-footer-tagline/sv]]",
+	"islam-search-fulltext": "Sök efter sidor som innehåller $1",
+	"islam-search-noresults-title": "Ånej! Inga resultat för $1",
+	"islam-search-noresults-desc": "Kanske prova alternativen nedan?"
+}

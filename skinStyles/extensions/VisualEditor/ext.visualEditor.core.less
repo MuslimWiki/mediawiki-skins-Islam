@@ -1,0 +1,201 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:VisualEditor
+ * Module: ext.visualEditor.core
+ * Version: REL1_43
+*/
+
+@import '../../../resources/variables.less';
+
+.ve-ui-toolbar > .oo-ui-toolbar-bar {
+	/* Fix z-index */
+	z-index: @z-index-sticky;
+	/* Fix weird gap between save button and toolbar bottom */
+	border-bottom: 0;
+	box-shadow: 0 1px 0 0 var( --border-color-base );
+}
+
+/* ve.ce.BranchNode.css */
+.ve-ce-branchNode-blockSlug,
+.ve-ce-branchNode-newSlug {
+	outline: 1px dashed var( --border-color-base );
+	background-color: var( --background-color-button-quiet--hover );
+}
+
+/* ve.ce.RootNode.css */
+.ve-ce-attachedRootNode::selection,
+.ve-ce-attachedRootNode *::selection {
+	color: var( --color-inverted-primary );
+	background-color: var( --color-progressive );
+}
+
+/* ve.ce.CommentNode.css */
+.ve-ce-commentNode > .ve-ce-focusableNode-invisibleIcon.oo-ui-iconElement .oo-ui-labelElement-label {
+	font-family: var( --font-family-monospace );
+}
+
+/* ve.ce.TableCellNode.css */
+.ve-ce-tableCellableNode {
+	border-color: var( --border-color-base );
+}
+
+/* ve.ce.TableNode.css */
+.ve-ce-tableNode-active .ve-ce-tableCaptionNode,
+.ve-ce-tableCaptionNode.ve-ce-activeNode-active {
+	border-color: var( --border-color-base );
+}
+
+/* ve.ce.LinkAnnotation.css */
+.ve-ce-linkAnnotation.ve-ce-annotation-active {
+	background-color: var( --background-color-button-quiet--hover );
+	box-shadow: 0 0 0 1px var( --border-color-base );
+}
+
+/* ve.ce.ResizableNode.css */
+.ve-ce-resizableNode-sizeText {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-base );
+}
+
+/* ve.ui.ToolbarDialog.css */
+.oo-ui-toolbar-position-top .ve-ui-toolbarDialog-position-above {
+	border-top-color: var( --border-color-base );
+}
+
+.oo-ui-toolbar-position-bottom .ve-ui-toolbarDialog-position-above {
+	border-bottom-color: var( --border-color-base );
+}
+
+.ve-ui-toolbarDialog-position-side {
+	background: var( --color-surface-1 );
+	border-left-color: var( --border-color-base );
+}
+
+/* ve.ui.CommandHelpDialog.css */
+.ve-ui-commandHelpDialog-shortcut > kbd,
+.ve-ui-commandHelpDialog-sequence > kbd {
+	color: var( --color-emphasized );
+	text-shadow: none;
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+	box-shadow: none;
+}
+
+/* ve.ui.LinkContextItem.css */
+.ve-ui-desktopContext .ve-ui-linkContextItem .ve-ui-linkContextItem-label {
+	width: calc( 100% + 1em * 2 );
+	border-top-color: var( --border-color-base );
+}
+
+.ve-ui-desktopContext .ve-ui-linkContextItem .ve-ui-linkContextItem-label .ve-ui-linkContextItem-label-preview {
+	color: var( --color-subtle );
+}
+
+/* ve.ui.Overlay.css */
+.ve-ui-overlay {
+	font-family: var( --font-family-base );
+}
+
+.ve-ui-overlay-global {
+	z-index: @z-index-overlay;
+}
+
+/* ve.ui.Surface.css */
+.ve-ui-surface-source-font {
+	font-family: var( --font-family-monospace );
+}
+
+/* ve.ui.DebugBar.css */
+.ve-ui-debugBar-commands .ve-ui-debugBar-commands-divider {
+	border-right-color: var( --border-color-base );
+}
+
+.ve-ui-debugBar-dump > table {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.ve-ui-debugBar-dump td {
+	background-color: var( --color-surface-1 );
+}
+
+.ve-ui-debugBar-dump th {
+	color: var( --color-subtle );
+	text-shadow: 0 1px 1px var( --color-surface-1 );
+}
+
+.ve-ui-debugBar-dump ol {
+	color: var( --color-subtle );
+}
+
+.ve-ui-debugBar-dump li .ve-ui-debugBar-dump-element,
+.ve-ui-debugBar-dump li .ve-ui-debugBar-dump-char,
+.ve-ui-debugBar-dump li .ve-ui-debugBar-dump-achar {
+	color: var( --color-emphasized );
+	text-shadow: 0 1px 1px var( --color-surface-1 );
+	background-color: var( --color-surface-2 );
+}
+
+.ve-ui-debugBar-dump li .ve-ui-debugBar-dump-note {
+	color: var( --color-subtle );
+}
+
+.ve-ui-debugBar-filibuster {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.ve-ui-debugBar-transactions > ol > li {
+	border-left-color: var( --border-color-base );
+}
+
+/* Responsive handling */
+.ve-init-mw-desktopArticleTarget-toolbar {
+	> .oo-ui-toolbar-bar {
+		> .oo-ui-toolbar-tools {
+			position: relative;
+			// Needed to hide overflow tools
+			background: var( --color-surface-0 );
+
+			&:first-child {
+				display: inline-block;
+				max-width: ~'calc( 100% - 250px )';
+				white-space: nowrap;
+			}
+		}
+
+		> .oo-ui-toolbar-actions {
+			border-left: var( --border-width-base ) solid var( --border-color-base );
+		}
+	}
+}
+
+.ve-ui-toolbar-saveButton {
+	@media ( max-width: @max-width-breakpoint-tablet ) {
+		min-width: 56px;
+		text-align: center;
+
+		.oo-ui-tool-title {
+			font-size: 0;
+
+			&::before {
+				font-size: 1.25rem;
+				line-height: 1;
+				content: '✓';
+			}
+		}
+	}
+}
+
+/* Hide less useful buttons on small viewport */
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	.ve-ui-toolbar-group {
+		&-format,
+		&-style,
+		&-help {
+			display: none;
+		}
+	}
+}

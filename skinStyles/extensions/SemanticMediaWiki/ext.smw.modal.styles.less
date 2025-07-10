@@ -1,0 +1,62 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: ext.smw.modal.styles
+ * Version: 4.0.2 (0fcdfce)
+ *
+ * Date: 2022-10-20
+*/
+
+@import '../../../resources/variables.less';
+
+/* smw/util/ext.smw.modal.css */
+.smw-modal {
+	z-index: @z-index-overlay;
+	background-color: var( --background-color-backdrop-light );
+}
+
+.smw-modal-title {
+	margin-left: 0;
+	font-size: 1.25rem;
+	font-weight: var( --font-weight-semi-bold );
+	vertical-align: middle;
+	color: var( --color-emphasized );
+}
+
+/* smw-modal Content */
+.smw-modal-content {
+	padding: var( --space-xl );
+	background-color: var( --color-surface-1 );
+	border: 0;
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}
+
+.smw-modal-close:hover,
+.smw-modal-close:focus {
+	color: var( --background-color-icon--hover );
+}
+
+.smw-modal-close:active {
+	color: var( --background-color-icon--active );
+}
+
+.smw-modal-header {
+	padding: 0;
+	margin: 0;
+	font-weight: var( --font-weight-normal );
+	background-color: transparent;
+	border-bottom: 0;
+}
+
+.smw-modal-header h2 {
+	font-size: 1.25rem;
+	color: var( --color-emphasized );
+	border-bottom: 0;
+}
+
+.smw-modal-footer {
+	color: var( --color-subtle );
+	background-color: transparent;
+}

@@ -1,0 +1,57 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:CookieWarning
+ * Module: ext.CookieWarning.styles
+ * Version: REL1_39 021d9ea
+ *
+ * Date: 2023-07-30
+*/
+
+@import '../../../resources/mixins.less';
+@import '../../../resources/variables.less';
+
+.mw-cookiewarning-container {
+	right: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var( --space-sm );
+	width: auto;
+	max-width: @max-width-breakpoint-tablet;
+	padding: var( --space-md );
+	margin: var( --space-xs );
+	background-color: var( --color-surface-1 );
+	border: var( --border-width-base ) solid var( --border-color-base );
+	border-radius: var( --border-radius-large );
+	box-shadow: var( --box-shadow-drop-xx-large );
+	.mixin-islam-font-styles( 'small' );
+
+	@media only screen and ( min-width: @min-width-breakpoint-desktop ) {
+		right: unset;
+		left: var( --header-size );
+	}
+
+	.mw-cookiewarning-text {
+		margin-bottom: 0; // Override media styles
+		font-size: inherit;
+		font-weight: var( --font-weight-medium );
+		color: var( --color-base );
+	}
+
+	form {
+		.oo-ui-layout {
+			display: grid;
+			grid-template-columns: repeat( auto-fit, minmax( 0, 1fr ) );
+			gap: var( --space-xs );
+		}
+
+		.oo-ui-widget {
+			margin: 0;
+
+			.oo-ui-buttonElement-button {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,260 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:WikiEditor
+ * Module: ext.wikiEditor
+ * Version: REL1_43
+*/
+
+@import '../../../resources/mixins.less';
+
+@wikieditor-button-size: 42px;
+
+.skin-islam .mw-editform:has( .ext-WikiEditor-ResizingDragBar ) .editOptions {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* jquery.wikiEditor.less */
+.wikiEditor-ui {
+	.wikiEditor-ui-view {
+		border: 0;
+	}
+
+	// Make into sticky header
+	.wikiEditor-ui-top {
+		border-bottom: 0; /* Bottom border is implemented with box shadow */
+		.mixin-islam-sticky-header;
+	}
+}
+
+/* jquery.wikiEditor.toolbar.less */
+.wikiEditor-ui-toolbar {
+	background-color: var( --color-surface-0 );
+	box-shadow: none;
+
+	.tabs,
+	.section-main,
+	.section-secondary {
+		min-height: @wikieditor-button-size; /* Align with VE */
+	}
+
+	.tabs span.tab a,
+	.group .tool-select .label {
+		display: flex;
+		column-gap: var( --space-xxs );
+		align-items: center;
+		height: @wikieditor-button-size; /* Align with VE */
+		padding-inline: var( --space-xs );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-emphasized );
+		text-decoration: none;
+		filter: none;
+
+		&::before,
+		&::after {
+			position: relative;
+			inset: unset;
+			opacity: var( --opacity-icon-base );
+			filter: var( --filter-invert );
+		}
+
+		&:hover {
+			color: var( --color-emphasized );
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			color: var( --color-emphasized );
+			background-color: var( --background-color-button-quiet--active );
+		}
+	}
+
+	.sections {
+		.section-advanced:not( .section-hidden ) {
+			display: flex;
+			overflow: auto;
+		}
+	}
+
+	/* Top Level Containers */
+	/* Tabs */
+	.tabs {
+		display: flex;
+		max-width: 100%;
+		margin-inline: 0;
+		overflow: auto;
+		white-space: nowrap;
+
+		span.tab {
+			line-height: @wikieditor-button-size; /* Align with VE */
+
+			a:visited {
+				color: var( --color-emphasized );
+			}
+
+			a.current,
+			a.current:visited {
+				color: var( --color-progressive );
+				box-shadow: inset 0 -2px 0 0 var( --color-progressive );
+			}
+		}
+	}
+
+	/* Groups */
+	.group {
+		/* Toolbar */
+		.label {
+			height: 38px;
+			margin-left: 16px;
+			font-size: var( --font-size-small );
+			font-weight: var( --font-weight-medium );
+			line-height: 38px;
+			color: var( --color-subtle );
+		}
+
+		.tool-select {
+			height: @wikieditor-button-size;
+
+			.label {
+				font-size: inherit;
+				line-height: @wikieditor-button-size; /* Align with VE */
+				letter-spacing: inherit;
+			}
+
+			.menu .options .option:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			.options {
+				.option {
+					color: var( --color-emphasized );
+
+					&:hover {
+						background-color: var( --background-color-progressive-subtle );
+					}
+
+					&[ rel='heading-2' ] {
+						.mixin-islam-font-styles( 'heading-2' );
+					}
+
+					&[ rel='heading-3' ] {
+						.mixin-islam-font-styles( 'heading-3' );
+					}
+
+					&[ rel='heading-4' ] {
+						.mixin-islam-font-styles( 'heading-4' );
+					}
+
+					&[ rel='heading-5' ] {
+						font-size: var( --font-size-medium );
+						font-weight: var( --font-weight-semi-bold );
+					}
+				}
+			}
+		}
+	}
+
+	/* Characters Pages */
+	.page-characters {
+		div {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var( --space-xxs );
+			padding: var( --space-xxs );
+
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2rem;
+				height: 2rem;
+				padding: 0;
+				margin: 0;
+				font-family: var( --font-family-monospace );
+				border: 0;
+				border-radius: var( --border-radius-base );
+
+				&:hover {
+					background-color: var( --background-color-button-quiet--hover );
+				}
+
+				&:active {
+					background-color: var( --background-color-button-quiet--active );
+				}
+			}
+		}
+	}
+
+	.ve-init-mw-editSwitch .oo-ui-popupToolGroup.oo-ui-iconElement {
+		height: @wikieditor-button-size; /* Align with VE */
+
+		.oo-ui-popupToolGroup-handle {
+			padding-top: @wikieditor-button-size;
+			border-radius: var( --border-radius-base );
+		}
+	}
+}
+
+.tool.oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button {
+	min-width: @wikieditor-button-size; /* Align with VE */
+	min-height: @wikieditor-button-size; /* Align with VE */
+	border-radius: var( --border-radius-base );
+
+	> .oo-ui-iconElement-icon {
+		left: 0.78571429em; /* Align with VE */
+		opacity: var( --opacity-icon-base );
+	}
+
+	&:hover {
+		background-color: var( --background-color-button-quiet--hover );
+
+		> .oo-ui-iconElement-icon {
+			opacity: var( --opacity-icon-base--hover );
+		}
+	}
+
+	// Added active state
+	&:active {
+		background-color: var( --background-color-button-quiet--active );
+
+		> .oo-ui-iconElement-icon {
+			opacity: var( --opacity-icon-base--selected );
+		}
+	}
+
+	&.tool-active {
+		background-color: var( --background-color-progressive-subtle );
+	}
+}
+
+.wikiEditor-toolbar-dialog {
+	.ui-dialog-content {
+		padding: var( --space-md ) !important;
+	}
+
+	.ui-dialog-buttonpane {
+		border-top-color: var( --border-color-base ) !important;
+	}
+
+	.wikieditor-toolbar-field-wrapper {
+		/* Input field label */
+		> label {
+			color: var( --color-subtle );
+			.mixin-islam-font-styles( 'overline' );
+
+			~ input,
+			~ select {
+				margin-top: var( --space-xxs );
+			}
+		}
+
+		/* Checkbox text */
+		> input + label {
+			margin-left: var( --space-xs );
+			font-size: inherit;
+			color: var( --color-base );
+			letter-spacing: inherit;
+		}
+	}
+}

@@ -1,0 +1,78 @@
+/*
+ * Islam - SRF List Widget
+ * https://starcitizen.tools
+*/
+
+@import '../../../../resources/variables.less';
+
+.skin-theme-clientpref-night {
+	.srf-listwidget-navigation .ln-letters a {
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget-navigation .ln-letters a.ln-last {
+		border-right: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget-navigation .ln-letters a:hover,
+	.srf-listwidget-navigation .ln-letters a.ln-selected {
+		background-color: @dark-bg-10;
+	}
+
+	.srf-listwidget-navigation .ln-letters a.ln-disabled {
+		color: var( --color-subtle );
+	}
+
+	.srf-listwidget-navigation .ln-letter-count {
+		color: var( --background-color-progressive-subtle );
+	}
+
+	.srf-listwidget .lm-wrapper .lm-letters a {
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget .lm-wrapper .lm-letters a:hover,
+	.srf-listwidget .lm-wrapper .lm-letters a.lm-selected {
+		background-color: @dark-bg-10;
+	}
+
+	.srf-listwidget .lm-wrapper .lm-letters a.lm-disabled {
+		color: var( --color-subtle );
+	}
+
+	.srf-listwidget .lm-wrapper .lm-letters a.lm-last {
+		border-right: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget .lm-wrapper .lm-letter-count {
+		color: var( --background-color-progressive-subtle );
+	}
+
+	.srf-listwidget .lm-wrapper .lm-menu {
+		background: #ffc;
+		border: var( --border-width-base ) solid @dark-bg-20;
+		border-top: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget .lm-wrapper .lm-menu .lm-no-match {
+		color: var( --color-success );
+	}
+
+	.srf-listwidget-navigation a,
+	.ellipse {
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget-navigation a.last_link {
+		border-right: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.srf-listwidget-navigation a:hover,
+	.srf-listwidget-navigation a.page_link.active_page {
+		background-color: @dark-bg-10;
+	}
+
+	.srf-listwidget-navigation a.ln-disabled {
+		color: var( --color-subtle );
+	}
+}

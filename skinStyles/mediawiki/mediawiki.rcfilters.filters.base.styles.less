@@ -1,0 +1,23 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Special:RecentChanges filters
+ * Module: mediawiki.rcfilters.filters.base.styles
+ * Version: 1.39.0
+ *
+ * Date: 2022-12-07
+*/
+
+.client-js {
+	.mw-rcfilters-spinner {
+		& .mw-rcfilters-spinner-bounce,
+		&::before,
+		&::after {
+			background-color: var( --color-subtle );
+		}
+	}
+}
+
+.mw-rcfilters-staticfilters-selected {
+	font-weight: var( --font-weight-semi-bold );
+}

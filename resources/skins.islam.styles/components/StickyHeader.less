@@ -1,0 +1,172 @@
+#islam-page-header-sticky-sentinel {
+	visibility: hidden;
+	height: 1px;
+	margin-top: -1px;
+	contain: strict;
+}
+
+.ve-activated,
+.action-edit {
+	// HACK: So sticky header will never trigger in edit action
+	#islam-page-header-sticky-sentinel {
+		display: none;
+	}
+}
+
+.islam-sticky-header {
+	padding-inline: var( --padding-page );
+	border-bottom: var( --border-base );
+	.mixin-islam-frosted-glass( islam-sticky-header-backdrop, 0 );
+
+	&-container {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: @z-index-sticky;
+		visibility: hidden;
+		transform: translateY( -100% );
+		transition-timing-function: var( --transition-timing-function-ease-out );
+		transition-duration: var( --transition-duration-medium );
+		transition-property: transform, visibility;
+
+		@media ( min-width: @min-width-breakpoint-desktop ) {
+			margin-left: var( --header-size );
+		}
+	}
+
+	&-inner {
+		display: flex;
+		gap: var( --space-md );
+		align-items: center;
+		justify-content: space-between;
+		max-width: var( --width-page );
+		min-height: 3.25rem;
+		padding-block: var( --space-xxs );
+		margin-inline: auto;
+	}
+
+	&-start {
+		display: flex;
+		flex-grow: 1;
+		align-items: center;
+		margin-inline-start: -16px; // Compensate for the cdx button padding
+		overflow: hidden;
+	}
+
+	&-end {
+		display: flex;
+		align-items: center;
+
+		// Already have fixed page tools in narrow screen
+		@media ( max-width: @max-width-breakpoint-tablet ) {
+			display: none;
+		}
+	}
+
+	&-backtotop {
+		flex-grow: 1;
+
+		&.cdx-button {
+			gap: var( --space-xs );
+			justify-content: flex-start;
+			max-width: none;
+		}
+
+		&:hover {
+			.islam-ui-icon {
+				opacity: 1;
+			}
+
+			.islam-sticky-header-page-info {
+				transform: translateX( calc( var( --size-icon ) + var( --space-xs ) ) );
+			}
+		}
+
+		.islam-ui-icon {
+			position: absolute;
+			opacity: 0;
+			transform: rotate( 90deg ) !important;
+			transition-timing-function: var( --transition-timing-function-ease );
+			transition-duration: var( --transition-duration-medium );
+			transition-property: opacity;
+		}
+	}
+
+	&-page-info {
+		overflow: hidden;
+		transition-timing-function: var( --transition-timing-function-ease );
+		transition-duration: var( --transition-duration-base );
+		transition-property: transform;
+	}
+
+	&-page-title,
+	&-page-tagline {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&-page-title {
+		font-size: var( --font-size-large );
+		font-weight: var( --font-weight-semi-bold );
+		color: var( --color-emphasized );
+	}
+
+	&-page-tagline {
+		display: none;
+		font-size: var( --font-size-x-small );
+		color: var( --color-subtle );
+	}
+
+	&-dropdown-container {
+		.islam-dropdown-details {
+			&[ open ] {
+				.islam-dropdown-summary {
+					background-color: var( --background-color-button-quiet--active );
+				}
+			}
+		}
+
+		.islam-dropdown {
+			position: relative;
+		}
+
+		.islam-menu__card {
+			top: calc( 100% + var( --space-xs ) );
+			right: calc( var( --space-xs ) * -1 );
+			max-width: 80vw;
+			max-height: 60vh;
+			transform-origin: var( --transform-origin-offset-end ) var( --transform-origin-offset-start );
+
+			&-content {
+				padding-block: var( --space-xs );
+			}
+		}
+	}
+
+	// The buttons are not supposed to be focusable
+	.cdx-button {
+		&:focus {
+			border-color: transparent !important;
+			box-shadow: none !important;
+		}
+	}
+}
+
+.islam-sticky-header-visible {
+	.islam-sticky-header {
+		&-container {
+			visibility: visible;
+			transform: none;
+		}
+	}
+}
+
+/*
+ * T289817 `.mw-sticky-header-element` provides an API for template developers
+ * to make their templates compatible with the Islam sticky header.
+ */
+.mw-sticky-header-element {
+	.mixin-islam-sticky-header-element;
+}

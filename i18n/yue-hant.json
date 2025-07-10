@@ -1,0 +1,41 @@
+{
+	"@metadata": {
+		"language": "Cantonese (Traditional)",
+		"language_code": "yue-hant",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Winston Sung"
+		],
+		"note": "Traditional Cantonese language using Traditional Chinese characters used in Hong Kong."
+	},
+	"skinname-islam": "公民 （Islam）",
+	"islam-skin-desc": "個為 [ https : / / muslim . wiki MuslimWiki ] 開發嘅乾淨、回應式嘅 MediaWiki 皮膚。具有一個直覺化嘅介面，優化咗嚟喺所有裝置上面分享伊斯蘭知識。",
+	"islam-prefs-talkpage": "[[mw:Skin_talk:Islam|討論]]",
+	"islam.css": "/* 呢度放置嘅CSS會影響所有使用Islam外觀嘅用戶 */",
+	"islam.js": "/* 響每一次個頁面載入時，用 Islam 畫面嘅用戶都會載入呢度任何嘅JavaScript */",
+	"islam-drawer-toggle": "切換選單",
+	"islam-usermenu-toggle": "切換個人選單",
+	"islam-search-toggle": "切換搜尋",
+	"islam-languages-toggle": "多啲語言",
+	"islam-actions-more-toggle": "版嘅動作",
+	"islam-sitestats-articles-label": "篇文章",
+	"islam-sitestats-images-label": "份檔",
+	"islam-sitestats-users-label": "位用戶",
+	"islam-sitestats-edits-label": "次修改",
+	"islam-page-info-copyright": "版權",
+	"islam-page-info-lastmod": "上次修改",
+	"islam-footer-desc": "喺[[MediaWiki:Islam-footer-desc]]喥改",
+	"islam-footer-tagline": "喺[[MediaWiki:Islam-footer-tagline]]喥改",
+	"islam-action-addsection": "加主題",
+	"islam-jumptotop": "返到上面",
+	"islam-search-fulltext": "喺每頁入面喥搵$1",
+	"islam-search-empty-desc": "打字開始搵",
+	"islam-tagline-ns-talk": "{{SUBJECTPAGENAME}}嘅討論頁",
+	"islam-tagline-ns-project": "關於{{SITENAME}}嘅資料",
+	"islam-tagline-ns-file": "喺{{SITENAME}}嘅檔案",
+	"islam-tagline-ns-mediawiki": "MediaWiki嘅介面頁",
+	"islam-tagline-ns-template": "模組頁",
+	"islam-tagline-ns-help": "幫手頁",
+	"islam-tagline-ns-category": "分類頁"
+}

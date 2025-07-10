@@ -1,0 +1,174 @@
+.islam-header {
+	--header-icon-size: ~'calc( var( --header-button-size ) / 2 )';
+	--header-button-size: ~'calc( var( --header-size ) - var(  --space-xs ) * 2 )';
+	--header-direction: row;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @z-index-fixed;
+	display: flex;
+	flex-direction: var( --header-direction );
+	gap: var( --space-xxs );
+	padding: ~'var( --space-xs ) max( env( safe-area-inset-right ), var( --space-xs ) ) max( env( safe-area-inset-bottom ), var( --space-xs ) ) max( env( safe-area-inset-left ), var( --space-xs ) )';
+	background-color: var( --color-surface-0 );
+	border-top: var( --border-width-base ) solid var( --border-color-base );
+
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+
+	&__button {
+		display: grid;
+		place-items: center;
+		width: var( --header-button-size );
+		height: var( --header-button-size );
+		contain: strict;
+		border-radius: var( --border-radius-base );
+
+		// Pure CSS icons
+		&Icon {
+			width: var( --header-icon-size );
+			height: var( --header-icon-size );
+			contain: strict;
+			overflow: hidden; // Sometimes CSS animation can clip
+			opacity: var( --opacity-icon-base );
+			filter: var( --filter-invert );
+			transition: var( --transition-hover );
+			transition-property: transform, opacity;
+		}
+
+		&Icon,
+		.islam-ui-icon {
+			margin: auto;
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+
+			.islam-header__buttonIcon {
+				opacity: var( --opacity-icon-base--hover );
+			}
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+
+			.islam-header__buttonIcon {
+				opacity: var( --opacity-icon-base--selected );
+			}
+		}
+
+		// Disable default padding when menu item is used as header button
+		.islam-menu .mw-list-item & {
+			padding: 0;
+		}
+	}
+
+	&__logo {
+		padding: 0 var( --space-xs ) 0 0;
+		margin: 0 var( --space-xxs );
+		border-right: var( --border-width-base ) solid var( --border-color-base );
+
+		img {
+			margin: auto;
+		}
+
+		.islam-ui-icon {
+			position: absolute;
+			inset: 0;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: var( --header-direction );
+		gap: var( --space-xxs );
+		justify-content: space-between;
+		min-width: 0;
+		overflow-x: auto;
+	}
+
+	&__start,
+	&__end {
+		display: flex;
+		flex-shrink: 0; // let _inner handle the overflow
+		flex-direction: var( --header-direction );
+		gap: var( --space-xxs );
+
+		// Hide top-level menu header labels
+		> .islam-menu > .islam-menu__heading {
+			.mixin-islam-screen-reader-only;
+		}
+	}
+
+	&__start {
+		align-items: center;
+		min-width: 0;
+	}
+
+	.islam-dropdown {
+		&-summary {
+			display: grid;
+			place-items: center;
+			width: var( --header-button-size );
+			height: var( --header-button-size );
+			contain: strict;
+			border-radius: var( --border-radius-base );
+		}
+	}
+}
+
+// Notifications
+#p-notifications {
+	ul {
+		display: flex;
+		flex-direction: var( --header-direction );
+		gap: var( --space-xxs );
+		align-items: center;
+	}
+}
+
+.client-nojs {
+	// Hide preferences button completely when JS is not supported
+	// Since it won't do anything
+	.islam-preferences {
+		display: none;
+	}
+}
+
+// Reset hover styles if it is a touch device
+// This is dumb but hover:hover overrides active states
+@media ( hover: none ) {
+	.islam-header {
+		&__button {
+			&:hover {
+				background-color: transparent;
+
+				.islam-header__buttonIcon {
+					opacity: var( --opacity-icon-base );
+				}
+			}
+		}
+	}
+}
+
+@media ( min-width: @min-width-breakpoint-desktop ) {
+	.islam-header {
+		--header-direction: column;
+		top: 0;
+		right: unset;
+		left: 0;
+		border-top: 0;
+		border-right: var( --border-width-base ) solid var( --border-color-base );
+
+		&__logo {
+			padding: 0 0 var( --space-xs ) 0;
+			margin: var( --space-xxs ) 0;
+			border-right: 0;
+			border-bottom: var( --border-width-base ) solid var( --border-color-base );
+		}
+	}
+}

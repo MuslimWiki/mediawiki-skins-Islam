@@ -1,0 +1,26 @@
+.islam-page-footer {
+	display: flex;
+	flex-direction: column;
+	grid-area: footer;
+	gap: var( --space-xl );
+	padding-top: var( --space-xl );
+	margin-top: var( --space-xl );
+	.mixin-islam-font-styles( 'small' );
+}
+
+.page-info {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var( --space-xl );
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: var( --space-xxs );
+	}
+
+	&__label {
+		color: var( --color-subtle );
+		.mixin-islam-font-styles( 'overline' );
+	}
+}

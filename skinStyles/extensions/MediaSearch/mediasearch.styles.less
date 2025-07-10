@@ -1,0 +1,1004 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:MediaSearch
+ * Module: mediasearch.styles
+ * Version: REL1_39 (e0aa7bb)
+ *
+ * Date: 2022-12-09
+*/
+
+@import '../../../resources/variables.less';
+
+// Disable sticky header
+#islam-page-header-sticky-sentinel {
+	display: none;
+}
+
+// Be extra safe
+// MediaSearch uses indicators for associated pages
+// So let's tweak the styles to make it look that way
+.mw-special-MediaSearch {
+	.firstHeading-container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.mw-indicators {
+		padding-left: 0;
+		margin-top: var( --space-xs );
+		margin-left: 0;
+		border-left: 0;
+	}
+}
+
+// Missing from the original stylesheet
+.searchmatch {
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+}
+
+/* AutocompleteSearchInput.less */
+.sd-input {
+	&__icon {
+		opacity: var( --opacity-icon-base );
+	}
+
+	&__indicator {
+		color: var( --color-base-subtle );
+	}
+
+	&__input {
+		color: var( --color-emphasized );
+		background-color: transparent;
+		border-color: var( --border-color-interactive );
+		border-radius: var( --border-radius-base );
+
+		&::placeholder {
+			color: var( --color-base-subtle );
+		}
+
+		&:hover {
+			background-color: var( --color-surface-0 );
+			border-color: var( --color-progressive--hover );
+		}
+
+		&:focus {
+			background-color: var( --color-surface-0 );
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive );
+		}
+	}
+
+	&--pending .sd-input__input {
+		background-color: var( --color-surface-2 );
+		background-image: linear-gradient( 135deg, var( --color-surface-1 ) 25%, rgba( 255, 255, 255, 0 ) 25%, rgba( 255, 255, 255, 0 ) 50%, var( --color-surface-1 ) 50%, var( --color-surface-1 ) 75%, rgba( 255, 255, 255, 0 ) 75%, rgba( 255, 255, 255, 0 ) );
+	}
+}
+
+/* Button.less */
+.sd-button {
+	font-family: var( --font-family-base );
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+	border-radius: var( --border-radius-base );
+
+	&:hover {
+		color: var( --color-emphasized );
+		background-color: var( --background-color-button-quiet--hover );
+	}
+
+	&:focus {
+		border-color: var( --color-progressive );
+		box-shadow: inset 0 0 0 1px var( --color-progressive );
+	}
+
+	&--framed {
+		background-color: var( --color-surface-2 );
+		border-color: var( --border-color-base );
+
+		&:hover {
+			color: var( --color-subtle );
+			background-color: var( --color-surface-2--hover );
+		}
+
+		// Add active state
+		&:active {
+			color: var( --color-emphasized );
+			background-color: var( --color-surface-2--active );
+		}
+	}
+
+	&--progressive {
+		color: var( --color-progressive );
+
+		&:hover {
+			color: var( --color-progressive--hover );
+		}
+
+		// Add active state
+		&:active {
+			color: var( --color-progressive--active );
+		}
+
+		&.sd-button--framed {
+			color: var( --color-inverted-primary );
+
+			&:hover {
+				border-color: var( --color-progressive--hover );
+			}
+
+			// Add active state
+			&:active {
+				color: var( --color-progressive--active );
+			}
+		}
+	}
+
+	&--destructive {
+		color: var( --color-destructive );
+
+		&:hover {
+			color: var( --color-destructive--hover );
+		}
+
+		// Add active state
+		&:active {
+			color: var( --color-destructive--active );
+		}
+
+		&:focus {
+			border-color: var( --color-destructive );
+			box-shadow: inset 0 0 0 1px var( --color-destructive );
+		}
+
+		&.sd-button--framed {
+			color: var( --color-inverted-fixed );
+
+			&:hover {
+				border-color: var( --color-destructive--hover );
+			}
+
+			// Add active state
+			&:active {
+				color: var( --color-destructive--active );
+			}
+
+			&:focus {
+				box-shadow: inset 0 0 0 1px var( --color-destructive );
+			}
+		}
+	}
+
+	&--primary {
+		&.sd-button--framed {
+			background-color: var( --color-progressive );
+			border-color: var( --color-progressive );
+
+			&:hover {
+				background-color: var( --color-progressive--hover );
+				border-color: var( --color-progressive--hover );
+			}
+
+			// Add active state
+			&:active {
+				background-color: var( --color-progressive--active );
+				border-color: var( --color-progressive--active );
+			}
+
+			&:focus {
+				border-color: var( --color-progressive );
+				box-shadow: inset 0 0 0 1px var( --color-progressive ), inset 0 0 0 2px var( --color-inverted-primary );
+			}
+
+			&.sd-button--destructive {
+				background-color: var( --color-destructive );
+				border-color: var( --color-destructive );
+
+				&:hover {
+					background-color: var( --color-destructive--hover );
+					border-color: var( --color-destructive--hover );
+				}
+
+				// Add active state
+				&:active {
+					background-color: var( --color-destructive--active );
+					border-color: var( --color-destructive--active );
+				}
+
+				&:focus {
+					border-color: var( --color-destructive );
+					box-shadow: inset 0 0 0 1px var( --color-destructive ), inset 0 0 0 2px var( --color-inverted-fixed );
+				}
+			}
+		}
+	}
+
+	&:disabled {
+		color: var( --color-subtle );
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+
+		&.sd-button--framed {
+			color: var( --color-subtle );
+			background-color: var( --color-surface-4 );
+			border-color: var( --color-surface-4 );
+
+			&:hover,
+			&:focus {
+				background-color: var( --color-surface-4 );
+				border-color: var( --color-surface-4 );
+			}
+		}
+
+		&:not( .sd-button--framed ) .sd-icon {
+			opacity: var( --opacity-base--disabled );
+		}
+	}
+}
+
+/* Checkbox.less */
+.sd-checkbox {
+	&__icon {
+		// Show background when hovered
+		background-color: transparent;
+		border-color: var( --border-color-interactive );
+		border-radius: var( --border-radius-base );
+	}
+
+	&__input {
+		&:focus + .sd-checkbox__icon {
+			background-color: var( --color-surface-0 );
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive );
+		}
+
+		&:hover + .sd-checkbox__icon {
+			background-color: var( --color-surface-0 );
+			border-color: var( --color-progressive--hover );
+		}
+
+		&:active + .sd-checkbox__icon {
+			background-color: var( --color-progressive--active );
+			border-color: var( --color-progressive--active );
+			box-shadow: none;
+		}
+
+		// Set up check icon.
+		&:checked + .sd-checkbox__icon {
+			background-color: var( --color-progressive );
+			border-color: var( --color-progressive );
+		}
+
+		&:disabled {
+			& + .sd-checkbox__icon {
+				background-color: var( --color-surface-4 );
+				border-color: var( --color-surface-4 );
+			}
+
+			& ~ .sd-checkbox__label-text {
+				color: var( --color-subtle );
+			}
+		}
+
+		&:checked:enabled:focus + .sd-checkbox__icon {
+			background-color: var( --color-progressive );
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive ), inset 0 0 0 2px var( --color-inverted-primary );
+		}
+
+		&:checked:enabled:hover + .sd-checkbox__icon {
+			background-color: var( --color-progressive--hover );
+			border-color: var( --color-progressive--hover );
+		}
+
+		&:checked:enabled:active + .sd-checkbox__icon {
+			background-color: var( --color-progressive--active );
+			border-color: var( --color-progressive--active );
+			box-shadow: none;
+		}
+	}
+}
+
+/* CopyTextLayout.less */
+.sd-copy-text-layout {
+	&__text {
+		border-right-color: var( --border-color-base );
+	}
+}
+
+/* Dialog.less */
+.sd-dialog {
+	// Align with Islam and Codex
+	z-index: @z-index-overlay;
+
+	&__overlay {
+		background-color: var( --background-color-backdrop-light );
+	}
+
+	&__shell {
+		background-color: var( --color-surface-1 );
+		border-color: transparent;
+		border-radius: var( --border-radius-medium );
+		box-shadow: var( --box-shadow-drop-xx-large );
+	}
+
+	&__header {
+		border-bottom-color: var( --border-color-base );
+
+		.sd-dialog__header-title {
+			font-weight: var( --font-weight-semi-bold );
+			color: var( --color-emphasized );
+		}
+	}
+
+	&__footer:not( :empty ) {
+		border-top-color: var( --border-color-base );
+	}
+}
+
+/* Message.less */
+.sd-message {
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+
+	&--error {
+		color: var( --color-destructive );
+	}
+
+	&--success {
+		color: var( --color-success );
+	}
+
+	// Sync with message box styles
+	&--block {
+		font-weight: var( --font-weight-normal );
+		color: var( --color-emphasized );
+		border-radius: var( --border-radius-base );
+
+		&.sd-message--notice {
+			background-color: var( --color-surface-2 );
+			border-color: var( --color-surface-2 );
+		}
+
+		&.sd-message--error {
+			background-color: var( --background-color-destructive-subtle );
+			border-color: var( --background-color-destructive-subtle );
+		}
+
+		&.sd-message--warning {
+			background-color: var( --background-color-warning-subtle );
+			border-color: var( --background-color-warning-subtle );
+		}
+
+		&.sd-message--success {
+			background-color: var( --background-color-success-subtle );
+			border-color: var( --background-color-success-subtle );
+		}
+	}
+
+	// Cancel out default Islam margin
+	&__content p {
+		margin: 0;
+	}
+}
+
+/* Radio.less */
+.sd-radio {
+	&__icon {
+		// Show background when hovered
+		background-color: transparent;
+		border-color: var( --border-color-interactive );
+	}
+
+	&__input {
+		&:hover + .sd-radio__icon {
+			background-color: var( --color-surface-0 );
+			border-color: var( --color-progressive--hover );
+		}
+
+		&:active + .sd-radio__icon {
+			background-color: var( --color-progressive--active );
+			border-color: var( --color-progressive--active );
+		}
+
+		&:checked + .sd-radio__icon {
+			background-color: var( --color-inverted-primary );
+			border-color: var( --color-progressive );
+		}
+
+		&:disabled {
+			& + .sd-radio__icon {
+				background-color: var( --color-surface-4 );
+				border-color: var( --color-surface-4 );
+			}
+
+			& ~ .sd-radio__label-text {
+				color: var( --color-subtle );
+			}
+
+			&:checked + .sd-radio__icon {
+				background-color: var( --color-inverted-fixed );
+			}
+		}
+
+		&:checked:enabled {
+			&:focus + .sd-radio__icon {
+				&::before {
+					border-color: var( --color-progressive--active );
+				}
+			}
+
+			&:hover + .sd-radio__icon {
+				border-color: var( --color-progressive--hover );
+			}
+
+			&:active + .sd-radio__icon {
+				border-color: var( --color-progressive--active );
+				box-shadow: none;
+
+				&::before {
+					border-color: var( --color-progressive--active );
+				}
+			}
+		}
+	}
+}
+
+/* Select.less */
+.sd-select {
+	&__handle {
+		color: var( --color-base );
+	}
+
+	&__content {
+		font-family: var( --font-family-base ); // Browser overrides button font
+		color: var( --color-emphasized );
+		// Show background when hovered
+		background-color: transparent;
+		border-color: var( --border-color-interactive );
+
+		&:hover {
+			color: var( --color-emphasized );
+			background-color: var( --color-surface-1 );
+			border-color: var( --color-progressive--hover );
+
+			.sd-select__handle {
+				color: var( --color-base );
+			}
+		}
+
+		&:focus {
+			background-color: var( --color-surface-1 );
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive );
+		}
+
+		&:active {
+			color: var( --color-emphasized );
+			border-color: var( --border-color-interactive );
+		}
+	}
+
+	&--open {
+		.sd-select__content {
+			background-color: var( --color-surface-1 );
+		}
+
+		.sd-select__handle {
+			color: var( --color-base );
+		}
+	}
+
+	&--disabled {
+		.sd-select__content {
+			color: var( --color-subtle );
+			background-color: var( --color-surface-4 );
+			border-color: var( --color-surface-4 );
+
+			&:hover {
+				.sd-select__handle {
+					color: var( --color-subtle );
+				}
+			}
+
+			&:focus {
+				border-color: var( --color-surface-4 );
+			}
+		}
+
+		.sd-select__handle {
+			color: var( --color-subtle );
+		}
+	}
+}
+
+/* SelectMenu.less */
+.sd-select-menu {
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-interactive );
+	border-radius: 0 0 var( --border-radius-base ) var( --border-radius-base );
+	// box-shadow: var( --box-shadow-drop-xx-large );
+
+	&__list-item {
+		color: var( --color-emphasized );
+
+		&--active {
+			color: var( --color-emphasized );
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&--selected {
+			background-color: var( --background-color-progressive-subtle );
+		}
+
+		&--active.sd-select-menu__list-item--selected {
+			color: var( --color-progressive );
+		}
+	}
+}
+
+/* Tabs.less */
+.sd-tabs {
+	&__header {
+		// Use border instead of box-shadow to align with Islam and Codex
+		border-bottom: var( --border-width-base ) solid var( --border-color-base );
+		box-shadow: none;
+
+		&--gradient {
+			&::after {
+				// TODO: Should really make this into a LESS variable or mixin since it is useful
+				background-image: linear-gradient( to right, rgba( 255, 255, 255, 0 ) 85%, var( --color-surface-0 ) 100% );
+			}
+		}
+	}
+
+	&__tabs-list {
+		// Should show a scroll bar on pointer device so user can scroll the tabs
+		@media ( hover: hover ) {
+			scrollbar-width: thin;
+
+			&::-webkit-scrollbar {
+				display: block;
+				-webkit-appearance: initial;
+			}
+		}
+
+		&__item {
+			font-weight: var( --font-weight-medium );
+			color: var( --color-emphasized );
+
+			&--current {
+				color: var( --color-progressive );
+				box-shadow: inset 0 -2px var( --color-progressive );
+			}
+
+			&:hover {
+				color: var( --color-progressive--hover );
+				box-shadow: inset 0 -2px var( --color-progressive--hover );
+			}
+
+			&:active {
+				color: var( --color-progressive--active );
+				box-shadow: inset 0 -2px var( --color-progressive--active );
+			}
+
+			&--disabled {
+				color: var( --color-subtle );
+
+				&--current,
+				&:hover,
+				&:active {
+					color: var( --color-subtle );
+				}
+			}
+		}
+
+		&:focus {
+			.sd-tabs__tabs-list__item--current {
+				border-radius: var( --border-radius-base );
+				box-shadow: inset 0 0 0 2px var( --color-progressive );
+			}
+		}
+	}
+}
+
+/* ImageResult.less */
+// Sync with Islam image styles
+.sdms-image-result {
+	overflow: hidden; // needed for transition and rounded corners
+	// Keep original light background so that transparent images are more legible
+	// background-color: var( --color-surface-2 );
+	border-radius: var( --border-radius-base );
+
+	&:hover,
+	&:focus {
+		box-shadow: none; // disable default style
+
+		img {
+			transform: var( --transform-image-hover );
+		}
+	}
+
+	&:focus {
+		outline: solid 2px var( --color-progressive );
+		outline-offset: 0;
+	}
+
+	img {
+		transition: var( --transition-hover );
+		transition-property: transform;
+	}
+}
+
+/* VideoResult.less */
+.sdms-video-result {
+	overflow: hidden; // Hide transition overflow
+	color: var( --color-progressive );
+	border-color: transparent;
+	border-radius: var( --border-radius-base );
+
+	&__title {
+		color: var( --color-emphasized );
+		transition: none;
+	}
+
+	&__body {
+		z-index: @z-index-stacking-1;
+		padding: var( --space-sm ) 0 0 0;
+		// HACK: Hide thumbnail overflow
+		background-color: var( --color-surface-0 );
+	}
+
+	&__meta {
+		margin-top: var( --space-xxs );
+		font-size: var( --font-size-small );
+	}
+
+	&:hover &__title {
+		color: var( --color-emphasized );
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+
+		.sdms-video-result__thumbnail {
+			transform: var( --transform-image-hover );
+		}
+	}
+
+	&:focus {
+		outline: solid 2px var( --color-progressive );
+		outline-offset: 0;
+	}
+
+	&__thumbnail {
+		border-radius: var( --border-radius-base );
+		transition: var( --transition-hover );
+		transition-property: transform;
+	}
+
+	&__duration {
+		padding: var( --space-xxs ) var( --space-xs );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-base );
+		background-color: var( --color-surface-2 );
+		border-radius: var( --border-radius-base );
+	}
+
+	&__mime {
+		color: var( --color-subtle );
+	}
+}
+
+/* AudioResult.less */
+.sdms-audio-result {
+	padding: var( --space-md ) 0;
+	font-size: var( --font-size-small );
+	border-bottom: 0;
+
+	&__title + &__meta {
+		margin-top: var( --space-xxs );
+	}
+
+	&__meta {
+		font-size: var( --font-size-small );
+	}
+
+	p {
+		margin: 0;
+	}
+
+	&__duration {
+		padding: var( --space-xxs ) var( --space-xs );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-base );
+		background-color: var( --color-surface-2 );
+		border-radius: var( --border-radius-base );
+	}
+
+	&__mime {
+		color: var( --color-subtle );
+	}
+}
+
+/* PageResult.less */
+.sdms-page-result {
+	padding: var( --space-md ) 0;
+	font-size: var( --font-size-small );
+	border-bottom: 0;
+
+	p {
+		font-size: var( --font-size-small );
+		color: var( --color-subtle );
+	}
+
+	// Sync with duration styles
+	&__namespace {
+		padding: var( --space-xxs ) var( --space-xs );
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-base );
+		background-color: var( --color-surface-2 );
+		border-radius: var( --border-radius-base );
+	}
+}
+
+/* OtherResult.less */
+.sdms-other-result {
+	&__meta {
+		color: var( --color-subtle );
+	}
+
+	&__extension {
+		font-weight: var( --font-weight-semi-bold );
+	}
+}
+
+/* SearchResults.less */
+.sdms-search-results {
+	&__details {
+		&--expanded {
+			top: var( --space-md );
+			height: ~'calc( 100vh - var( --space-md ) * 2 )';
+			background-color: var( --color-surface-2 );
+			border-radius: var( --border-radius-large );
+
+			// Responsive handling
+			@media screen and ( max-width: @max-width-breakpoint-tablet ) {
+				position: fixed;
+				top: unset;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				max-height: 40vh;
+				padding-bottom: var( --header-size ); // So that header won't hide the bottom
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
+	}
+
+	&__details-dialog {
+		background-color: var( --color-surface-1 );
+	}
+
+	.sdms-search-result--highlighted {
+		&.sdms-image-result,
+		&.sdms-video-result {
+			border-color: var( --color-progressive );
+		}
+	}
+
+	&__list-wrapper--collapsed {
+		// Responsive handling
+		@media screen and ( max-width: @max-width-breakpoint-tablet ) {
+			// Since the quickview card is a modal, we don't need the right margin anymore
+			margin-right: 0;
+		}
+	}
+}
+
+/* QuickView.less */
+.sdms-quick-view {
+	font-size: var( --font-size-small );
+
+	&__body {
+		.sd-icon {
+			color: var( --color-subtle );
+		}
+	}
+
+	&__cta {
+		font-weight: var( --font-weight-medium );
+		color: var( --color-progressive );
+		background-color: var( --color-surface-2 );
+		border-color: var( --border-color-base );
+		border-radius: var( --border-radius-base );
+
+		&:hover {
+			color: var( --color-progressive--hover );
+			background-color: var( --color-surface-2--hover );
+			border-color: var( --color-progressive--hover );
+		}
+
+		&:active {
+			color: var( --color-progressive--active );
+			background-color: var( --color-surface-2--active );
+			border-color: var( --color-progressive--active );
+		}
+
+		&:focus {
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive );
+		}
+	}
+
+	&__button {
+		background-color: var( --color-surface-1 );
+
+		.sd-icon {
+			color: var( --color-base );
+		}
+
+		&:hover,
+		&:focus {
+			.sd-icon {
+				color: var( --color-emphasized );
+			}
+		}
+
+		&:focus {
+			border-color: var( --color-progressive );
+		}
+	}
+}
+
+/* Spinner.less */
+.sdms-spinner {
+	& .sdms-spinner-bounce,
+	&::before,
+	&::after {
+		background-color: var( --color-subtle );
+	}
+}
+
+/* EmptyState.less */
+.sdms-empty-state {
+	font-size: var( --font-size-x-large );
+}
+
+/* NoResults.less */
+.sdms-no-results {
+	font-size: var( --font-size-x-large );
+	font-weight: var( --font-weight-semi-bold );
+}
+
+/* EndOfResults.less */
+.sdms-end-of-results {
+	font-size: var( --font-size-medium );
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+}
+
+/* SearchFilters.less */
+.sdms-search-filters {
+	// Should show a scroll bar on pointer device so user can scroll the tabs
+	@media screen and ( hover: hover ) {
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			display: block;
+			-webkit-appearance: initial;
+		}
+	}
+
+	.sd-select {
+		&__content {
+			color: var( --color-emphasized );
+			border-radius: var( --border-radius-base );
+
+			@media screen and ( min-width: @min-width-breakpoint-tablet ) {
+				font-size: var( --font-size-small );
+			}
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+				border-color: transparent;
+			}
+
+			&:focus {
+				border-color: var( --color-progressive );
+				box-shadow: inset 0 0 0 1px var( --color-progressive );
+			}
+
+			&:active {
+				background-color: var( --color-surface-1 );
+				border-color: var( --border-color-interactive );
+			}
+		}
+
+		&.sdms-search-filter--selected {
+			.sd-select__content {
+				font-weight: var( --font-weight-semi-bold );
+				color: var( --color-progressive );
+
+				.sd-select__handle {
+					color: var( --color-progressive );
+				}
+			}
+		}
+	}
+
+	&__namespace {
+		border-radius: var( --border-radius-base );
+
+		@media screen and ( min-width: @min-width-breakpoint-tablet ) {
+			font-size: var( --font-size-small );
+		}
+
+		&--selected {
+			font-weight: var( --font-weight-semi-bold );
+			color: var( --color-progressive );
+
+			&:hover {
+				color: var( --color-progressive );
+			}
+		}
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:focus {
+			border-color: var( --color-progressive );
+			box-shadow: inset 0 0 0 1px var( --color-progressive );
+		}
+
+		&:active {
+			background-color: var( --color-surface-1 );
+			border-color: var( --border-color-interactive );
+		}
+	}
+
+	.sdms-search-results-count {
+		@media screen and ( min-width: @min-width-breakpoint-tablet ) {
+			font-size: var( --font-size-small );
+		}
+	}
+
+	&__clear {
+		&--no-js {
+			@media screen and ( min-width: @min-width-breakpoint-tablet ) {
+				font-size: var( --font-size-small );
+			}
+		}
+	}
+}
+
+.sdms-search-filters-wrapper--gradient {
+	&::after {
+		// TODO: Should really make this into a LESS variable or mixin since it is useful
+		background-image: linear-gradient( to right, rgba( 255, 255, 255, 0 ) 85%, var( --color-surface-0 ) 100% );
+	}
+}
+
+/* DidYouMean.less */
+.sdms-did-you-mean a {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+/* UserNotice.less */
+.sdms-user-notice__title {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+/* SearchError.less */
+.sdms-error {
+	font-size: var( --font-size-x-large );
+	font-weight: var( --font-weight-semi-bold );
+}

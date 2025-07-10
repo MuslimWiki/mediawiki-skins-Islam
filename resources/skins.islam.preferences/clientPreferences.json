@@ -1,0 +1,22 @@
+{
+	"islam-feature-custom-font-size": {
+		"options": [ "small", "standard", "large", "xlarge" ],
+		"preferenceKey": "islam-font-size"
+	},
+	"skin-theme": {
+		"options": [ "os", "day", "night" ],
+		"preferenceKey": "islam-theme"
+	},
+	"islam-feature-custom-width": {
+		"options": [ "standard", "wide", "full" ],
+		"preferenceKey": "islam-width"
+	},
+	"islam-feature-pure-black": {
+		"options": [ "0", "1" ],
+		"preferenceKey": "islam-pure-black"
+	},
+	"islam-feature-autohide-navigation": {
+		"options": [ "0", "1" ],
+		"preferenceKey": "islam-autohide-navigation"
+	}
+}

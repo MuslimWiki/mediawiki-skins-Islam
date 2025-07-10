@@ -1,0 +1,24 @@
+<li id="toc-{{anchor}}"
+	class="islam-toc-list-item islam-toc-level-{{toclevel}}">
+	<a class="islam-toc-link" href="#{{linkAnchor}}" role="button">
+		<div class="islam-toc-indicator"></div>
+		<div class="islam-toc-content">
+			<div class="islam-toc-text">
+				<span class="islam-toc-numb">{{number}}</span>
+				<span class="islam-toc-heading">{{{line}}}</span>
+			</div>
+			{{#html-summary}}<div class="islam-toc-summary">{{{.}}}</div>{{/html-summary}}
+		</div>
+	</a>
+	{{#is-top-level-section}}{{#is-parent-section}}
+		<button aria-controls="toc-{{anchor}}-sublist" class="islam-toc-toggle">
+			<span class="islam-ui-icon mw-ui-icon-wikimedia-collapse"></span>
+			<span>{{{islam-button-label}}}</span>
+		</button>
+	{{/is-parent-section}}{{/is-top-level-section}}
+	<ul id="toc-{{anchor}}-sublist" class="islam-toc-list">
+		{{#array-sections}}
+		{{>TableOfContents__line}}
+		{{/array-sections}}
+	</ul>
+</li>

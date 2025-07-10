@@ -1,0 +1,595 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: ext.smw.styles
+ * Version: 5.0.2
+ *
+ * Date: 2025-06-12
+*/
+
+/* smw/ext.smw.css */
+.smw-placeholder {
+	font-family: inherit;
+	font-size: var( --font-size-small );
+	line-height: inherit;
+	background-color: var( --color-surface-2 );
+	border-radius: var( --border-radius-base );
+}
+
+.client-nojs .smw-placeholder::after {
+	color: var( --color-destructive );
+}
+
+.smw-personal-jobqueue-watchlist:hover,
+.smw-personal-jobqueue-watchlist:focus,
+.smw-personal-jobqueue-watchlist:active {
+	color: var( --color-progressive );
+}
+
+.item-count {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+	border-radius: var( --border-radius-base );
+}
+
+.item-count.active {
+	color: var( --color-base );
+	background-color: var( --color-surface-3 );
+}
+
+/* make divs look like <pre> */
+.smwpre {
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smw-debug-box {
+	background: var( --background-color-warning-subtle );
+	border-color: var( --color-warning );
+}
+
+.smw-debug-box-header {
+	font-family: var( --font-family-base );
+	border-bottom-color: var( --color-warning );
+}
+
+div.smwtimeline {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smwtable-striped tbody > tr:nth-child( even ) {
+	background-color: var( --color-surface-2 );
+}
+
+.smwtable-striped tbody > tr:nth-child( odd ) {
+	background-color: var( --color-surface-0 );
+}
+
+.smwtable-striped tbody > tr:hover {
+	background-color: var( --background-color-button-quiet--hover );
+}
+
+.smwtable-clean tr {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tr > th {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tr > td {
+	border-top-color: var( --border-color-base );
+}
+
+.smwtable-clean tbody > tr:nth-child( even ) {
+	background-color: var( --color-surface-2 );
+}
+
+div.smwhr hr {
+	color: var( --border-color-base );
+	background-color: var( --border-color-base );
+}
+
+span.smwwarning {
+	color: var( --background-color-icon );
+}
+
+span.smwsearchicon {
+	color: var( --background-color-icon );
+}
+
+span.smwsearch a {
+	color: var( --background-color-icon );
+}
+
+span.smwsearch a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+span.smwsearch a:active {
+	color: var( --background-color-icon--hover );
+}
+
+span.smwbrowse a {
+	color: var( --background-color-icon );
+}
+
+span.smwbrowse a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+span.smwbrowse a:active {
+	color: var( --background-color-icon--hover );
+}
+
+.concept-documenation {
+	border-top-color: var( --border-color-base );
+}
+
+hr.smw-form-horizontalrule {
+	background-color: var( --border-color-base );
+}
+
+.smw-horizontalrule {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-editpage-help {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smw-column-header {
+	color: var( --color-emphasized );
+}
+
+.smw-note {
+	font-family: inherit;
+	font-size: var( --font-size-small );
+	line-height: inherit;
+	background-color: var( --color-surface-2 );
+	border-radius: var( --border-radius-base );
+}
+
+.autocomplete-suggestions {
+	color: var( --color-base );
+	background: var( --color-surface-1 );
+	border: 0;
+	border-radius: var( --border-radius-base );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}
+
+.autocomplete-suggestion {
+	border-bottom-color: var( --border-color-base );
+}
+
+.autocomplete-selected {
+	background: var( --background-color-progressive-subtle );
+}
+
+.autocomplete-suggestions strong {
+	color: var( --color-progressive );
+}
+
+.autocomplete-group strong {
+	border-bottom-color: var( --border-color-base );
+}
+
+.smw-breadcrumb-arrow-right {
+	border-left-color: var( --color-subtle );
+}
+
+.smw-ask-action-btn,
+.smw-action-btn {
+	border-radius: var( --border-radius-base );
+}
+
+.smw-ask-action-btn-lgrey,
+a.smw-ask-action-btn-lgrey:visited,
+.smw-action-btn-lgrey,
+.smw-action-btn-lgrey:visited {
+	color: var( --color-base );
+	text-decoration: none;
+	background-color: var( --color-surface-2 );
+	border-color: var( --color-surface-2 );
+}
+
+a.smw-ask-action-btn-lgrey:hover,
+.smw-action-btn-lgrey:hover {
+	color: var( --color-base );
+	background-color: var( --color-surface-2--hover );
+	border-color: var( --color-surface-2--hover );
+}
+
+// Added active state
+a.smw-ask-action-btn-lgrey:active,
+.smw-action-btn-lgrey:active {
+	color: var( --color-base );
+	background-color: var( --color-surface-2--active );
+	border-color: var( --color-surface-2--active );
+}
+
+.smw-ask-action-btn-lblue,
+a.smw-ask-action-btn-lblue:visited {
+	color: var( --color-inverted-primary );
+	background-color: var( --color-progressive );
+	border-color: var( --color-progressive );
+}
+
+a.smw-ask-action-btn-lblue:hover {
+	color: var( --color-inverted-primary );
+	background-color: var( --color-progressive--hover );
+	border-color: var( --color-progressive--hover );
+}
+
+// Added active state
+a.smw-ask-action-btn-lblue:active {
+	color: var( --color-inverted-primary );
+	background-color: var( --color-progressive--active );
+	border-color: var( --color-progressive--active );
+}
+
+.smw-page-indicator {
+	color: var( --background-color-icon );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-base );
+}
+
+.smw-protection-indicator {
+	color: var( --background-color-icon );
+	border-radius: var( --border-radius-base );
+}
+
+.smw-protection-indicator.with-border {
+	border-color: var( --border-color-base );
+}
+
+.smw-page-indicator.usage-count.moderate {
+	color: var( --color-progressive );
+	background-color: var( --background-color-progressive-subtle );
+	border-color: var( --background-color-progressive-subtle );
+}
+
+.smw-page-indicator.usage-count.high {
+	color: var( --color-destructive );
+	background-color: var( --background-color-destructive-subtle );
+	border-color: var( --background-color-destructive-subtle );
+}
+
+.mw-json .value,
+.mw-json-single-value {
+	overflow-wrap: break-word;
+}
+
+.ns-112.action-submit .error {
+	color: var( --color-destructive );
+	background: var( --background-color-destructive-subtle );
+	border-left-color: var( --color-destructive );
+}
+
+.ns-112.action-submit .error::before {
+	color: var( --color-destructive );
+}
+
+/* smw/ext.smw.dropdown.css */
+.smw-dropdown {
+	font-family: inherit;
+}
+
+.smw-dropdown > a,
+.smw-dropdown > button {
+	font-family: inherit;
+	color: var( --color-emphasized );
+	background-color: transparent;
+	border-color: var( --border-color-base );
+}
+
+.smw-dropdown > button {
+	font-weight: var( --font-weight-medium );
+}
+
+.smw-dropdown > a::before,
+.smw-dropdown > button::before {
+	border-top-color: var( --color-emphasized );
+}
+
+.smw-dropdown .smw-dropdown-menu {
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-base );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}
+
+.smw-dropdown .smw-dropdown-menu li:hover {
+	background-color: var( --background-color-button-quiet--hover );
+}
+
+.smw-dropdown .smw-dropdown-menu li a {
+	color: var( --color-emphasized );
+}
+
+.smw-dropdown .smw-dropdown-menu .divider {
+	background-color: var( --border-color-base );
+}
+
+.smw-dropdown-menu::before {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+.smw-dropdown-menu::after {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+/* smw/ext.smw.tabs.css */
+.smw-tabs section,
+.smw-tabs .subtab-content {
+	border-top-color: var( --border-color-base );
+}
+
+// Similar to TabberNeue
+.smw-tabs label.nav-label {
+	font-weight: var( --font-weight-medium );
+	color: var( --color-subtle );
+}
+
+.smw-tabs label.nav-label:hover {
+	color: var( --color-progressive--hover );
+	border-bottom: var( --border-width-thick ) solid var( --color-progressive--hover );
+}
+
+// Added active state
+.smw-tabs label.nav-label:active {
+	color: var( --color-progressive--active );
+	border-bottom: var( --border-width-thick ) solid var( --color-progressive--active );
+}
+
+.smw-tabs input.nav-tab:checked + label.nav-label {
+	color: var( --color-progressive );
+	border-color: transparent;
+	border-top: var( --border-width-base ) solid transparent;
+	border-bottom: var( --border-width-thick ) solid var( --color-progressive );
+}
+
+.smw-tabs input.nav-tab:checked + label.nav-label.cached {
+	border-top: var( --border-width-base ) solid transparent;
+	border-bottom: var( --border-width-thick ) solid var( --color-warning );
+}
+
+.smw-tabs label.nav-label .smw-tab-icon {
+	opacity: var( --opacity-icon-base );
+}
+
+.smw-tabs label.nav-label:hover .smw-tab-icon {
+	opacity: var( --opacity-icon-base--hover );
+}
+
+// Added active state
+.smw-tabs label.nav-label:active .smw-tab-icon,
+.smw-tabs input.nav-tab:checked + label.nav-label .smw-tab-icon {
+	opacity: var( --opacity-icon-base--selected );
+}
+
+@media screen and ( max-width: 800px ) {
+	.smw-tabs input.nav-tab:checked + label.nav-label {
+		background-color: var( --background-color-progressive-subtle );
+	}
+}
+
+.smw-tabset > label {
+	color: var( --color-subtle );
+}
+
+.smw-tabset > label::after {
+	background: var( --color-subtle );
+}
+
+.smw-tabset > input:focus + label,
+.smw-tabset > input:checked + label {
+	color: var( --color-progressive );
+}
+
+.smw-tabset > input:focus + label::after,
+.smw-tabset > input:checked + label::after {
+	background: var( --color-progressive );
+}
+
+.smw-tabset > input:focus + label.smw-indicator-severity-error::after,
+.smw-tabset > input:checked + label.smw-indicator-severity-error::after {
+	background: var( --color-destructive );
+}
+
+.smw-tabset > input:focus + label.smw-indicator-severity-warning::after,
+.smw-tabset > input:checked + label.smw-indicator-severity-warning::after {
+	background: var( --color-warning );
+}
+
+.smw-tabset > label:hover {
+	color: var( --color-base );
+}
+
+.smw-tabset > label:hover::after {
+	background: var( --color-base );
+}
+
+.smw-tabset > input:checked + label {
+	margin-bottom: -2px;
+	border-color: transparent;
+	border-top: var( --border-width-base ) solid transparent;
+	border-bottom: var( --border-width-thick ) solid var( --color-progressive );
+}
+
+.smw-tabset > input:checked + label.smw-indicator-severity-error {
+	color: var( --color-destructive );
+	border-top: var( --border-width-base ) solid transparent;
+	border-bottom: var( --border-width-thick ) solid var( --color-destructive );
+}
+
+.smw-tabset > input:checked + label.smw-indicator-severity-warning {
+	color: var( --color-warning );
+	border-top: var( --border-width-base ) solid transparent;
+	border-bottom: var( --border-width-thick ) solid var( --color-warning );
+}
+
+.tab-panel {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-issue-panel > label::after {
+	background: var( --color-surface-2 );
+}
+
+/* smw/factbox/smw.factbox.css */
+.smwfact {
+	background-color: var( --color-surface-2 );
+	border-color: var( --border-color-base );
+}
+
+.smwfact td,
+.smwfact tr,
+.smwfact table {
+	background-color: var( --color-surface-2 );
+}
+
+.smwfact .smwfacttable {
+	border-top-color: var( --border-color-base );
+}
+
+.smwfact .smw-table-row:nth-child( odd ) {
+	background-color: var( --color-surface-2 );
+}
+
+.smwfact .smw-table-row:nth-child( even ) {
+	background-color: var( --color-surface-0 );
+}
+
+.rdflink a {
+	color: var( --background-color-icon );
+}
+
+.rdflink a:hover {
+	color: var( --background-color-icon--hover );
+}
+
+// Added active state
+.rdflink a:active {
+	color: var( --background-color-icon--hover );
+}
+
+/* smw/smw.indicators.css */
+.smw-indicator-vertical-bar-loader {
+	/* This can cause significant layout shift on pages, hide it completely. */
+	display: none;
+}
+
+.smw-icon-indicator-placeholder {
+	background-color: var( --color-surface-2 );
+}
+
+.smw-list-rule-title {
+	color: var( --color-emphasized );
+	border-bottom-color: var( --border-color-base );
+}
+
+/*
+ * TODO: Figure what are those
+ * I honestly have no idea what these do
+ */
+/*
+.smw-indicator-accordion-tab {
+  color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-label {
+  background: transparent;
+  color: var( --color-subtle );
+  border-bottom-color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-label:hover {
+  background: var( --background-color-button-quiet--hover );
+  color: var( --color-base );
+}
+
+// Added active state
+.smw-indicator-accordion-tab-label:active {
+    background: var( --background-color-button-quiet--active );
+    color: var( --color-base );
+  }
+
+.smw-indicator-accordion-tab:last-child .smw-indicator-accordion-tab-label {
+  border-bottom-color: var( --color-surface-0 );
+}
+
+.smw-indicator-accordion-tab-content {
+  max-height: 0;
+  padding: 0 0.8em;
+  color: #2c3e50;
+  transition: all .35s;
+}
+
+.smw-indicator-accordion-tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  background: #2c3e50;
+  cursor: pointer;
+}
+
+.smw-indicator-accordion-tab .smw-indicator-accordion-tab-label {
+  border-top: var( --border-width-base ) solid #ebebeb;
+  border-bottom: 0px solid var( --color-inverted-fixed );
+}
+
+.smw-indicator-accordion-tab-close:hover {
+  background: #333;
+}
+
+input:checked + .smw-indicator-accordion-tab-label {
+  background: #333;
+  color: var( --color-inverted-fixed );
+}
+
+input:checked + .smw-indicator-accordion-tab-label::after {
+    color: var( --color-inverted-fixed );
+    width: 20px;
+    margin-top: 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+*/
+
+// It is not great but it works
+div,
+span {
+	&[ class^='smw-icon-' ] {
+		filter: var( --filter-invert );
+	}
+}
+
+/* smw/ext.smw.table.css */
+.smw-table-header {
+	background-color: var( --color-surface-2 );
+}
+
+.smw-table-cell,
+.smw-table-head {
+	border-color: var( --border-color-base );
+}
+
+.smw-table-footer {
+	background-color: var( --color-surface-2 );
+}
+
+.smw-table-sort-asc::after {
+	color: var( --background-color-icon );
+}
+
+.smw-table-sort-desc::after {
+	color: var( --background-color-icon );
+}

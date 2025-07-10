@@ -1,0 +1,17 @@
+ {{!
+ 	string link-mainpage link to the main page
+	string msg-islam-drawer-toggle The label used by the drawer button
+}}
+<header class="mw-header islam-header">
+	{{>Header__logo}}
+	{{#data-search-box}}{{>Search}}{{/data-search-box}}
+	{{>Drawer}}
+	<div class="islam-header__inner">
+		<div class="islam-header__start"></div>
+		<div class="islam-header__end">
+			{{>Preferences}}
+			{{#data-portlets.data-notifications}}{{>Menu}}{{/data-portlets.data-notifications}}
+			{{>UserMenu}}
+		</div>
+	</div>
+</header>

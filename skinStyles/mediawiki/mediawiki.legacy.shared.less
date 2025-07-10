@@ -1,0 +1,39 @@
+/*
+ * Islam - Legacy shared styles
+ * https://muslim.wiki
+*/
+
+@import '../../resources/variables.less';
+
+.skin-theme-clientpref-night {
+	.catlinks li {
+		border-left: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.autocomment,
+	.autocomment a,
+	.autocomment a:visited {
+		color: var( --color-subtle );
+	}
+
+	.mw-datatable {
+		border: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.mw-datatable td,
+	.mw-datatable th {
+		border: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.mw-datatable th {
+		background-color: var( --background-color-progressive-subtle );
+	}
+
+	.mw-datatable td {
+		background-color: var( --color-surface-0 );
+	}
+
+	.mw-datatable tr:hover td {
+		background-color: var( --background-color-progressive-subtle );
+	}
+}

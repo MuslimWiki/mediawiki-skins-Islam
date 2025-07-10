@@ -1,0 +1,94 @@
+.islam-page-container {
+	/* Include margin of child elements as part of the height */
+	display: flex;
+	flex-direction: column;
+	/* Make page container take the whole page height on short page */
+	min-height: inherit;
+}
+
+.mw-body,
+.parsoid-body {
+	flex-grow: 1;
+}
+
+.islam-body-container {
+	display: grid;
+	// stylelint-disable-next-line @stylistic/declaration-colon-space-after
+	grid-template-areas:
+		'content'
+		'footer';
+	// Using auto as min value will cause overflow
+	grid-template-columns: minmax( 0, var( --width-layout ) );
+	gap: 0 var( --space-lg );
+	justify-content: center;
+	padding: 0 var( --padding-page );
+	// Bottom margin is added because data-after-content cannot
+	margin-bottom: var( --space-xl );
+}
+
+.islam-body {
+	z-index: @z-index-base; // Stop body content going over sticky header
+	grid-area: content;
+	word-wrap: break-word; // Fix overflow text (e.g. long single word text in <li>)
+}
+
+#mw-data-after-content:not( :empty ) {
+	margin-top: var( --space-xl );
+}
+
+@media ( min-width: @min-width-breakpoint-desktop ) {
+	.islam-page-container {
+		// Reserve space for header
+		margin-left: var( --header-size );
+	}
+
+	.islam-toc-enabled {
+		--width-page: calc( var( --width-layout ) + var( --width-toc ) + var( --space-lg ) );
+
+		.islam-body-container {
+			// stylelint-disable-next-line @stylistic/declaration-colon-space-after
+			grid-template-areas:
+				'content sidebar'
+				'footer footer';
+			grid-template-columns: minmax( 0, var( --width-layout ) ) var( --width-toc );
+		}
+	}
+
+	.islam-page-header,
+	.islam-body-container {
+		transition-timing-function: var( --transition-timing-function-ease );
+		transition-duration: var( --transition-duration-medium );
+	}
+
+	.islam-page-header {
+		transition-property: max-width;
+	}
+
+	.islam-page-header,
+	.firstHeading-container {
+		flex-wrap: nowrap;
+	}
+
+	.page-actions {
+		.mw-list-item {
+			text-wrap: nowrap;
+		}
+	}
+
+	.islam-body-container {
+		transition-property: grid;
+	}
+}
+
+/* Wider page width for certain namespaces */
+@media ( min-width: @min-width-breakpoint-desktop-wide ) {
+	// 1 - Special, 6 - File, 14 - Category
+	.ns {
+		&--1,
+		&-6,
+		&-14 {
+			--width-layout: var( --width-layout--extended );
+			--width-page: calc( var( --width-layout--extended ) + var( --width-toc ) + var( --space-lg ) );
+		}
+	}
+}

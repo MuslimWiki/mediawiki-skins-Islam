@@ -1,0 +1,287 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:CodeEditor
+ * Module: ext.codeEditor.ace
+ * Version: REL1_39 67c012c
+ *
+ * Date: 2023-06-03
+ */
+
+.ace {
+	&-tm {
+		color: var( --color-emphasized );
+		background-color: transparent;
+
+		.ace {
+			&_gutter {
+				color: var( --color-subtle );
+				background-color: transparent;
+
+				&-active-line {
+					background-color: var( --background-color-button-quiet--hover );
+				}
+			}
+
+			&_marker-layer {
+				.ace {
+					&_active-line {
+						background-color: var( --background-color-button-quiet--hover );
+					}
+
+					&_selected-word {
+						background: var( --background-color-progressive-subtle );
+						border-color: var( --border-color-base );
+					}
+
+					&_selection {
+						background: var( --background-color-progressive-subtle );
+						box-shadow: inset 0 0 0 2px var( --color-progressive );
+					}
+				}
+			}
+
+			&_print-margin {
+				background: var( --border-color-base );
+			}
+
+			&_cursor {
+				color: var( --color-emphasized );
+			}
+
+			&_storage,
+			&_keyword {
+				color: var( --color-syntax-purple );
+			}
+
+			&_constant {
+				color: var( --color-syntax-orange );
+
+				&.ace {
+					&_buildin {
+						color: var( --color-syntax-orange );
+					}
+
+					&_language {
+						color: var( --color-syntax-orange );
+					}
+
+					&_library {
+						color: var( --color-syntax-orange );
+					}
+
+					&_numeric {
+						color: var( --color-syntax-orange );
+					}
+				}
+			}
+
+			&_invalid {
+				color: var( --color-destructive );
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&_support {
+				&.ace {
+					&_function {
+						color: var( --color-syntax-blue );
+					}
+
+					&_constant {
+						color: var( --color-syntax-orange );
+					}
+
+					&_type,
+					&_class {
+						color: var( --color-syntax-purple );
+					}
+				}
+			}
+
+			&_keyword {
+				&.ace {
+					&_operator {
+						color: var( --color-syntax-cyan );
+					}
+				}
+			}
+
+			&_string {
+				color: var( --color-syntax-green );
+
+				&.ace {
+					&_regex {
+						color: var( --color-syntax-red );
+					}
+				}
+			}
+
+			&_comment {
+				color: var( --color-subtle );
+
+				&.ace {
+					&_doc {
+						&.ace {
+							&_tag {
+								color: var( --color-subtle );
+							}
+						}
+					}
+				}
+			}
+
+			&_variable {
+				color: var( --color-syntax-yellow );
+			}
+
+			&_xml-pe {
+				color: var( --color-syntax-brown );
+			}
+
+			&_entity {
+				&.ace {
+					&_name {
+						&.ace {
+							&_function {
+								color: var( --color-syntax-blue );
+							}
+						}
+					}
+				}
+			}
+
+			&_heading {
+				color: var( --color-syntax-blue );
+			}
+
+			&_list {
+				color: var( --color-syntax-red );
+			}
+
+			&_meta {
+				&.ace {
+					&_tag {
+						color: var( --color-syntax-blue );
+					}
+				}
+			}
+
+			&_paren,
+			&_punctuation {
+				color: var( --color-syntax-cyan );
+			}
+
+			&_indent-guide {
+				opacity: var( --opacity-base--disabled );
+			}
+		}
+	}
+
+	&_gutter {
+		&-cell {
+			color: var( --color-subtle );
+		}
+	}
+
+	&_search {
+		color: var( --color-subtle );
+		background-color: var( --color-surface-2 );
+		border-color: var( --border-color-base );
+
+		&_field {
+			color: var( --color-emphasized );
+			background-color: transparent;
+			border-color: var( --border-color-interactive );
+			border-top-left-radius: var( --border-radius-base );
+			border-bottom-left-radius: var( --border-radius-base );
+
+			&:hover {
+				background-color: var( --color-surface-0 );
+				border-color: var( --color-progressive--hover );
+			}
+
+			&:focus {
+				background-color: var( --color-surface-0 );
+				border-color: var( --color-progressive );
+				box-shadow: inset 0 0 0 1px var( --color-progressive );
+			}
+		}
+
+		&btn {
+			font-weight: var( --font-weight-semi-bold );
+			color: var( --color-emphasized );
+			background-color: transparent;
+			border-color: var( --border-color-interactive );
+
+			&:last-child {
+				border-color: var( --border-color-interactive );
+			}
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+		}
+	}
+
+	&_button {
+		font-weight: var( --font-weight-semi-bold );
+		color: var( --color-emphasized );
+		border-color: transparent;
+		border-radius: var( --border-radius-base );
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+
+		&.checked {
+			background-color: var( --background-color-progressive-subtle );
+			border-color: transparent;
+		}
+	}
+
+	&_optionsMenuEntry {
+		button {
+			background-color: var( --color-surface-3 );
+			border-color: var( --border-color-base );
+
+			&:hover {
+				background-color: var( --background-color-button-quiet--hover );
+			}
+
+			&:active {
+				background-color: var( --background-color-button-quiet--active );
+			}
+
+			&[ ace_selected_button='true' ] {
+				color: var( --color-inverted-primary );
+				background-color: var( --color-progressive );
+				border-color: var( --color-progressive );
+				box-shadow: none;
+
+				&:hover {
+					background-color: var( --color-progressive--hover );
+					border-color: var( --color-progressive--hover );
+				}
+
+				&:active {
+					background-color: var( --color-progressive--active );
+					border-color: var( --color-progressive--active );
+				}
+			}
+		}
+	}
+}
+
+#ace_settingsmenu {
+	color: var( --color-base );
+	background-color: var( --color-surface-0 );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}

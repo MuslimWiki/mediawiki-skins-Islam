@@ -1,0 +1,39 @@
+/*
+ * Islam
+ *
+ * SkinStyles for JSON content
+ * Module: mediawiki.content.json
+ * Version: REL1_39
+ *
+ * Date: 2023-06-02
+ */
+
+.mw-json {
+	tr {
+		background-color: var( --color-surface-2 );
+	}
+
+	th,
+	td {
+		padding: var( --space-xs ) var( --space-md );
+		font-size: var( --font-size-small );
+		border-color: var( --border-color-base );
+	}
+
+	th {
+		background-color: var( --color-surface-0 );
+	}
+
+	&-value,
+	&-single-value {
+		background-color: var( --background-color-success-subtle );
+	}
+
+	&-single-value {
+		background-color: var( --color-surface-2 );
+	}
+
+	&-empty {
+		background-color: var( --color-surface-0 );
+	}
+}

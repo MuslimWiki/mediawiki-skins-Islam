@@ -1,0 +1,13 @@
+<nav
+	id="{{id}}"
+	class="islam-menu{{#class}} {{.}}{{/class}}"
+	{{{html-tooltip}}}
+	{{{html-userlangattributes}}}
+>
+	{{#label}}
+	<div class="islam-menu__heading{{#label-class}} {{.}}{{/label-class}}">
+		{{.}}
+	</div>
+	{{/label}}
+	{{>MenuContents}}
+</nav>

@@ -1,0 +1,301 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UploadWizard
+ * Module: ext.uploadWizard
+ * Version: REL1_43
+*/
+
+@import '../../../resources/variables.less';
+@import '../../../resources/mixins.less';
+
+// Disable sticky header
+#islam-page-header-sticky-sentinel {
+	display: none;
+}
+
+.arrowSteps {
+	li {
+		display: flex;
+		flex: auto;
+		justify-content: center;
+		height: auto !important;
+		background-color: transparent;
+
+		div {
+			inset: unset;
+			display: flex;
+			align-items: center;
+			width: auto;
+			padding-inline: 0 !important;
+			transform: none;
+		}
+
+		&.head {
+			background-color: transparent;
+
+			div {
+				box-shadow: 0 -2px 0 var( --color-progressive ) inset;
+			}
+		}
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+#mwe-upwiz {
+	&-steps {
+		justify-content: space-between;
+		height: 3rem;
+		line-height: var( --line-height-small );
+		box-shadow: 0 -1px 0 var( --border-color-base ) inset;
+
+		@media ( max-width: @max-width-breakpoint-mobile ) {
+			font-size: var( --font-size-small );
+		}
+	}
+
+	&-filelist {
+		margin-top: var( --space-md );
+
+		&:empty {
+			margin-top: 0;
+		}
+	}
+
+	&-stepdiv-deeds:not( :empty ) {
+		padding-block: var( --space-md );
+	}
+
+	&-content {
+		label.oo-ui-radioOptionWidget {
+			// Extend clickable area of radio
+			display: block;
+		}
+	}
+
+	&-files {
+		max-width: none;
+	}
+
+	&-add-file-container {
+		&:not( .mwe-upwiz-add-files-0 ) {
+			display: flex;
+			align-items: center;
+		}
+
+		.mwe-upwiz-add-file {
+			flex-grow: 1;
+			max-width: none;
+		}
+	}
+
+	&-deeds {
+		&-thumbnails {
+			&:empty {
+				margin-block: 0;
+			}
+
+			&:not( :empty ) {
+				border: 1px solid var( --border-color-subtle );
+				border-radius: var( --border-radius-base );
+			}
+		}
+
+		// Style as message box
+		&-intro {
+			padding: var( --space-md );
+			margin-block: var( --space-xl ) var( --space-md );
+			font-size: var( --font-size-small );
+			line-height: var( --line-height-small );
+			background-color: var( --background-color-notice-subtle );
+			border: 1px solid var( --border-color-notice );
+			border-radius: var( --border-radius-base );
+		}
+	}
+}
+
+.mwe-upwiz-add-files-0,
+#mwe-upwiz-files {
+	margin-block: var( --space-md );
+}
+
+.mwe-upwiz {
+	&-thumbnail-link {
+		canvas,
+		img {
+			border-radius: var( --border-radius-base );
+			box-shadow: none;
+		}
+	}
+
+	&-add-file {
+		.mwe-upwiz-add-files-0 & {
+			display: grid;
+			gap: var( --space-xs );
+			place-content: center;
+			min-height: 40vh;
+			font-size: var( --font-size-medium );
+
+			> .oo-ui-selectFileInputWidget-selectButton {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	&-visible-file-filename-text {
+		font-weight: var( --font-weight-semi-bold );
+		color: var( --color-emphasized );
+	}
+
+	&-file {
+		&-endchoice {
+			> .oo-ui-horizontalLayout {
+				// Fix incorrect alignment for flex
+				justify-content: end;
+			}
+		}
+
+		&-license,
+		&-status {
+			margin-top: 0;
+		}
+	}
+
+	&-source {
+		&-multiple {
+			flex-wrap: wrap;
+			padding-bottom: 0;
+			overflow: hidden;
+			font-weight: var( --font-weight-medium );
+			text-align: center;
+			border: 1px solid var( --border-color-interactive );
+			border-radius: var( --border-radius-medium );
+
+			label.oo-ui-radioOptionWidget {
+				flex-grow: 1;
+				padding: var( --space-sm ) var( --space-md );
+				margin-right: 0;
+
+				&:hover {
+					background-color: var( --background-color-button-quiet--hover );
+				}
+
+				&.oo-ui-optionWidget-selected {
+					color: var( --color-inverted-primary );
+					background-color: var( --color-progressive );
+				}
+
+				> .oo-ui-radioInputWidget {
+					display: none;
+				}
+
+				> .oo-ui-labelElement-label {
+					display: block;
+					padding-left: 0;
+					vertical-align: middle;
+				}
+			}
+		}
+
+		&-thirdparty {
+			// Fake notice box
+			&-explain,
+			&-custom-multiple-intro {
+				padding-inline: var( --space-md );
+				font-size: var( --font-size-small );
+				line-height: var( --line-height-small );
+				background-color: var( --background-color-notice-subtle );
+				border-color: var( --border-color-notice );
+				border-inline-width: 1px;
+			}
+
+			&-explain {
+				padding-top: var( --space-md );
+				color: var( --color-emphasized );
+				border-top-width: 1px;
+				border-top-left-radius: var( --border-radius-base );
+				border-top-right-radius: var( --border-radius-base );
+
+				// No text beneath
+				&:has( + ol ) {
+					padding-bottom: var( --space-md );
+					margin-bottom: var( --space-md );
+					border-bottom-width: 1px;
+					border-bottom-right-radius: var( --border-radius-base );
+					border-bottom-left-radius: var( --border-radius-base );
+				}
+			}
+
+			&-custom-multiple-intro {
+				padding-top: var( --space-xs );
+				padding-bottom: var( --space-md );
+				margin-bottom: var( --space-md );
+				font-size: var( --font-size-small );
+				border-bottom-width: 1px;
+				border-bottom-right-radius: var( --border-radius-base );
+				border-bottom-left-radius: var( --border-radius-base );
+			}
+		}
+	}
+
+	&-deeds {
+		&-individual {
+			gap: var( --space-lg );
+			padding-block: var( --space-xl );
+
+			.mwe-upwiz-deeds-individual-thumbnail {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&-deed {
+		&-forms {
+			.mwe-upwiz-deed {
+				&-ownwork,
+				&-thirdparty {
+					padding-top: var( --space-lg );
+					margin-top: var( --space-lg );
+					margin-left: 0;
+				}
+			}
+		}
+
+		&-form-internal {
+			.mwe-upwiz-label-title {
+				margin-top: 0;
+				font-size: inherit;
+				font-weight: var( --font-weight-medium );
+				color: var( --color-emphasized );
+			}
+
+			ol {
+				margin-block: 0;
+			}
+		}
+
+		&-option-title:first-child {
+			margin-top: 0;
+		}
+
+		&-subgroup {
+			padding: var( --space-md );
+			margin-block: var( --space-sm );
+			border: 1px solid var( --border-color-base );
+			border-radius: var( --border-radius-base );
+		}
+	}
+
+	&-label-extra {
+		font-size: var( --font-size-small );
+	}
+
+	&-count {
+		font-size: var( --font-size-small );
+		color: var( --color-subtle );
+	}
+}

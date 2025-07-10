@@ -1,0 +1,32 @@
+{{!
+	string|null html-site-notice the contents of a banner defined in MediaWiki:Sitenotice.
+		Also used by CentralNotice to inject banners into Vector.
+	string html-subtitle
+	string html-undelete-link
+	string html-user-message
+	string html-body-content--formatted
+	string html-categories
+	string html-after-content
+	object data-footer for footer template partial. see Footer.mustache for documentation.
+}}
+
+{{>Header}}
+<div class="islam-page-container">
+	<div class="islam-sitenotice-container">{{{html-site-notice}}}</div>
+	<main class="mw-body" id="content">
+		{{>PageHeader}}
+		<div class="islam-body-container">
+			<div id="bodyContent" class="islam-body" aria-labelledby="firstHeading">
+				<div id="contentSub"{{{html-user-language-attributes}}}>{{{html-subtitle}}}</div>
+				{{#html-undelete-link}}<div id="contentSub2">{{{.}}}</div>{{/html-undelete-link}}
+				{{{html-user-message}}}
+				{{{html-body-content--formatted}}}
+			</div>
+			{{#toc-enabled}}{{>PageSidebar}}{{/toc-enabled}}
+			{{>PageFooter}}
+		</div>
+	</main>
+	{{{html-after-content}}}
+	{{#data-footer}}{{>Footer}}{{/data-footer}}
+</div>
+{{#data-sticky-header}}{{>StickyHeader}}{{/data-sticky-header}}

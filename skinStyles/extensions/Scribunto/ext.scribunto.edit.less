@@ -1,0 +1,126 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Scribunto
+ * Module: ext.scribunto.edit
+ * Version: REL1_39 ebb91f2
+ *
+ * Date: 2023-05-29
+ */
+
+@import '../../../resources/mixins.less';
+
+.mw-scribunto-console-fieldset {
+	.mixin-islam-font-styles( 'small' );
+
+	legend {
+		.mixin-islam-font-styles( 'overline' );
+	}
+
+	input[ type='button' ] {
+		width: 100%;
+		padding: var( --space-xs ) var( --space-sm );
+		margin: var( --space-xs ) 0;
+		font-weight: var( --font-weight-medium );
+		color: var( --color-inverted-fixed );
+		cursor: pointer;
+		background-color: var( --color-destructive );
+		border-radius: var( --border-radius-base );
+
+		&:hover {
+			background: var( --color-destructive--hover );
+		}
+
+		&:active {
+			background: var( --color-destructive--active );
+		}
+	}
+
+	> div:last-child {
+		position: sticky;
+		bottom: 0;
+	}
+}
+
+.mw-scribunto-console-fieldset,
+.mw-scribunto-input,
+.mw-scribunto-normalOutput,
+.mw-scribunto-print,
+.mw-scribunto-message,
+.mw-scribunto-error,
+.mw-scribunto-propList,
+.mw-scribunto-tabcomplete,
+.mw-scribunto-clear {
+	background-color: transparent;
+}
+
+.mw-scribunto-message {
+	color: var( --color-subtle );
+}
+
+.mw-scribunto-message + div {
+	padding-top: var( --space-sm );
+	border-top: var( --border-width-base ) solid var( --border-color-base );
+}
+
+#mw-scribunto-output {
+	font-family: var( --font-family-monospace );
+}
+
+#mw-scribunto-input {
+	color: var( --color-emphasized );
+	background-color: transparent;
+	border: var( --border-width-base ) solid var( --border-color-base );
+	border-radius: var( --border-radius-base );
+
+	&:hover {
+		border-color: var( --color-progressive--hover );
+	}
+
+	&:focus {
+		outline: var( --border-width-base ) solid transparent;
+		border-color: var( --color-progressive );
+		box-shadow: inset 0 0 0 1px var( --color-progressive );
+	}
+}
+
+.mw-scribunto-input {
+	display: block;
+	margin-top: var( --space-md );
+	font-weight: normal;
+	color: var( --color-emphasized );
+
+	// Fake terminal input indicator
+	&:not( #mw-scribunto-input )::before {
+		color: var( --color-subtle );
+		content: '> ';
+	}
+}
+
+#mw-scribunto-output p {
+	margin: 0;
+}
+
+.mw-scribunto-normalOutput {
+	color: var( --color-base );
+}
+
+.mw-scribunto-print {
+	color: var( --color-syntax-brown );
+}
+
+.mw-scribunto-error {
+	color: var( --color-destructive );
+}
+
+.mw-scribunto-clear {
+	color: var( --color-syntax-red );
+}
+
+.mw-scribunto-propList {
+	color: var( --color-syntax-green );
+}
+
+.mw-scribunto-tabcomplete {
+	color: var( --color-syntax-violet );
+}

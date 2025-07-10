@@ -1,0 +1,31 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Cargo
+ * Module: ext.cargo.pagevalues
+ * Version: REL1_39 b4c6314
+ *
+ * Date: 2023-01-03
+*/
+
+@import '../../../resources/mixins.less';
+
+// Disable sticky header since it collides with cargo sticky header
+#islam-page-header-sticky-sentinel {
+	display: none;
+}
+
+// Apply Islam sticky header styles
+.cargo-pagevalues-tableinfo {
+	padding: var( --space-md ) 0;
+	font-size: var( --font-size-small );
+	color: var( --color-subtle );
+	background-color: transparent;
+	.mixin-islam-sticky-header;
+
+	// Tweak size to look more like other sticky header
+	h2 {
+		margin: 0;
+		.mixin-islam-font-styles( 'heading-4' );
+	}
+}

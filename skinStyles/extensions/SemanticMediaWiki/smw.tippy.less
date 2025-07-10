@@ -1,0 +1,78 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: smw.tippy
+ * Version: 5.0.2
+ *
+ * Date: 2025-06-12
+*/
+
+/* smw/util/smw.tippy.css */
+.tippy-header {
+	padding: var( --space-xs ) var( --space-sm ) 0 var( --space-sm );
+	font-size: var( --font-size-x-small );
+	font-weight: var( --font-weight-medium );
+	color: var( --color-subtle );
+	background-color: transparent;
+	border-bottom: 0;
+	border-top-left-radius: var( --border-radius-base );
+	border-top-right-radius: var( --border-radius-base );
+}
+
+.tippy-content-container {
+	padding: var( --space-xs ) var( --space-sm );
+	font-size: var( --font-size-small );
+}
+
+.tippy-bottom {
+	background-color: transparent;
+	border-top-color: var( --border-color-base );
+	border-bottom-right-radius: var( --border-radius-base );
+	border-bottom-left-radius: var( --border-radius-base );
+}
+
+.tippy-tooltip.light-border-theme[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-theme[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-border-theme[ x-placement^='bottom' ] .tippy-arrow::after,
+.tippy-tooltip.light-theme[ x-placement^='bottom' ] .tippy-arrow::after {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+.tippy-tooltip.light-border-theme.square-border-transparent-arrow[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-border-theme.square-border-light[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-theme.square-border-transparent-arrow[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-theme.square-border-light[ x-placement^='bottom' ] .tippy-arrow,
+.tippy-tooltip.light-border-theme.square-border-transparent-arrow[ x-placement^='bottom' ] .tippy-arrow::after,
+.tippy-tooltip.light-border-theme.square-border-light[ x-placement^='bottom' ] .tippy-arrow::after,
+.tippy-tooltip.light-theme.square-border-transparent-arrow[ x-placement^='bottom' ] .tippy-arrow::after,
+.tippy-tooltip.light-theme.square-border-light[ x-placement^='bottom' ] .tippy-arrow::after {
+	border-bottom-color: var( --color-surface-1 );
+}
+
+.square-border-light .tippy-header {
+	background-color: var( --color-surface-1 );
+}
+
+.tippy-cancel {
+	color: var( --background-color-icon );
+	text-shadow: none;
+	opacity: 1;
+}
+
+.tippy-cancel:hover {
+	color: var( --background-color-icon--hover );
+	opacity: 1;
+}
+
+.tippy-cancel:active {
+	color: var( --background-color-icon--active );
+}
+
+.tippy-warning-circle {
+	background-color: var( --color-warning );
+}
+
+.tippy-error-circle {
+	background-color: var( --color-destructive );
+}

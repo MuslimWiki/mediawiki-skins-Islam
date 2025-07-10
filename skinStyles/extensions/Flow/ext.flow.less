@@ -1,0 +1,97 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:StructuredDiscussions
+ * Module: ext.flow
+ * Version: REL1_35 (e3379f0)
+ *
+ * Date: 2022-04-27
+*/
+
+@import '../../../resources/variables.less';
+
+/* styles/mediawiki.ui/modal.less */
+.flow-ui-modal {
+	background: var( --background-color-backdrop-light );
+}
+
+.flow-ui-modal-layout {
+	color: var( --color-base );
+	background: var( --color-surface-1 );
+	box-shadow: var( --box-shadow-drop-xx-large );
+}
+
+.flow-ui-modal-heading {
+	color: var( --color-base );
+	border-bottom-color: var( --border-color-base );
+}
+
+.flow-ui-modal-heading-prev {
+	color: var( --color-subtle );
+	border-right-color: var( --border-color-base );
+}
+
+.flow-ui-modal-heading-next {
+	color: var( --color-subtle );
+	border-left-color: var( --border-color-base );
+}
+
+/* styles/mediawiki.ui/tooltips.less */
+.flow-ui-tooltip {
+	color: var( --color-base );
+	background-color: var( --color-surface-1 );
+	box-shadow: var( --box-shadow-drop-xx-large );
+
+	.flow-ui-tooltip-triangle {
+		&::after {
+			position: absolute;
+			z-index: @z-index-stacking-1;
+			width: 1em;
+			height: 1em;
+			content: '';
+			background: var( --color-surface-1 );
+			-webkit-transform: rotate( 45deg );
+			transform: rotate( 45deg );
+		}
+	}
+
+	// triangle on top
+	&.flow-ui-tooltip-up {
+		.flow-ui-tooltip-triangle {
+			&::after {
+				/* @noflip */
+				box-shadow: 0 0 1px 0 var( --border-color-base );
+			}
+		}
+	}
+
+	// triangle on bottom
+	&.flow-ui-tooltip-down {
+		.flow-ui-tooltip-triangle {
+			&::after {
+				/* @noflip */
+				box-shadow: 0 -1.5px 0 1.5px var( --border-color-base ), 0 0 1px 0 var( --border-color-base );
+			}
+		}
+	}
+
+	// triangle at left
+	&.flow-ui-tooltip-left {
+		.flow-ui-tooltip-triangle {
+			&::after {
+				/* @noflip */
+				box-shadow: 1.5px 0 0 1.5px var( --border-color-base ), 0 0 1px 0 var( --border-color-base );
+			}
+		}
+	}
+
+	// triangle at right
+	&.flow-ui-tooltip-right {
+		.flow-ui-tooltip-triangle {
+			&::after {
+				/* @noflip */
+				box-shadow: 0 1.5px 0 1.5px var( --border-color-base ), 0 0 1px 0 var( --border-color-base );
+			}
+		}
+	}
+}

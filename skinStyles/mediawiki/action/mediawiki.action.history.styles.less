@@ -1,0 +1,43 @@
+/*
+ * Islam - Page History Styles
+ * https://muslim.wiki
+*/
+
+@import '../../../resources/variables.less';
+
+#mw-history-compare {
+	margin: var( --space-md ) 0;
+}
+
+.mw-history-compareselectedversions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: var( --space-md ) 0;
+	font-size: var( --font-size-small );
+}
+
+#pagehistory {
+	margin: 0;
+	list-style: none;
+
+	li {
+		&.selected {
+			color: var( --color-base--emphasized );
+			outline-color: var( --border-color-base );
+
+			&.before {
+				background-color: var( --background-color-success-subtle );
+			}
+
+			&.after {
+				background-color: var( --background-color-destructive-subtle );
+			}
+
+			a {
+				color: var( -- );
+			}
+		}
+	}
+}

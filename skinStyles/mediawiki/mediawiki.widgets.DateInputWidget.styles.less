@@ -1,0 +1,80 @@
+/*
+ * Islam - Widget Datetime
+ * https://muslim.wiki
+*/
+
+@import '../../resources/variables.less';
+
+.skin-theme-clientpref-night {
+	.mw-widget-dateInputWidget {
+		&-handle {
+			color: var( --color-emphasized );
+			background-color: var( --color-surface-0 );
+			border-color: @dark-bg-50;
+		}
+
+		&.oo-ui-widget-enabled {
+			.mw-widget-dateInputWidget-handle {
+				&:hover {
+					border-color: @dark-bg-60;
+				}
+			}
+		}
+
+		&-calendar {
+			background-color: var( --color-surface-0 ) !important;
+		}
+
+		&.oo-ui-widget-disabled {
+			.mw-widget-dateInputWidget-handle {
+				color: var( --color-subtle ) !important;
+				text-shadow: 0 1px 1px var( --color-surface-0 ) !important;
+				background-color: @dark-bg-20 !important;
+				border-color: @dark-bg-30 !important;
+			}
+		}
+	}
+
+	/**
+Calendar
+TODO move into separate file?
+ */
+	.mw-widgets-datetime-calendarWidget {
+		background-color: var( --color-surface-0 ) !important;
+		border-color: @dark-bg-50 !important;
+
+		&-grid {
+			.mw-widgets-datetime-calendarWidget-cell {
+				&.mw-widgets-datetime-calendarWidget-extra .oo-ui-buttonElement-button {
+					.oo-ui-labelElement-label {
+						color: var( --color-subtle ) !important;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+mw.widgets.CalendarWidget.less
+  TODO move into separate file?
+ */
+	.mw-widget-calendarWidget {
+		border: var( --border-width-base ) solid @dark-bg-50 !important;
+
+		&-day {
+			color: var( --color-base ) !important;
+		}
+
+		&-day-heading {
+			color: var( --color-base ) !important;
+		}
+
+		&-day-additional {
+			color: var( --color-subtle ) !important;
+
+			&:hover {
+				color: var( --color-base ) !important;
+			}
+		}
+	}
+}

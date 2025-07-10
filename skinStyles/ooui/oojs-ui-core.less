@@ -1,0 +1,152 @@
+/*
+ * Islam
+ *
+ * SkinStyles for OOUI
+ * Module: oojs-ui-core.styles
+ * Version: v0.51.2
+ *
+ * Date: 2025-01-08
+ */
+
+@import '../../resources/variables.less';
+
+/**
+ * From Vector 2022
+ * T365764 - OOUI Icon classes for inverted dark-mode icons.
+ * This includes OOUI icons that are not colored (progressive/destructive), checkbox icons, and
+ * indicator widgets.
+ */
+.oo-ui-iconElement-icon:not( .oo-ui-image-progressive ):not( .oo-ui-image-destructive ):not( .oo-ui-checkboxInputWidget-checkIcon ):not( .oo-ui-image-invert ):not( .mw-no-invert ),
+.oo-ui-indicatorElement-indicator {
+	filter: var( --filter-invert );
+
+	/**
+	 * Prevent double inversion.
+	 * Do not apply invert to elements that are inside a notheme or a skin-invert class to avoid inversion in light theme or
+	 * double inversion in an already inverted element
+	 * - OOUI icons inside .notheme OOUI elements
+	 * - OOUI icons inside elements with .skin-invert
+	 * - OOUI icons inside elements with .notheme
+	 */
+	.skin-invert &,
+	.notheme & {
+		filter: none !important;
+	}
+}
+
+.oo-ui-buttonElement > .oo-ui-buttonElement-button {
+	font-weight: var( --font-weight-medium );
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget.oo-ui-textInputWidget > .oo-ui-inputWidget-input,
+.oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget .oo-ui-dropdownWidget-handle,
+.oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget .oo-ui-tagMultiselectWidget-handle {
+	border-radius: var( --border-radius-base ) 0 0 var( --border-radius-base );
+}
+
+.oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-button .oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
+	border-radius: 0 var( --border-radius-base ) var( --border-radius-base ) 0;
+}
+
+.oo-ui-panelLayout-framed {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-buttonGroupWidget {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-buttonGroupWidget .oo-ui-buttonElement-framed .oo-ui-buttonElement-button {
+	border-radius: 0;
+}
+
+.oo-ui-buttonGroupWidget .oo-ui-buttonElement-framed:first-child .oo-ui-buttonElement-button {
+	border-top-left-radius: var( --border-radius-base );
+	border-bottom-left-radius: var( --border-radius-base );
+}
+
+.oo-ui-buttonGroupWidget .oo-ui-buttonElement-framed:last-child .oo-ui-buttonElement-button {
+	border-top-right-radius: var( --border-radius-base );
+	border-bottom-right-radius: var( --border-radius-base );
+}
+
+.oo-ui-labelElement .oo-ui-labelElement-label-highlight {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.oo-ui-fieldsetLayout.oo-ui-labelElement > .oo-ui-fieldsetLayout-header > .oo-ui-labelElement-label {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.oo-ui-messageWidget {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.oo-ui-menuSectionOptionWidget {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.oo-ui-popupWidget-popup {
+	background-color: var( --color-surface-1 );
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-checkboxInputWidget [ type='checkbox' ] + span {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-dropdownInputWidget select {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-textInputWidget .oo-ui-inputWidget-input {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-menuSelectWidget {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-dropdownWidget-handle {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-comboBoxInputWidget .oo-ui-inputWidget-input {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.oo-ui-comboBoxInputWidget.oo-ui-comboBoxInputWidget-empty .oo-ui-inputWidget-input,
+.oo-ui-comboBoxInputWidget-php .oo-ui-inputWidget-input {
+	border-top-right-radius: var( --border-radius-base );
+	border-bottom-right-radius: var( --border-radius-base );
+}
+
+.oo-ui-comboBoxInputWidget-dropdownButton.oo-ui-indicatorElement .oo-ui-buttonElement-button,
+.oo-ui-comboBoxInputWidget-dropdownButton.oo-ui-indicatorElement .oo-ui-buttonElement-button:focus {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.oo-ui-selectFileInputWidget-dropTarget {
+	border-radius: var( --border-radius-base );
+}
+
+.oo-ui-numberInputWidget-buttoned .oo-ui-inputWidget-input {
+	border-radius: 0;
+}
+
+.oo-ui-numberInputWidget-minusButton > .oo-ui-buttonElement-button {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.oo-ui-numberInputWidget-plusButton > .oo-ui-buttonElement-button {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}

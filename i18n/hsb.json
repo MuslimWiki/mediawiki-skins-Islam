@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"language": "Hornjoserbsce (High Sorbian)",
+		"language_code": "hsb",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"J budissin"
+		],
+		"note": "Standard Hornjoserbsce (High Sorbian) language used in eastern Germany."
+	},
+	"islam-languages-toggle": "Dalše rěče",
+	"islam-actions-more-toggle": "Dalše akcije",
+	"islam-sitestats-articles-label": "zapiski",
+	"islam-sitestats-images-label": "dataje",
+	"islam-sitestats-users-label": "wužiwarjo",
+	"islam-sitestats-edits-label": "změny",
+	"islam-page-info-copyright": "Awtorske prawo",
+	"islam-action-addsection": "Temu dodać",
+	"islam-jumptotop": "Wróćo k spočatkej",
+	"islam-search-fulltext": "Pytać za zapiskami, kotrež wobsahuja $1",
+	"islam-search-mediasearch": "Pytać za medijemi",
+	"islam-tagline-ns-project": "Informacije wo {{SITENAME}}"
+}

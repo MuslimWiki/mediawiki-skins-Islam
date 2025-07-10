@@ -1,0 +1,62 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build outputs
+/dist/
+/build/
+*.min.js
+*.min.css
+*.map
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local development
+.sass-cache/
+*.sass.map
+*.scss.map
+
+# MediaWiki cache
+/cache/
+
+# Composer
+composer.lock
+composer.phar
+
+# NPM
+package-lock.json
+yarn.lock
+
+# Local configuration
+LocalSettings*.php
+*.local.php
+
+# Testing
+/coverage/
+*.coverage
+
+# Debug
+*.log
+*.sqlite
+*.sqlite-journal

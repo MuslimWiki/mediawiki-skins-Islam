@@ -1,0 +1,87 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:AccountInfo
+ * Module: ext.AccountInfo.special
+ * Version: REL1_39 (2e529e7)
+ *
+ * Date: 2024-07-24
+*/
+
+@import '../../../resources/mixins.less';
+
+.mw-special-AccountInfo h1 {
+	margin-bottom: 0.25em;
+	border-bottom: 0;
+	.mixin-islam-font-styles( 'heading-1' );
+}
+
+.mw-special-AccountInfo p {
+	width: 100%;
+	padding: 0;
+	margin-bottom: 0;
+	background: none;
+	border-radius: 0;
+}
+
+.mw-special-AccountInfo table {
+	width: 100%;
+}
+
+.mw-special-AccountInfo #mw-content-text > p {
+	padding: var( --space-md );
+	margin-top: var( --space-md );
+	color: var( --color-base );
+	background: var( --color-surface-2 );
+	border: var( --border-width-base ) solid var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+	.mixin-islam-font-styles( 'small' );
+}
+
+.mw-special-AccountInfo td,
+.mw-special-AccountInfo th {
+	padding: var( --space-xs ) var( --space-sm );
+}
+
+.mw-special-AccountInfo #mw-content-text > table th {
+	color: var( --color-emphasized );
+}
+
+.mw-special-AccountInfo table thead th {
+	font-size: inherit;
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+	text-transform: none;
+	white-space: nowrap;
+	cursor: auto;
+	border-bottom-color: var( --border-color-base );
+}
+
+.mw-special-AccountInfo table tbody tr:last-child td:first-child {
+	border-bottom-left-radius: var( --border-radius-medium );
+}
+
+.mw-special-AccountInfo table tbody tr:last-child td:last-child {
+	border-bottom-right-radius: var( --border-radius-medium );
+}
+
+.mw-special-AccountInfo #mw-content-text table {
+	display: table;
+	max-width: none;
+	margin: var( --space-md ) 0;
+	overflow: initial;
+	border-collapse: collapse;
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-border );
+	.mixin-islam-font-styles( 'small' );
+}
+
+.mw-special-AccountInfo tr.mw-accountinfo-current {
+	background: transparent;
+}
+
+.mw-special-AccountInfo tr.mw-accountinfo-current td:first-child {
+	color: var( --color-base--emphasized );
+	background: var( --color-text-success );
+}

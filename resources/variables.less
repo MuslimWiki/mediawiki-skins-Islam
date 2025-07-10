@@ -1,0 +1,111 @@
+/*
+ * Islam
+ *
+ * All LESS variables used in the skin must be defined here
+ * Use CSS variables from tokens.less is preferrable
+ * Only import this stylesheet when LESS variables is nessecary
+ *
+ * Related files:
+ * - Islam tokens: skins.islam.styles/tokens.less
+ * - Override MW skin default variables: mediawiki.less/mediawiki.skin.variables.less
+ *
+*/
+
+/* Imports */
+/*
+ * MediaWiki mixins
+ * @see https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.less/mediawiki.mixins.less
+ */
+@import 'mediawiki.mixins';
+/*
+ * MediaWiki skin variables
+ * mediawiki.less/mediawiki.skin.variables.less
+ * @see https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.less/mediawiki.skin.defaults.less
+ */
+@import 'mediawiki.skin.variables.less';
+
+/* == Spacing == */
+@space-unit: 1rem;
+
+/* == Fonts == */
+/*
+ * --font-family-islam-base-xx are default fonts prioritized by Islam.
+ * --font-family-language-xx are language-specific fonts from language RL module.
+ * It is empty by default but populated by Islam language modules such as the CJK one.
+ */
+// Islam sans-serif fonts
+@font-family-base: var( --font-family-islam-base ), var( --font-family-language-base ), system-ui, -apple-system, sans-serif;
+// Islam serif fonts
+@font-family-serif: var( --font-family-islam-serif ), var( --font-family-language-serif ), 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
+// Islam monospace fonts
+@font-family-monospace: var( --font-family-islam-monospace ), var( --font-family-language-monospace ), 'Menlo', 'Consolas', 'Liberation Mono', 'Fira Code', 'Courier New', monospace;
+
+/* == Colors == */
+
+/*
+ * Syntax highlight colors
+ * Based on Material Theme Lighter
+ * https://material-theme.site
+*/
+@color-syntax-red: #e53935;
+@color-syntax-orange: #f76d47;
+@color-syntax-yellow: #e2931d;
+@color-syntax-green: #91b859;
+@color-syntax-cyan: #39adb5;
+@color-syntax-blue: #6182b8;
+@color-syntax-paleblue: #8796b0;
+@color-syntax-purple: #9c3eda;
+@color-syntax-brown: #916b53;
+@color-syntax-pink: #ff5370;
+@color-syntax-violet: #945eb8;
+@color-syntax-grey: #90a4ae;
+
+/*
+ * Syntax highlight colors
+ * Based on Material Theme Palenight
+ * https://material-theme.site
+*/
+@color-syntax-red-dark: #f07178;
+@color-syntax-orange-dark: #f78c6c;
+@color-syntax-yellow-dark: #ffcb6b;
+@color-syntax-green-dark: #c3e88d;
+@color-syntax-cyan-dark: #89ddff;
+@color-syntax-blue-dark: #82aaff;
+@color-syntax-paleblue-dark: #b2ccd6;
+@color-syntax-purple-dark: #c792ea;
+@color-syntax-brown-dark: #916b53;
+@color-syntax-pink-dark: #ff9cac;
+@color-syntax-violet-dark: #bb80b3;
+@color-syntax-grey-dark: #676E95;
+
+/* == Box model properties == */
+/* `--*size` variables are used for `*width` & `*height` properties. */
+@size-icon:		1.25rem;
+// Not in the header section it is also used outside of header
+@header-size:	3.5rem;
+// 67.5rem at 16px font size
+// We use px because it would be frustrating if max-width changes with font size
+@width-layout:	1080px;
+// TODO: Revise this number, fixed value isn't great but we need it for b
+@width-toc: 240px;
+
+/* Paddings */
+@padding-page:	16px;
+
+/* Transitions */
+@transition-hover: var( --transition-duration-base ) var( --transition-timing-function-ease );
+@transition-menu: var( --transition-duration-medium ) var( --transition-timing-function-ease-out );
+
+/*
+ * Legacy colors
+ *
+ * They are used by the SMW skinstyles and a few MW UI stuff.
+ * Those styles should be updated to the new standard.
+ * After that we can remove all theses LESS variables.
+*/
+@dark-bg-10: #1d2129;
+@dark-bg-20: #22262d;
+@dark-bg-30: #24272f;
+@dark-bg-40: #2b2f36;
+@dark-bg-50: #33363d;
+@dark-bg-60: #34383f;

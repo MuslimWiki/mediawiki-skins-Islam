@@ -1,0 +1,24 @@
+{{#data-toc}}
+<div id="islam-toc" class="islam-toc islam-dropdown">
+	<details class="islam-dropdown-details">
+		<summary
+			class="islam-dropdown-summary" 
+			title="{{msg-toc}}"
+			aria-details="mw-panel-toc">
+			<span class="islam-ui-icon mw-ui-icon-wikimedia-listBullet"></span>
+			<span>{{msg-toc}}</span>
+		</summary>
+	</details>
+	<nav id="mw-panel-toc" class="islam-toc-card islam-menu__card" role="navigation" aria-labelledby="mw-panel-toc-label">
+		<div class="islam-menu__card-backdrop"></div>
+		<div class="islam-menu__card-content">
+			<a class="islam-toc-top islam-toc-link" title="{{html-islam-jumptotop}}" href="#top" role="button">
+				<div class="islam-ui-icon mw-ui-icon-first mw-ui-icon-wikimedia-first"></div>
+				<div class="islam-toc-text">{{msg-islam-jumptotop}}</div>
+			</a>
+			<div class="islam-menu__heading">{{msg-toc}}</div>
+			{{>TableOfContents__list}}
+		</div>
+	</nav>
+</div>
+{{/data-toc}}

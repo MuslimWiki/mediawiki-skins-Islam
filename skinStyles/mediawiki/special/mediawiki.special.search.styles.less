@@ -1,0 +1,174 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Special:Search
+ * Module: mediawiki.special.search.styles
+ * Version: 1.39.0
+ *
+ * Date: 2023-06-20
+*/
+
+@import '../../../resources/mixins.less';
+@import '../../../resources/variables.less';
+
+// Disable default sticky header
+#islam-page-header-sticky-sentinel {
+	display: none;
+}
+
+#mw-search-top-table {
+	display: flex;
+	gap: var( --space-xl );
+	justify-content: space-between;
+}
+
+.mw-search-profile-tabs {
+	margin-top: var( --space-xxs );
+	background-color: transparent;
+	border: 0;
+	border-bottom: var( --border-width-base ) solid var( --border-color-base );
+}
+
+.search-types {
+	float: none;
+	padding-left: 0;
+
+	ul {
+		display: flex;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	a {
+		padding: var( --space-xs ) var( --space-sm );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-emphasized );
+		border-bottom: var( --border-width-thick ) solid transparent;
+
+		&:hover {
+			color: var( -color-primary--hover );
+			border-color: var( --color-progressive--hover );
+		}
+	}
+
+	.current a {
+		color: var( --color-progressive );
+		border-color: var( --color-progressive );
+	}
+}
+
+.results-info {
+	font-size: var( --font-size-small );
+	color: var( --color-subtle );
+	white-space: nowrap;
+}
+
+#mw-searchoptions {
+	background-color: var( --color-surface-1 );
+	border-color: transparent;
+	border-radius: 0;
+
+	h4 {
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-subtle );
+	}
+
+	.divider {
+		border-color: var( --border-color-base );
+	}
+}
+
+#mw-search-interwiki {
+	border-color: var( --border-color-base );
+}
+
+.searchdidyoumean {
+	font-size: 1rem;
+}
+
+.mw-search-createlink,
+.mw-search-exists {
+	color: var( --color-emphasized );
+}
+
+.mw-search-results {
+	max-width: 50em;
+
+	li {
+		padding: var( --space-md ) 0;
+
+		a {
+			font-size: var( --font-size-x-large );
+		}
+	}
+}
+
+.mw-search-result {
+	// padding: var( --space-md ) 0;
+	font-size: var( --font-size-small );
+
+	&-heading {
+		a {
+			// font-size: var( --font-size-x-large );
+			font-weight: var( --font-weight-semi-bold );
+		}
+	}
+
+	&-data {
+		font-size: var( --font-size-small );
+		color: var( --color-subtle );
+	}
+}
+
+.searchmatch {
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+
+	a & {
+		// If searchmatch is part of the link (usually title), use link color
+		color: inherit;
+	}
+}
+
+.searchresults {
+	h2 {
+		padding-bottom: var( --space-xs );
+		margin-bottom: 0;
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-subtle );
+		border-bottom: var( --border-width-base ) solid var( --border-color-base );
+	}
+}
+
+// Somehow got overridden
+.islam-body {
+	.search-types {
+		ul {
+			margin: 0;
+		}
+	}
+
+	.mw-search-results {
+		margin: 0;
+	}
+}
+
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	.results-info {
+		display: none;
+	}
+
+	// Not great but works for now
+	#mw-searchoptions {
+		max-height: 20vh;
+		overflow: auto;
+	}
+
+	.mw-search-createlink,
+	.mw-search-exists {
+		float: none;
+		max-width: none;
+	}
+}

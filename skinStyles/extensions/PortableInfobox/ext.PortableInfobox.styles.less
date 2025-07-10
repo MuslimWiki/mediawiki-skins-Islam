@@ -1,0 +1,91 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:PortableInfobox
+ * Module: ext.PortableInfobox.styles
+ * Version: 0.6 16a77dc
+ *
+ * Date: 2024-04-17
+*/
+
+:root {
+	--pi-background: var( --color-surface-2 );
+	--pi-border-color: var( --border-color-base );
+	--pi-secondary-background: var( --color-surface-3 );
+	--pi-margin: var( --space-md );
+}
+
+.pi-caption {
+	font-size: var( --font-size-small );
+	font-style: normal;
+	font-weight: var( --font-weight-medium );
+	// Align with Islam caption styles
+	color: var( --color-subtle );
+}
+
+.portable-infobox {
+	font-size: var( --font-size-small );
+}
+
+.portable-infobox .pi-title {
+	font-size: var( --font-size-x-large );
+	line-height: var( --line-height-small );
+}
+
+.portable-infobox .pi-header {
+	font-size: var( --font-size-medium );
+	font-weight: var( --font-weight-semi-bold );
+	line-height: var( --line-height-small );
+}
+
+.client-js .pi-collapse {
+	.pi-header:first-child {
+		// So that clicking the header won't highlight the entire section
+		@supports ( user-select: none ) {
+			user-select: none;
+		}
+
+		@supports ( -webkit-user-select: none ) {
+			-webkit-user-select: none;
+		}
+	}
+}
+
+.portable-infobox p {
+	margin: var( --space-xs ) 0; // More akin to Vector
+}
+
+.portable-infobox .pi-horizontal-group {
+	margin-top: 0;
+}
+
+.portable-infobox .pi-section-navigation,
+.portable-infobox .pi-media-collection-tabs {
+	padding-bottom: 0;
+	background-color: var( --color-surface-3 );
+}
+
+.pi-section-navigation .pi-section-tab.pi-section-active,
+.pi-section-navigation .pi-section-tab.current,
+.pi-media-collection .pi-tab-link.current {
+	background: var( --color-surface-2 );
+	border-color: var( --color-progressive );
+	border-bottom-width: 0;
+}
+
+.pi-section-navigation .pi-section-tab,
+.pi-media-collection .pi-tab-link {
+	margin: 0 4px;
+	background: var( --color-surface-2 );
+	border-width: 2px;
+	border-top-left-radius: var( --border-radius-medium );
+	border-top-right-radius: var( --border-radius-medium );
+
+	&:hover {
+		border-color: var( --color-progressive--hover );
+	}
+
+	&:active {
+		border-color: var( --color-progressive--active );
+	}
+}

@@ -1,0 +1,55 @@
+/*
+ * Islam - Diff Styles
+ * https://muslim.wiki
+*/
+
+@import '../../resources/variables.less';
+@import '../../resources/mixins.less';
+
+.diff {
+	display: table; // So that it does not break layout in mobile
+
+	&change {
+		color: var( --color-emphasized );
+	}
+
+	&-lineno {
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+	}
+
+	&-context {
+		color: var( --color-subtle );
+		background: transparent;
+		border-color: var( --border-color-base );
+	}
+
+	&-addedline {
+		border-color: var( --color-success );
+	}
+
+	&-deletedline {
+		border-color: var( --color-destructive );
+	}
+
+	&-addedline,
+	&-deletedline,
+	&-context {
+		.mixin-islam-font-styles( 'small' );
+	}
+
+	&-editfont-monospace {
+		.diff {
+			&-addedline,
+			&-deletedline,
+			&-context {
+				font-family: var( --font-family-monospace );
+			}
+		}
+	}
+}
+
+.mw-diff-movedpara-left::after,
+.mw-diff-movedpara-right::after {
+	color: var( --color-subtle );
+}

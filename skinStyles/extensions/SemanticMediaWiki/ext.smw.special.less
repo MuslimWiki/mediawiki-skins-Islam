@@ -1,0 +1,125 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:SemanticMediaWiki
+ * Module: ext.smw.special
+ * Version: 5.0.2
+ *
+ * Date: 2025-06-12
+*/
+
+/* smw/special/ext.smw.special.css */
+/**
+ * Special:Admin
+ */
+.smw-admin-deprecation-notice-docu-section {
+	color: var( --color-warning );
+	background-color: var( --background-color-warning-subtle );
+	border-color: var( --border-color-base );
+}
+
+.smw-admin-deprecation-notice-section-legend {
+	color: var( --color-subtle );
+}
+
+.smw-admin-deprecation fieldset,
+.smw-pending-task fieldset {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-admin-deprecation fieldset.smw-admin-deprecation-notice-section-legend {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-admin-alerts-section-legend {
+	color: var( --color-subtle );
+}
+
+.smw-admin-alerts-section-legend p {
+	color: var( --color-base );
+}
+
+.smw-admin-alerts fieldset {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-admin-alerts fieldset.smw-admin-alerts-section-legend {
+	border-top-color: var( --border-color-base );
+}
+
+.smw-admin-alerts-section-legend-info {
+	color: var( --color-warning );
+}
+
+.smw-admin-alerts-section-legend-info p {
+	color: var( --color-base );
+}
+
+.smw-admin-alerts fieldset.smw-admin-alerts-section-legend-info {
+	border-top-color: var( --color-warning );
+}
+
+.smw-admin-hr {
+	background-color: var( --color-surface-2 );
+}
+
+.smw-special-filter-button {
+	color: var( --color-base );
+	border-color: var( --border-color-base );
+}
+
+.smw-special-filter-button:hover {
+	background-color: var( --background-color-button-quiet--hover );
+}
+
+// Added active state
+.smw-special-filter-button:active {
+	background-color: var( --background-color-button-quiet--active );
+}
+
+.smw-special-filter-button a,
+.smw-special-filter-button a:hover,
+.smw-special-filter-button a:focus,
+.smw-special-filter-button a:active,
+.smw-special-filter-button a:visited {
+	color: var( --color-base );
+}
+
+/**
+ * Tabbed admin
+ */
+.smw-admin section {
+	border-color: var( --border-color-base );
+}
+
+.smw-admin input.nav-tab:checked + label.nav-label {
+	border-color: var( --border-color-base );
+	border-top-color: var( --color-warning );
+	border-bottom-color: transparent;
+}
+
+.smw-admin input.nav-tab:checked + label.nav-label.smw-tab-warning {
+	border-top-color: var( --color-destructive );
+}
+
+.smw-admin input.nav-tab:checked + label.nav-label.smw-tab-notice {
+	border-top-color: var( --color-warning );
+}
+
+.client-nojs .smw-admin-supplementary-duplookup-content::after {
+	color: var( --color-destructive );
+	background-color: var( --color-surface-2 );
+}
+
+.smw-admin h3,
+h3.smw-title,
+h4.smw-title,
+h3 .smw-title {
+	background: var( --color-surface-2 );
+}
+
+.smw-admin h3,
+h3.smw-title {
+	color: var( --color-emphasized );
+	border-bottom-color: var( --border-color-base );
+}

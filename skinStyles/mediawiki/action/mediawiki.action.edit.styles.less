@@ -1,0 +1,52 @@
+/*
+ * Islam
+ *
+ * SkinStyles for MediaWiki core
+ * Module: mediawiki.action.edit.styles.less
+ * Version: REL1_39 3baf9e1
+ *
+ * Date: 2022-11-08
+*/
+
+@import '../../../resources/mixins.less';
+
+// Needed the specificity
+.skin-islam {
+	.mw-editform {
+		#wpTextbox1 {
+			padding: 0;
+			padding-bottom: var( --space-lg );
+			background-color: transparent;
+			border: 0;
+
+			&:focus {
+				outline: 0;
+			}
+		}
+
+		.editOptions {
+			padding: var( --space-lg );
+			font-size: var( --font-size-small );
+			color: var( --color-base );
+			background-color: var( --color-surface-2 );
+			border: 0;
+			border-radius: var( --border-radius-large );
+		}
+
+		#editpage-copywarn {
+			margin-top: var( --space-sm );
+			margin-bottom: var( --space-sm );
+			color: var( --color-subtle );
+			.mixin-islam-font-styles( 'small' );
+		}
+
+		.editButtons {
+			margin-top: var( --space-md );
+		}
+	}
+}
+
+// Disable sticky header
+#islam-page-header-sticky-sentinel {
+	display: none;
+}

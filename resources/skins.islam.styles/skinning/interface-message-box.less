@@ -1,0 +1,48 @@
+/*
+ * Islam
+ *
+ * Module: mediawiki.skinning.interface-message-box
+ * Version: REL1_39
+ *
+ * Date: 2023-06-22
+ */
+
+.mw-message-box {
+	padding: var( --space-sm ) var( --space-md );
+	overflow: hidden;
+	color: var( --color-emphasized );
+	overflow-wrap: break-word;
+	background-color: var( --color-surface-2 );
+	border: var( --border-width-base ) solid var( --border-color-base );
+	border-radius: var( --border-radius-base );
+
+	/* Ensure box inner spacing is not all over the place no matter what element is only child. */
+	> :only-child {
+		margin: 0;
+	}
+
+	// Formerly provided by mw-warning-with-logexcerpt, now available for all messageboxes.
+	.mw-logevent-loglines li {
+		font-size: 90%;
+	}
+
+	&-error {
+		background-color: var( --background-color-destructive-subtle );
+	}
+
+	&-warning {
+		background-color: var( --background-color-warning-subtle );
+	}
+
+	&-success {
+		background-color: var( --background-color-success-subtle );
+	}
+}
+
+#siteNotice {
+	.mw-message-box {
+		border: 0;
+		// Since it is edge to edge
+		border-radius: 0;
+	}
+}

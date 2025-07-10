@@ -1,0 +1,25 @@
+.islam-siteStats {
+	--size-icon: 0.875rem;
+	display: flex;
+	gap: var( --space-md );
+	.mixin-islam-font-styles( 'overline' );
+	white-space: nowrap;
+
+	&__item {
+		display: flex;
+		gap: var( --space-xs );
+		align-items: center;
+	}
+
+	.islam-ui-icon {
+		width: 0.875rem;
+		height: 0.875rem;
+	}
+}
+
+/* Can't display all in one line so let's hide file */
+@media ( max-width: 480px ) {
+	#islam-siteStats__item--images {
+		display: none;
+	}
+}

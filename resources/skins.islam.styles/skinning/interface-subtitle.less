@@ -1,0 +1,44 @@
+/*
+ * Islam
+ *
+ * Module: mediawiki.skinning.interface-subtitle
+ * Version: REL1_43
+ *
+ * Date: 2025-06-25
+ */
+
+#siteSub,
+#contentSub,
+#contentSub2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var( --color-subtle );
+	.mixin-islam-font-styles( 'small' );
+}
+
+#siteSub {
+	// Reduced line height for siteSub
+	line-height: var( --line-height-x-small );
+}
+
+// Reduced spacing if both sub1 and 2 exists
+#contentSub + #contentSub2 {
+	margin-top: ~'calc( var( --space-xs ) * -1 )';
+}
+
+#islam-tagline-user > span + span::before {
+	margin: 0 var( --space-xxs );
+	content: '·';
+
+	@supports ( user-select: none ) {
+		user-select: none;
+	}
+
+	@supports ( -webkit-user-select: none ) {
+		-webkit-user-select: none;
+	}
+}
+
+span.subpages {
+	display: block;
+}

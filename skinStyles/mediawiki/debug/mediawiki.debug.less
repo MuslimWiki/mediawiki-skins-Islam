@@ -1,0 +1,158 @@
+/*
+ * Islam
+ *
+ * SkinStyles for MediaWiki core
+ * Module: mediawiki.debug
+ * Version: REL1_43
+ *
+ * Date: 2025-01-03
+*/
+
+@import '../../../resources/variables.less';
+
+/* $wgDebugToolbar = true; */
+#jquery-foot-hovzer {
+	z-index: @z-index-toolbar;
+	// @see https://caniuse.com/mdn-css_properties_width_stretch
+	width: -webkit-fill-available;
+	width: -moz-available;
+	margin-bottom: var( --header-size );
+
+	@media ( min-width: @min-width-breakpoint-desktop ) {
+		margin-bottom: 0;
+		// So that it is not hidden by header
+		margin-left: ~'calc( var( --header-size ) + 1px )'; // compensate border
+	}
+}
+
+.mw-debug {
+	background-color: var( --color-surface-0 );
+	border-top-color: var( --border-color-base );
+
+	table {
+		tr {
+			background-color: var( --color-surface-1 );
+
+			&:nth-child( even ) {
+				background-color: var( --color-surface-2 );
+			}
+		}
+
+		td {
+			border-bottom-color: var( --border-color-base );
+
+			span.stats {
+				color: var( --color-subtle );
+			}
+		}
+	}
+}
+
+.mw-debug-bits {
+	display: flex;
+	overflow-x: auto;
+	white-space: nowrap;
+	border-bottom: 0;
+}
+
+.mw-debug-bit {
+	padding: var( --space-sm );
+}
+
+#mw-debug-mwversion {
+	flex-grow: 1;
+}
+
+.mw-debug-panelink {
+	background-color: transparent;
+	border-color: transparent !important;
+
+	&:hover {
+		background-color: var( --background-color-button-quiet--hover );
+	}
+
+	&:active {
+		background-color: var( --background-color-button-quiet--active );
+	}
+
+	&.current {
+		background-color: transparent;
+		box-shadow: inset 0 -2px 0 0 var( --color-progressive );
+	}
+}
+
+a.mw-debug-panelabel,
+a.mw-debug-panelabel:visited {
+	color: var( --color-emphasized );
+}
+
+.mw-debug-pane {
+	background-color: var( --color-surface-2 );
+}
+
+#mw-debug-pane-request {
+	tr,
+	th,
+	td,
+	table {
+		border-color: var( --border-color-base );
+	}
+
+	th {
+		font-weight: var( --font-weight-semi-bold );
+		background-color: transparent;
+	}
+
+	td {
+		color: var( --color-emphasized );
+		background-color: var( --background-color-success-subtle );
+	}
+}
+
+.mw-debug-backtrace {
+	background-color: var( --color-surface-3 );
+
+	span {
+		font-weight: var( --font-weight-semi-bold );
+		color: var( --color-emphasized );
+	}
+
+	li {
+		color: var( --color-base );
+	}
+}
+
+.mw-debug-console-log {
+	background-color: var( --background-color-progressive-subtle );
+}
+
+.mw-debug-console-warn {
+	background-color: var( --background-color-warning-subtle );
+}
+
+.mw-debug-console-deprecated {
+	background-color: var( --background-color-destructive-subtle );
+}
+
+/* $wgShowDebug = true; */
+#mw-html-debug-log {
+	padding: 0 var( --padding-page );
+
+	// Label text
+	> strong {
+		font-size: var( --font-size-small );
+		font-weight: var( --font-weight-medium );
+		color: var( --color-subtle );
+	}
+
+	@media ( min-width: @min-width-breakpoint-desktop ) {
+		// So that it is not hidden by header
+		margin-left: var( --header-size );
+	}
+}
+
+#mw-debug-html {
+	padding-left: var( --space-lg ); // So that it is not clipped
+	margin-left: 0;
+	overflow-x: auto;
+}

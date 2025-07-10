@@ -1,0 +1,40 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Lingo
+ * Module: ext.Lingo
+ * Version: REL1_35 e948775
+ *
+ * Date: 2022-04-29
+*/
+
+@import '../../../resources/mixins.less';
+
+@media screen {
+	span.mw-lingo-term {
+		border-bottom-color: var( --color-subtle );
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+	}
+}
+
+.mw-lingo-tooltip {
+	color: var( --color-base );
+	background-color: var( --color-surface-1 );
+	border: 0;
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-drop-xx-large );
+	.mixin-islam-font-styles( 'small' );
+
+	.qtip-content {
+		padding: var( --space-sm );
+	}
+}
+
+.mw-lingo-definition-link {
+	& > a::before {
+		filter: var( --filter-invert );
+	}
+}

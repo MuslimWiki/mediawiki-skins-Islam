@@ -1,0 +1,57 @@
+/*
+ * Islam - SRF jQplot Core
+ * https://starcitizen.tools
+*/
+
+@import '../../../../resources/variables.less';
+
+.skin-theme-clientpref-night {
+	.jqplot-target {
+		color: var( --color-subtle );
+	}
+
+	.jqplot-meterGauge-tick {
+		color: var( --color-subtle );
+	}
+
+	.jqplot-meterGauge-label {
+		color: var( --color-subtle );
+	}
+
+	table.jqplot-table-legend,
+	table.jqplot-cursor-legend {
+		background-color: var( --color-surface-0 );
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	div.jqplot-table-legend-swatch-outline {
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	table.jqplot-cursor-tooltip {
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.jqplot-cursor-tooltip {
+		background: @dark-bg-30;
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	.jqplot-highlighter-tooltip,
+	.jqplot-canvasOverlay-tooltip {
+		background: @dark-bg-30;
+		border: var( --border-width-base ) solid @dark-bg-20;
+	}
+
+	div.jqplot-bubble-label {
+		color: var( --color-base );
+	}
+
+	div.jqplot-bubble-label.jqplot-bubble-label-highlight {
+		background: var( --color-surface-3 );
+	}
+
+	div.jqplot-noData-container {
+		background-color: @dark-bg-10;
+	}
+}

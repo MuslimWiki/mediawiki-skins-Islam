@@ -1,0 +1,119 @@
+html,
+body {
+	font-family: var( --font-family-base );
+	font-variation-settings: 'GRAD' var( --font-grade );
+	font-weight: var( --font-weight-normal );
+	/*
+	 * TODO: Revisit this when italic VF is better supported
+	 * Don't let browser faux font styles and weight
+	 * 1. We are already using VF
+	 * 2. Not all font styles apply to some languages (e.g. Italic is different in ZH)
+	 */
+	// font-synthesis: none;
+}
+
+input {
+	font-family: var( --font-family-base ); // Override browser's default
+}
+
+b,
+strong {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+cite {
+	font-style: inherit;
+}
+
+p:not( .mw-empty-elt ) {
+	+ ul,
+	+ ol,
+	+ table,
+	+ dl,
+	+ blockquote {
+		margin-top: calc( var( --space-xs ) * -1 );
+	}
+}
+
+blockquote {
+	font-style: italic;
+	.mixin-islam-font-styles( 'body' );
+
+	@supports ( text-wrap: pretty ) {
+		text-wrap: pretty;
+	}
+
+	cite {
+		font-style: normal;
+		.mixin-islam-font-styles( 'small' );
+	}
+}
+
+figcaption {
+	color: var( --color-subtle );
+	.mixin-islam-font-styles( 'small' );
+}
+
+em {
+	&:lang( ja ),
+	&:lang( ko ),
+	&:lang( mn ),
+	&:lang( zh ) {
+		/* CJK languages do not use italics for emphasis */
+		font-style: normal;
+		text-emphasis: filled;
+	}
+
+	&:lang( ja ),
+	&:lang( ko ),
+	&:lang( mn ) {
+		text-emphasis-position: over right;
+	}
+
+	&:lang( zh ) & {
+		text-emphasis-position: under right;
+	}
+}
+
+.islam-body {
+	font-size: var( --font-size-medium );
+	line-height: var( --line-height-content );
+
+	/* CJK languages need increased line-height for readability */
+	&:lang( ja ),
+	&:lang( ko ),
+	&:lang( zh ) {
+		--line-height-content: 1.75;
+	}
+}
+
+/*
+ * Utility classes
+ */
+.islam-text-heading-1 {
+	.mixin-islam-font-styles( 'heading-1' );
+}
+
+.islam-text-heading-2 {
+	.mixin-islam-font-styles( 'heading-2' );
+}
+
+.islam-text-heading-3 {
+	.mixin-islam-font-styles( 'heading-3' );
+}
+
+.islam-text-heading-4 {
+	.mixin-islam-font-styles( 'heading-4' );
+}
+
+.islam-text-body {
+	.mixin-islam-font-styles( 'body' );
+}
+
+.islam-text-small {
+	.mixin-islam-font-styles( 'small' );
+}
+
+.islam-text-overline {
+	.mixin-islam-font-styles( 'overline' );
+}

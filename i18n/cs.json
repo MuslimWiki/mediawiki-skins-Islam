@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"language": "Czech",
+		"language_code": "cs",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Georg101",
+			"Kareyac",
+			"Want"
+		],
+		"note": "Czech language used in the Czech Republic."
+	},
+	"islam-sitestats-articles-label": "články",
+	"islam-sitestats-images-label": "Soubory",
+	"islam-sitestats-users-label": "uživatelé",
+	"islam-sitestats-edits-label": "Úpravy",
+	"islam-page-info-copyright": "Autorská práva",
+	"islam-jumptotop": "Zpět nahoru",
+	"islam-tagline-ns-project": "Informace o {{SITENAME}}",
+	"islam-tagline-ns-template": "Stránka šablony",
+	"islam-tagline-ns-help": "Nápověda",
+	"islam-tagline-ns-category": "Stránka kategorie"
+}

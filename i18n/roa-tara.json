@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"language": "Tarantino (Southern Italian) ",
+		"language_code": "roa-tara",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Joetaras"
+		],
+		"note": "Regional dialect of Southern Italy"
+	},
+	"islam-skin-desc": "'Nu skin responsive sveluppate pa Uicchi  Islam",
+	"islam.css": "/* Tutte le CSS aqquà avène carecate pe le utinde ca ausane 'a masckere Islam */",
+	"islam.js": "/* Tutte le JavaScript aqquà avène carecate pe le utinde ca ausane 'a masckere Islam */",
+	"islam-drawer-toggle": "Live/mitte 'u menù",
+	"islam-usermenu-toggle": "Live/mitte 'u menù personale",
+	"islam-search-toggle": "Live/mitte 'a recerche",
+	"islam-sitestats-articles-label": "vôsce",
+	"islam-sitestats-images-label": "fail",
+	"islam-sitestats-users-label": "utinde",
+	"islam-sitestats-edits-label": "cangiaminde",
+	"islam-footer-desc": "Cange stu teste sus a [[MediaWiki:Islam-footer-desc]]",
+	"islam-footer-tagline": "Cange stu teste sus a [[MediaWiki:Islam-footer-tagline]]",
+	"islam-action-addsection": "Aggiunge 'n'argomende",
+	"islam-jumptotop": "Tuèrne sus",
+	"islam-search-fulltext": "Cirche le pàggene ca tènene",
+	"islam-search-empty-desc": "Scrive pe accumenzà 'a recerche",
+	"islam-tagline-ns-talk": "Pàgene de le 'ngazzaminde de {{SUBJECTPAGENAME}}",
+	"islam-tagline-ns-project": "'Mbormaizune sus a {{SITENAME}}",
+	"islam-tagline-ns-file": "Fail sus a {{SITENAME}}",
+	"islam-tagline-ns-mediawiki": "Pàgene de inderfacce de MediaUicchi",
+	"islam-tagline-ns-template": "Pàgene d'u template",
+	"islam-tagline-ns-help": "Pàgene d'ajute",
+	"islam-tagline-ns-category": "Pàgene d'a categorije"
+}

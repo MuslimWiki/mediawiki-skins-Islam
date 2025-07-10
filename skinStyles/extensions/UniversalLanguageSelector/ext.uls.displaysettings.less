@@ -1,0 +1,67 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UniversalLanguageSelector
+ * Module: ext.uls.displaysettings
+ * Version: MLEB 2021.12
+ *
+ * Date: 2022-05-17
+*/
+
+/* ext.uls.inputsettings.less */
+.uls-ime-menu-settings-item {
+	color: var( --color-base );
+	background-color: var( --color-surface-2 );
+	border-top-color: var( --border-color-base );
+	border-radius: 0 0 var( --border-radius-medium ) var( --border-radius-medium );
+}
+
+.uls-ime-disable-link,
+.uls-ime-more-settings-link,
+.ime-checked .ime-perime-help {
+	filter: var( --filter-invert );
+}
+
+.uls-ime-menu-settings-item > a:hover {
+	color: var( --color-emphasized );
+	background-color: var( --color-surface-2 );
+}
+
+.uls-input-settings-disable-info,
+.uls-input-settings-no-inputmethods {
+	color: var( --color-subtle );
+}
+
+.down + .uls-input-settings-caret {
+	border-bottom-color: var( --color-surface-2 );
+}
+
+.uls-input-settings .uls-input-settings-inputmethods-list {
+	background: var( --color-surface-2 );
+}
+
+.uls-ime-notification-bubble .link {
+	color: var( --color-progressive );
+}
+
+/* ext.uls.displaysettings.less */
+.ext-uls-sub-panel {
+	border-top-color: var( --border-color-base );
+}
+
+.uls-font-item {
+	background: var( --color-surface-2 );
+	border-bottom-color: var( --border-color-base );
+
+	&:first-child {
+		border-top-color: var( --border-color-base );
+	}
+}
+
+.uls-font-label {
+	color: var( --color-subtle );
+}
+
+.uls-font-label strong {
+	color: var( --color-base );
+}

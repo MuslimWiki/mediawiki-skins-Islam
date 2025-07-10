@@ -1,0 +1,44 @@
+/*
+ * Islam
+ *
+ * SkinStyles for MediaWiki
+ * Module: mediawiki.special.userlogin.common.styles
+ * Version: REL1_43
+ *
+ * Date: 2025-01-03
+*/
+
+@import '../../../resources/variables.less';
+
+.skin-islam {
+	.mw-ui-container {
+		gap: 0;
+		overflow: hidden; // quick hack for rounded corner
+		border: 1px solid var( --border-color-base );
+		border-radius: var( --border-radius-large );
+
+		> div {
+			display: grid;
+			flex-grow: 1;
+			place-content: center;
+			padding: var( --space-xxl );
+		}
+	}
+
+	.mw-htmlform {
+		width: auto;
+		max-width: @size-2400;
+	}
+
+	.mw-userlogin-username {
+		margin-top: 0;
+	}
+}
+
+#userloginForm {
+	.cdx-button,
+	.cdx-text-input__input {
+		// Increase button and input height
+		min-height: @min-size-interactive-touch;
+	}
+}

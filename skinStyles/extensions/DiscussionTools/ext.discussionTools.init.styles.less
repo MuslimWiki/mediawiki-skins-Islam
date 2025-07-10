@@ -1,0 +1,59 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:DiscussionTools
+ * Module: ext.discussionTools.init.styles
+ * Version: REL1_43
+ */
+
+.ext-discussiontools-visualenhancements-enabled {
+	h2.ext-discussiontools-ui-newTopic-sectionTitle {
+		font-size: var( --font-size-xx-large );
+	}
+
+	.ext-discussiontools-init-section {
+		/* Islam use flex layout for mw-heading, so we need to adjust the float hacks used in DiscussionTools */
+		flex-wrap: wrap;
+
+		/* HACK: Needed the specificity to override DiscussionTools styles */
+		&-subscribeButton.oo-ui-buttonElement.oo-ui-buttonElement.oo-ui-buttonElement {
+			order: 9999;
+			margin-inline-start: 0 !important;
+		}
+
+		&-bar {
+			order: 10000;
+			width: 100%;
+			font-size: var( --font-size-x-small );
+		}
+
+		&-metaitem,
+		&.mw-heading2-metaitem {
+			margin-block: var( --space-xxs );
+			line-height: var( --line-height-small );
+		}
+	}
+}
+
+/* Fix hard-coded font-family in DiscussionTools */
+.ext-discussiontools-visualenhancements-enabled .ext-discussiontools-init-section.mw-heading2,
+.ext-discussiontools-visualenhancements-enabled .ext-discussiontools-init-section,
+.ext-discussiontools-visualenhancements-enabled .ext-discussiontools-init-section.mw-heading2 h2,
+.ext-discussiontools-visualenhancements-enabled .ext-discussiontools-init-section h2,
+h2.ext-discussiontools-ui-newTopic-sectionTitle .oo-ui-inputWidget-input {
+	font-family: var( --font-family-base ) !important;
+	font-weight: var( --font-weight-semi-bold ) !important;
+}
+
+/* Remove additional space in the title after the colon */
+.ext-discussiontools-visualenhancements_pageframe-enabled {
+	.mw-page-title-separator::after {
+		content: '' !important;
+	}
+}
+
+.ext-discussiontools-init-replylink-buttons {
+	.ext-discussiontools-init-replylink-open & > .ext-discussiontools-init-replylink-reply {
+		color: var( --color-subtle );
+	}
+}

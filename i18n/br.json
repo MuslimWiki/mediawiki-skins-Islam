@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"language": "Breton",
+		"language_code": "br",
+		"direction": "ltr",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Adriendelucca"
+		],
+		"note": "Breton, a Celtic language spoken in Brittany, France."
+	},
+	"islam-theme-name": "Islam",
+	"islam-theme-description": "Cheñch tem ar wiki",
+	"islam-theme-day-label": "Sklaer",
+	"islam-theme-night-label": "Teñval",
+	"islam-theme-os-label": "Emgefre",
+	"islam-theme-exclusion-notice": "E mod sklaer e vez ar bajenn-mañ atav.",
+	"islam-feature-pure-black-name": "Mod peurzu",
+	"islam-feature-pure-black-0-label": "Lazhet",
+	"islam-feature-pure-black-1-label": "Enaouet",
+	"islam-feature-custom-font-size-name": "Testenn",
+	"islam-feature-custom-font-size-small-label": "Bihan",
+	"islam-feature-custom-font-size-standard-label": "Standard",
+	"islam-feature-custom-font-size-large-label": "Bras",
+	"islam-feature-custom-width-name": "Ledander",
+	"islam-feature-custom-width-standard-label": "Standard",
+	"islam-feature-custom-width-wide-label": "Ledan",
+	"islam-feature-custom-width-full-label": "Leun"
+}

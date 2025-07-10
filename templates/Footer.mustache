@@ -1,0 +1,36 @@
+ {{!
+	@typedef object footerItem
+	@prop string id of list item element
+	@prop string html of list item
+	@prop footerItem[] items
+
+	@typedef object footerRow
+	@prop string className of list element
+	@prop string id of list element
+	@prop footerItem[] array-items
+
+	footerRow[] array-footer-rows iterable list of footer rows
+	footerRow[] array-footer-icons iterable list of footer icons
+	string msg-sitetitle
+	string msg-islam-footer-desc
+	string msg-islam-footer-tagline
+}}
+
+<footer class="mw-footer islam-footer" {{{html-user-language-attributes}}}>
+	<div class="islam-footer__container">
+		<section class="islam-footer__content">
+			<div class="islam-footer__siteinfo">
+				<div id="footer-sitetitle" class="islam-footer__sitetitle mw-wiki-title">
+					<img class="mw-logo-icon" src="{{>Logo_icon_src}}" alt="" aria-hidden="true" loading="lazy" height="48" width="48">
+					{{>Wordmark}}
+				</div>
+				<p id="footer-desc" class="islam-footer__desc">{{{msg-islam-footer-desc}}}</p>
+			</div>
+			{{#data-places}}{{>Footer__row}}{{/data-places}}
+		</section>
+		<section class="islam-footer__bottom">
+			<div id="footer-tagline">{{{msg-islam-footer-tagline}}}</div>
+			{{#data-icons}}{{>Footer__row}}{{/data-icons}}
+		</section>
+	</div>
+</footer>

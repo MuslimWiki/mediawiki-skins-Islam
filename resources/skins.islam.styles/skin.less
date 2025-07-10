@@ -1,0 +1,67 @@
+// Islam main styles
+
+@import '../variables.less';
+@import '../mixins.less';
+
+// Common
+@import 'tokens.less';
+@import 'fonts.less';
+@import 'common/typography.less';
+@import 'common/viewTransition.less';
+@import 'skinning/elements.less';
+
+// FIXME: It is not great to load both Parsoid and Parsoid legacy media styles
+// Maybe there is a way to detect it without introducing a new RL module?
+@import 'skinning/content.media-common.less';
+@import 'skinning/interface-subtitle.less';
+
+@media screen {
+	@import 'layout.less';
+	@import 'common/features.less';
+	@import 'common/common.less';
+	@import 'common/content.less';
+	@import 'common/hacks.less';
+	@import 'common/progressbar.less';
+	@import 'common/links.less';
+
+	// Components
+	@import 'components/Button.less';
+	@import 'components/Header.less';
+	@import 'components/Drawer.less';
+	@import 'components/Drawer__button.less';
+	@import 'components/UserMenu.less';
+	@import 'components/Search.less';
+	@import 'components/Search__button.less';
+	@import 'components/Pagetools.less';
+	@import 'components/Menu.less';
+	@import 'components/Dropdown.less';
+	@import 'components/PageHeader.less';
+	@import 'components/PageSidebar.less';
+	@import 'components/PageFooter.less';
+	@import 'components/Footer.less';
+	@import 'components/TableOfContents.less';
+	@import 'components/StickyHeader.less';
+	@import 'components/Sitestats.less';
+	@import 'components/Sections.less';
+	@import 'components/OverflowElements.less';
+	@import 'components/UserInfo.less';
+	@import 'components/Wordmark.less';
+	@import 'components/KeyboardHint.less';
+	@import 'components/IconAnimation.less';
+
+	// Mediawiki.skinning
+	// This get loaded regardless so we don't have to use skinStyles to target them
+	// It is organized to be same as core because naming is hard :'(
+	// @see https://github.com/wikimedia/mediawiki/commits/master/resources/src/mediawiki.skinning
+	@import 'skinning/content.tables.less';
+	@import 'skinning/content.media-screen.less';
+	@import 'skinning/interface-edit-section-links.less';
+	@import 'skinning/interface-message-box.less';
+	@import 'skinning/interface-user-message.less';
+	@import 'skinning/interface-site-notice.less';
+	@import 'skinning/interface.category.less';
+}
+
+@media print {
+	@import 'common/print.less';
+}

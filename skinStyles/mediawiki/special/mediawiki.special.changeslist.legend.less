@@ -1,0 +1,42 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Special:RecentChanges and Watchlist
+ * Module: mediawiki.special.changeslist.legend
+ * Version: 1.39.0
+ *
+ * Date: 2023-05-29
+*/
+
+@import '../../../resources/variables.less';
+@import '../../../resources/mixins.less';
+
+// Need additional parent to override
+.mw-changeslist-legend {
+	position: relative;
+	z-index: @z-index-stacking-2 !important; // so it is not covered by the date header
+	padding: var( --space-sm );
+	border-radius: var( --border-radius-base );
+	.mixin-islam-font-styles( 'small' );
+
+	// Islam label styles
+	strong {
+		font-weight: var( --font-weight-medium );
+		color: var( --color-subtle );
+	}
+
+	dl,
+	ul {
+		margin-top: var( --space-xs );
+	}
+
+	ul {
+		margin-bottom: 0;
+		margin-left: var( --space-sm );
+	}
+
+	@media ( max-width: @max-width-breakpoint-tablet ) {
+		float: none;
+		margin: 0;
+	}
+}

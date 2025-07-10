@@ -1,0 +1,80 @@
+@page {
+	margin: 1cm;
+}
+
+:root {
+	--border-color-base: #aaa !important;
+	--border-width-base: 1pt;
+	--border-width-thick: 2pt;
+}
+
+// Hide unnessecary elements for printing
+.noprint,
+.islam-header,
+.islam-sitenotice-container,
+.page-actions,
+#islam-page-header-sticky-sentinel,
+#islam-page-header-sticky-placeholder,
+.islam-page-footer,
+.islam-page-sidebar,
+#footer-desc,
+#footer-places,
+.islam-overflow-nav {
+	display: none !important;
+}
+
+a {
+	color: #000;
+	border-bottom: 1pt solid var( --border-color-base );
+}
+
+table,
+img,
+svg {
+	break-inside: avoid;
+}
+
+/* HACK: Move footer to the top */
+.islam-page-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.islam-footer {
+	order: -1;
+	padding-block: var( --space-md );
+	margin-bottom: var( --space-md );
+	border-bottom: 1pt solid var( --border-color-base );
+}
+
+.islam-footer__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#footer-tagline {
+	font-size: 9pt;
+}
+
+#firstHeading {
+	margin: 0;
+}
+
+.printfooter {
+	margin-top: 1em;
+	font-size: 9pt;
+	border-top: 1pt solid var( --border-color-base );
+}
+
+.wikitable {
+	margin: 1em 0;
+	border-collapse: collapse;
+	border: 1pt solid var( --border-color-base );
+}
+
+.wikitable th,
+.wikitable td {
+	padding: var( --space-xs ) var( --space-sm );
+	border: 1pt solid var( --border-color-base );
+}

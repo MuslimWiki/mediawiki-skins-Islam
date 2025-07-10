@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+      "language": "LANGUAGE_NAME_HERE",
+      "language_code": "xx",
+      "direction": "ltr",
+      "authors": [
+        "[LinkToUserSite YourNameHere]",
+        "[LinkToUserSite AnotherNameHere]"
+      ],
+      "note": "Template for new translations. Copy and modify this file when creating a new language."
+    },
+    "example-key": "Translation goes here"
+  }

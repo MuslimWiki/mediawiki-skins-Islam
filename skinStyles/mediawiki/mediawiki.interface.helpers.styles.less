@@ -1,0 +1,33 @@
+/*
+ * Islam
+ *
+ * SkinStyles for helper classes used across special pages and actions
+ * Module: mediawiki.interface.helpers.styles
+ * Version: REL1_43
+ *
+ * Date: 2025-06-25
+*/
+
+@import 'mediawiki.skin.variables.less';
+@import '../../resources/mixins.less';
+
+.unpatrolled {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+.newpage,
+.minoredit,
+.botedit {
+	font-weight: var( --font-weight-semi-bold );
+}
+
+// Backported from T381315 for MW 1.43
+.mw-logevent-actionlink,
+.mw-logevent-tool,
+.mw-diff-tool,
+.mw-pager-tools {
+	a {
+		.cdx-mixin-link-base();
+		.islam-cdx-mixin-link-base-overrides();
+	}
+}

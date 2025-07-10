@@ -1,0 +1,34 @@
+{{!
+	string form-action action attribute of the search form
+	string page-title page title of the search page
+	string msg-search search text label
+	string html-input raw HTML containing the input box of the search box
+	string html-random-href URL of Special:Random
+	string msg-randompage tooltip message for random page button
+}}
+<div class="islam-search islam-header__item islam-dropdown">
+	<details id="islam-search-details" class="islam-dropdown-details">
+		{{>Search__button}}
+	</details>
+	<div role="search" id="islam-search__card" class="islam-search-box islam-search__card islam-menu__card">
+		<div class="islam-menu__card-backdrop"></div>
+		<div class="islam-menu__card-content">
+			<form action="{{form-action}}" class="islam-search__form" id="searchform" autocomplete="off">
+				<input type="hidden" name="title" value="{{page-title}}">
+				<label class="islam-search__formIcon" for="searchInput">
+					<span class="islam-search__icon islam-ui-icon mw-ui-icon-wikimedia-search"></span>
+					<span class="screen-reader-text">{{msg-search}}</span>
+				</label>
+				{{{html-input}}}
+				<a
+					class="islam-search__random islam-search__formButton"
+					href="{{html-random-href}}"
+					title="{{msg-randompage}}">
+					<span class="islam-ui-icon mw-ui-icon-wikimedia-die"></span>
+					<span class="screen-reader-text">{{msg-random}}</span>
+				</a>
+			</form>
+			{{>SearchFooter}}
+		</div>
+	</div>
+</div>

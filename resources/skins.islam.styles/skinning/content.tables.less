@@ -1,0 +1,138 @@
+/*
+ * Islam
+ *
+ * Module: mediawiki.skinning.content.tables
+ * Version: REL1_43
+ *
+ * Date: 2025-03-29
+*/
+
+.wikitable {
+	display: block;
+	max-width: max-content; // Needed for the border
+	margin: var( --space-md ) 0;
+	overflow-x: auto;
+	border-collapse: collapse;
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-border );
+	.mixin-islam-font-styles( 'small' );
+
+	caption {
+		padding: var( --space-xs ) var( --space-sm );
+		color: var( --color-emphasized );
+		text-align: start;
+		.mixin-islam-font-styles( 'heading-4' );
+	}
+
+	tbody tr {
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+	}
+
+	th {
+		text-align: start;
+	}
+
+	th,
+	td {
+		padding: var( --space-xs ) var( --space-sm );
+	}
+
+	tr {
+		&:first-of-type {
+			th,
+			td {
+				&:first-child {
+					border-left-width: 0;
+					border-top-left-radius: var( --border-radius-medium );
+				}
+
+				&:last-child {
+					border-right-width: 0;
+					border-top-right-radius: var( --border-radius-medium );
+				}
+			}
+		}
+
+		&:last-of-type {
+			th,
+			td {
+				&:first-child {
+					border-left-width: 0;
+					border-bottom-left-radius: var( --border-radius-medium );
+				}
+
+				&:last-child {
+					border-right-width: 0;
+					border-bottom-right-radius: var( --border-radius-medium );
+				}
+			}
+		}
+	}
+
+	/* Add border separator between caption, tr, thead, tbody, tfoot */
+	> :where( caption, tr, thead, tbody, tfoot ):not( [ hidden ] ) ~ :where( caption, tr, thead, tbody, tfoot ):not( [ hidden ] ),
+	> :where( thead, tbody, tfoot ) > :where( tr, thead, tbody, tfoot ):not( [ hidden ] ) ~ :where( tr, thead, tbody, tfoot ):not( [ hidden ] ) {
+		border-top: var( --border-width-base ) solid var( --border-color-base );
+	}
+
+	/* Reset border radius between thead tbody, tbody tfoot, etc. */
+	> :where( thead, tbody, tfoot ):has( + :where( thead, tbody, tfoot ):not( :empty ) ) {
+		tr:last-of-type {
+			th,
+			td {
+				&:first-child {
+					border-bottom-left-radius: var( --border-radius-sharp );
+				}
+
+				&:last-child {
+					border-bottom-right-radius: var( --border-radius-sharp );
+				}
+			}
+		}
+	}
+
+	> :where( thead, tbody, tfoot ) + :where( thead, tbody, tfoot ):not( :empty ) {
+		tr:first-of-type {
+			th,
+			td {
+				&:first-child {
+					border-top-left-radius: var( --border-radius-sharp );
+				}
+
+				&:last-child {
+					border-top-right-radius: var( --border-radius-sharp );
+				}
+			}
+		}
+	}
+
+	&--border {
+		tr {
+			> :is( th, td ):not( [ hidden ] ) {
+				border-right: var( --border-width-base ) solid var( --border-color-base );
+				border-left: var( --border-width-base ) solid var( --border-color-base );
+
+				&:first-child {
+					border-left: 0;
+				}
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+	}
+
+	&--stripe {
+		tbody tr:nth-child( even ) {
+			background-color: var( --color-surface-2 );
+		}
+	}
+
+	&--fluid {
+		width: 100%;
+	}
+}

@@ -1,0 +1,45 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:TabberNeue
+ * Module: ext.tabberNeue
+ * Version: 2.6.0
+ *
+ * Date: 2024-11-16
+*/
+
+.tabber {
+	&__header {
+		&__prev,
+		&__next {
+			&::after {
+				opacity: var( --opacity-icon-base );
+			}
+		}
+	}
+}
+
+@media ( hover: hover ) {
+	.tabber {
+		&__header {
+			&__prev,
+			&__next {
+				&:hover {
+					&::after {
+						opacity: var( --opacity-icon-base--hover );
+					}
+				}
+
+				&:active {
+					&::after {
+						opacity: var( --opacity-icon-base--selected );
+					}
+				}
+
+				&::after {
+					filter: var( --filter-invert );
+				}
+			}
+		}
+	}
+}

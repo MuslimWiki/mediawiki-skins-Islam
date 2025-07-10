@@ -1,0 +1,103 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:Popups
+ * Module: ext.popups.main
+ * Version: REL1_43
+ *
+ * Date: 2025-01-04
+*/
+
+@import '../../../resources/variables.less';
+
+.mwe-popups {
+	background: var( --color-surface-1 );
+	// border-radius: var( --border-radius-medium );
+
+	.mwe-popups-container {
+		footer {
+			// Hide footer as it is not needed
+			display: none;
+		}
+	}
+
+	.mwe-popups-title {
+		display: flex;
+		align-items: center;
+	}
+
+	.mwe-popups-extract {
+		&.mwe-popups-extract {
+			// Standardize margin since we removed footer
+			margin: var( --space-md );
+		}
+
+		&[ dir='ltr' ]::after {
+			/* @noflip */
+			background-image: linear-gradient( to right, rgba( 255, 255, 255, 0 ), var( --color-surface-1 ) 50% ) !important;
+		}
+
+		&[ dir='rtl' ]::after {
+			/* @noflip */
+			background-image: linear-gradient( to left, rgba( 255, 255, 255, 0 ), var( --color-surface-1 ) 50% ) !important;
+		}
+	}
+
+	&.mwe-popups-type-reference {
+		.mwe-popups-container {
+			.mwe-popups-extract {
+				.mwe-popups-fade {
+					background-image: linear-gradient( to bottom, rgba( 255, 255, 255, 0 ), var( --color-surface-1 ) 50% ) !important;
+				}
+			}
+		}
+	}
+
+	&.mwe-popups-no-image-pointer {
+		&::before {
+			border-top-color: var( --border-color-base );
+		}
+
+		&::after {
+			border-top-color: var( --color-surface-1 );
+		}
+	}
+
+	&.mwe-popups-image-pointer {
+		&::after {
+			border-top-color: var( --color-surface-1 );
+		}
+
+		&.flipped-x {
+			&::after {
+				border-top-color: var( --color-surface-1 );
+			}
+		}
+	}
+
+	&.flipped-x-y {
+		&::after {
+			border-bottom-color: var( --color-surface-1 );
+		}
+
+		&.mwe-popups-is-tall {
+			&::after {
+				border-bottom-color: var( --color-surface-1 );
+			}
+		}
+	}
+
+	&.flipped-y {
+		&::after {
+			border-bottom-color: var( --color-surface-1 );
+		}
+	}
+}
+
+@supports ( clip-path: polygon( 1px 1px ) ) {
+	.mwe-popups {
+		.mwe-popups-container {
+			background: var( --color-surface-1 );
+		}
+	}
+}

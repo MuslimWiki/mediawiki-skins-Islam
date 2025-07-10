@@ -1,0 +1,50 @@
+/*
+ * Islam
+ *
+ * SkinStyles for MediaWiki notifications
+ * Module: mediawiki.notification
+ * Version: 1.39.0
+ *
+ * Date: 2023-06-23
+ */
+
+@import '../../resources/mixins.less';
+
+.mw-notification-area {
+	padding: var( --space-xs );
+	.mixin-islam-font-styles( 'small' );
+}
+
+.mw-notification {
+	padding: var( --space-sm ) var( --space-md );
+	color: var( --color-emphasized );
+	background-color: var( --color-surface-1 );
+	border-color: var( --border-color-base );
+	border-radius: var( --border-radius-medium );
+	box-shadow: var( --box-shadow-drop-xx-large );
+	transition-timing-function: var( --transition-timing-function-ease-in );
+	transition-duration: var( --transition-duration-base );
+	transition-property: transform, opacity;
+
+	&-visible {
+		transition-timing-function: var( --transition-timing-function-ease-out );
+		transition-duration: var( --transition-duration-medium );
+	}
+
+	&.mw-notification-type {
+		&-warn {
+			background-color: var( --background-color-warning-subtle );
+			border-color: inherit;
+		}
+
+		&-error {
+			background-color: var( --background-color-destructive-subtle );
+			border-color: inherit;
+		}
+
+		&-success {
+			background-color: var( --background-color-success-subtle );
+			border-color: inherit;
+		}
+	}
+}

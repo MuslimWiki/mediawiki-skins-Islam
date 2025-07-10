@@ -1,0 +1,84 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:RelatedArticles
+ * Module: ext.relatedArticles.readMore
+ * Version: REL1_43
+ *
+ * Date: 2025-01-04
+*/
+
+@import '../../../resources/variables.less';
+@import '../../../resources/mixins.less';
+
+#mw-data-after-content > .read-more-container {
+	display: flex;
+	justify-content: center;
+	padding-inline: var( --padding-page );
+
+	> .read-more-container {
+		width: 100%;
+		max-width: var( --width-page );
+		padding: 0;
+	}
+}
+
+.ve-activated {
+	#mw-data-after-content > .read-more-container {
+		/* hide in VisualEditor */
+		display: none;
+	}
+}
+
+.read-more-container-heading {
+	padding: 0;
+	margin: 0;
+	.mixin-islam-font-styles( 'overline' );
+}
+
+.read-more-container-card-list {
+	grid-template-columns: minmax( 0, 1fr );
+	gap: var( --space-xs );
+
+	@media ( min-width: @min-width-breakpoint-tablet ) {
+		grid-template-columns: repeat( 2, minmax( 0, 1fr ) );
+	}
+
+	@media ( min-width: @min-width-breakpoint-desktop ) {
+		grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+	}
+
+	.cdx-card {
+		align-items: center;
+		// TODO: Remove when we find a way to customize Codex
+		border-radius: var( --border-radius-medium );
+
+		&:hover {
+			background-color: var( --background-color-button-quiet--hover );
+		}
+
+		&:active {
+			background-color: var( --background-color-button-quiet--active );
+		}
+	}
+
+	.cdx-card__text {
+		overflow: hidden;
+
+		&__title,
+		&__description {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		&__title {
+			color: var( --color-emphasized );
+		}
+
+		&__description {
+			margin-top: 0;
+			.mixin-islam-font-styles( 'small' );
+		}
+	}
+}

@@ -1,0 +1,264 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:MultimediaViewer
+ * Module: mmv
+ * Version: REL1_43
+*/
+
+@import '../../../resources/variables.less';
+
+.mw-mmv {
+	&-post-image {
+		right: 0;
+		left: 0;
+		width: auto;
+		padding-block: var( --space-xs ) var( --space-md );
+		padding-inline: var( --space-md );
+		border-top-left-radius: var( --border-radius-medium );
+		border-top-right-radius: var( --border-radius-medium );
+		transform: ~'translateY( calc( var( --space-xs ) * -1 ) )'; // counteract top positioning
+
+		&.mw-mmv-untruncated {
+			box-shadow: none;
+		}
+	}
+
+	&-above-fold {
+		display: flex;
+		gap: var( --space-md );
+		align-items: center;
+		height: auto;
+		padding-bottom: 0;
+	}
+
+	&-progress {
+		top: -2px;
+		right: ~'calc( var( --space-md ) * -1 )';
+		left: ~'calc( var( --space-md ) * -1 )';
+		width: auto;
+		height: 2px;
+		background-color: transparent;
+
+		&-percent {
+			height: 2px;
+			background: var( --color-progressive );
+		}
+	}
+
+	&-title-contain {
+		padding-block: var( --space-xs );
+	}
+
+	&-title-para {
+		display: flex;
+		flex-grow: 1;
+		order: -1;
+		height: auto;
+		padding: var( --space-xs ) 0 !important;
+		margin: 0 !important;
+		font-size: var( --font-size-medium ) !important;
+		line-height: var( --line-height-small ) !important;
+
+		.mw-mmv-ttf-ellipsis {
+			display: none !important;
+		}
+	}
+
+	&-title {
+		font-weight: var( --font-weight-semi-bold );
+		color: var( --color-emphasized );
+	}
+
+	&-stripe-button.mw-mmv-description-page-button {
+		margin: 0;
+
+		// Make Codex button normal size again
+		&.cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+			min-height: 32px;
+			padding-inline: 11px;
+		}
+
+		@media ( max-width: @max-width-breakpoint-mobile ) {
+			gap: 0;
+			font-size: 0;
+		}
+	}
+
+	&-image-metadata {
+		display: flex;
+		gap: var( --space-md );
+		justify-content: space-between;
+		padding-top: 0;
+		margin-top: 0;
+		font-size: var( --font-size-small );
+		line-height: 2; // Only show one line of text in collapsed state
+		background-color: transparent;
+		border-top: 0;
+		transform: ~'translateY( calc( var( --space-xxs ) * -1 ) )';
+
+		&-desc-column,
+		&-links-column {
+			width: auto;
+		}
+
+		&-desc-column {
+			flex-grow: 1;
+		}
+
+		&-links-column {
+			flex-grow: 1;
+			width: auto !important;
+		}
+	}
+
+	&-credit {
+		padding: 0;
+		font-size: inherit;
+	}
+
+	&-source-author {
+		line-height: inherit;
+	}
+
+	&-image-links {
+		margin: 0;
+		line-height: inherit;
+		color: var( --color-subtle );
+
+		li {
+			font-size: inherit;
+		}
+	}
+
+	&-author::before,
+	&-image-links li::before {
+		background-color: currentcolor !important;
+	}
+
+	&-image-desc {
+		padding: 0;
+		font-size: var( --font-size-small );
+
+		&-div {
+			margin-bottom: 0;
+		}
+	}
+
+	&-permission-box {
+		margin: var( --space-md ) 0;
+	}
+
+	&-image {
+		img {
+			// It was very easy to misclick the image in touch device,
+			// let's disable it.
+			@media ( pointer: coarse ) {
+				pointer-events: none;
+			}
+		}
+
+		&.error {
+			display: grid;
+			place-content: center;
+			background-color: inherit;
+		}
+
+		.error-box {
+			--mmv-error-icon-size: 80px;
+			position: relative;
+			inset: unset;
+			padding: ~'calc( var( --mmv-error-icon-size ) + var( --space-xxl ) )' 0 0 0;
+			margin: var( --space-md ) 4.5rem;
+			line-height: var( --line-height-small );
+			overflow-wrap: break-word;
+			background-size: var( --mmv-error-icon-size );
+
+			.mw-mmv-error {
+				&-text {
+					font-size: var( --font-size-xxx-large );
+					font-weight: var( --font-weight-semi-bold );
+					color: ~'hsl( var( --color-progressive-hsl__h ), 35%, 65% )';
+				}
+
+				&-description {
+					margin-top: var( --space-md );
+					font-size: var( --font-size-small );
+					color: ~'hsl( var( --color-progressive-hsl__h ), 35%, 65% )';
+				}
+			}
+		}
+	}
+}
+
+.mw-mmv-post-image:not( .mw-mmv-untruncated ) {
+	color: ~'hsl( var( --color-progressive-hsl__h ), 45%, 80% )'; // color-base in dark mode
+	background-color: transparent;
+
+	.mw-mmv {
+		&-title-para {
+			max-height: 3rem;
+			padding-block: 0 !important;
+		}
+
+		&-title {
+			overflow: hidden;
+			color: ~'hsl( var( --color-progressive-hsl__h ), 80%, 95% )';
+		}
+
+		&-stripe-button.mw-mmv-description-page-button {
+			margin: 0;
+
+			&.cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+				background-color: transparent;
+				border-color: rgba( 255, 255, 255, 0.11 ); // border-color-interactive in dark mode
+
+				&:hover {
+					background-color: var( --background-color-button-quiet--hover );
+				}
+
+				&:active {
+					background-color: var( --background-color-button-quiet--active );
+				}
+			}
+		}
+
+		&-credit,
+		&-image-links {
+			color: ~'hsl( var( --color-progressive-hsl__h ), 35%, 65% )'; // color-subtle in dark mode
+		}
+
+		&-image-links li.mw-mmv-license-li {
+			line-height: inherit;
+		}
+	}
+}
+
+.mw-mmv-untruncated {
+	.mw-mmv {
+		&-above-fold {
+			padding-bottom: var( --space-xs );
+			margin-bottom: var( --space-md );
+			border-bottom: 1px solid var( --border-color-base );
+		}
+
+		&-image-metadata {
+			line-height: var( --line-height-medium ); // restore line height after expanded
+
+			@media ( max-width: @max-width-breakpoint-mobile ) {
+				flex-direction: column;
+			}
+
+			&-desc-column {
+				max-width: var( --width-layout );
+				transform: none;
+			}
+
+			&-links-column {
+				@media ( max-width: @max-width-breakpoint-mobile ) {
+					max-width: none;
+				}
+			}
+		}
+	}
+}

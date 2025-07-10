@@ -1,0 +1,89 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UniversalLanguageSelector
+ * Module: ext.uls.languagesettings
+ * Version: MLEB 2021.12
+ *
+ * Date: 2022-05-17
+*/
+
+.languagesettings-menu {
+	h1 {
+		color: var( --color-emphasized );
+	}
+
+	.menu-section {
+		color: var( --color-base );
+
+		&.active {
+			color: var( --color-emphasized );
+			background-color: var( --color-surface-1 );
+			border-left-color: var( --color-progressive );
+		}
+
+		&:hover {
+			background-color: var( --color-surface-1 );
+		}
+
+		&:focus {
+			border-color: var( --color-progressive );
+		}
+
+		.settings-text {
+			color: var( --color-subtle );
+		}
+
+		&:hover .settings-text {
+			color: var( --color-base );
+		}
+
+		&.display-settings-block,
+		&.input-settings-block {
+			filter: var( --filter-invert );
+		}
+	}
+}
+
+#languagesettings-settings-panel {
+	color: var( --color-base );
+	background: var( --color-surface-1 );
+}
+
+#languagesettings-settings-panel h3 {
+	color: var( --color-base );
+}
+
+#languagesettings-settings-panel h4 {
+	color: var( --color-base );
+}
+
+.language-settings-dialog {
+	background: var( --color-surface-2 );
+}
+
+.uls-language-settings-close-block {
+	background: var( --color-surface-1 );
+}
+
+.language-settings-buttons {
+	border-top-color: var( --border-color-base );
+}
+
+.uls-ui-languages p,
+.checkbox {
+	color: var( --color-subtle );
+}
+
+#languagesettings-panels .mw-ui-pressed {
+	background-color: var( --color-progressive--active );
+	border-color: var( --color-progressive--active );
+}
+
+.checkbox strong {
+	color: var( --color-base );
+}
+
+.uls-icon-close {
+	filter: var( --filter-invert );
+}

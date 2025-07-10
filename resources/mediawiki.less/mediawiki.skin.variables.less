@@ -1,0 +1,39 @@
+/**
+ * Islam
+ *
+ * Core MediaWiki skin tokens
+ * Used by supported extensions and other UI in the MW ecosystem
+ * @see https://phabricator.wikimedia.org/T349359
+ */
+
+@import 'mediawiki.skin.defaults.less';
+
+/**
+ * Codex design tokens
+ * @see https://github.com/wikimedia/mediawiki/blob/master/resources/lib/codex-design-tokens/theme-wikimedia-ui.less
+ */
+@import 'mediawiki.skin.codex-design-tokens/theme-wikimedia-ui.less';
+
+// LESS variable override
+@font-size-x-small: var( --font-size-x-small );
+@font-size-small: var( --font-size-small );
+@font-size-medium: var( --font-size-medium );
+@font-size-large: var( --font-size-large );
+@font-size-x-large: var( --font-size-x-large );
+@font-size-xx-large: var( --font-size-xx-large );
+@font-size-xxx-large: var( --font-size-xxx-large );
+// Bold is too bold for Roboto, semi-bold looks nicer
+@font-weight-bold: var( --font-weight-semi-bold );
+
+/**
+ * Skin variables that are not Codex tokens
+ * @see https://github.com/wikimedia/mediawiki/blob/master/resources/src/mediawiki.less/mediawiki.skin.defaults.less
+ */
+@color-link: var( --color-link );
+@color-link--visited: var( --color-link );
+@color-link--active: var( --color-link--active );
+@color-link-new: var( --color-link-red );
+@color-link-new--visited: var( --color-link-red );
+@color-link-external: var( --color-link );
+@color-link-external--visited: var( --color-link );
+@color-link-external--active: var( --color-link--active );

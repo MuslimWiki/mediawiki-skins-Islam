@@ -1,0 +1,71 @@
+/*
+ * Islam - Gallery Styles
+ * https://muslim.wiki
+*/
+
+@import '../../resources/mixins.less';
+
+// T326017
+ul.gallery.gallery.gallery {
+	padding: 0;
+	margin: var( --space-xxs ) 0;
+}
+
+// Sync with caption styles
+div.gallerytext {
+	padding: 0 var( --border-radius-base );
+	margin-block: var( --space-xs );
+	color: var( --color-subtle );
+	.mixin-islam-font-styles( 'small' );
+
+	p {
+		margin: var( --space-xxs ) 0; // reset default style
+	}
+}
+
+ul.mw-gallery-packed-hover li.gallerybox:hover div.gallerytextwrapper,
+ul.mw-gallery-packed-overlay li.gallerybox div.gallerytextwrapper,
+ul.mw-gallery-packed-hover li.gallerybox.mw-gallery-focused div.gallerytextwrapper {
+	right: 0;
+	width: auto !important;
+	padding: 0 var( --space-xs );
+	margin: 0;
+	font-weight: var( --font-weight-normal ); // should use the same weight as caption
+	background: var( --background-color-backdrop-light );
+}
+
+/* Slideshow */
+ul.gallery.mw-gallery-slideshow {
+	.gallerybox {
+		&.slideshow-current {
+			background: var( --color-surface-2 );
+		}
+	}
+
+	.mw-gallery-slideshow {
+		&-buttons {
+			padding-top: var( --space-md );
+			padding-bottom: var( --space-sm );
+		}
+
+		&-img-container {
+			border-radius: var( --border-radius-large );
+		}
+
+		&-caption {
+			margin: 0;
+		}
+	}
+}
+
+li.gallerybox {
+	div.thumb {
+		display: grid;
+		place-content: center;
+		margin: 0;
+		overflow: hidden; // quick hack for rounded corner
+		background-color: var( --color-surface-2 );
+		border-color: transparent;
+		border-radius: var( --border-radius-base );
+	}
+}

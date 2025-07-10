@@ -1,0 +1,88 @@
+/*
+ * Islam - SRF
+ * https://starcitizen.tools
+ * timeline/resources/SimileTimeline/styles/timeline.css
+ * timeline/resources/SimileTimeline/styles/ethers.css
+ * timeline/resources/SimileTimeline/styles/events.css
+*/
+
+@import '../../../../resources/variables.less';
+
+.skin-theme-clientpref-night {
+	/**
+timeline/resources/SimileTimeline/styles/timeline.css
+ */
+	.timeline-band {
+		background: @dark-bg-20;
+	}
+
+	/**
+  timeline/resources/SimileTimeline/styles/ethers.css
+   */
+	.timeline-ether-marker-bottom {
+		color: var( --color-subtle );
+		border-left: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-bottom-emphasized {
+		color: var( --color-emphasized );
+		border-left: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-top {
+		color: var( --color-subtle );
+		border-left: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-top-emphasized {
+		color: var( --color-emphasized );
+		border-left: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-right {
+		color: var( --color-subtle );
+		border-top: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-right-emphasized {
+		color: var( --color-emphasized );
+		border-top: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-left {
+		color: var( --color-subtle );
+		border-top: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	.timeline-ether-marker-left-emphasized {
+		color: var( --color-emphasized );
+		border-top: var( --border-width-base ) solid @dark-bg-50;
+	}
+
+	/**
+  timeline/resources/SimileTimeline/styles/events.css
+   */
+	.timeline-duration-event {
+		border: var( --border-width-base ) solid var( --color-progressive );
+	}
+
+	.timeline-instant-event2 {
+		border-left: var( --border-width-base ) solid var( --color-progressive );
+	}
+
+	.timeline-event-bubble-title {
+		border-bottom: var( --border-width-base ) solid @dark-bg-60;
+	}
+
+	.timeline-event-bubble-wiki {
+		color: var( --color-warning );
+	}
+
+	.timeline-event-bubble-wiki a {
+		color: var( --color-warning );
+	}
+
+	.timeline-event-bubble-time {
+		color: var( --color-subtle );
+	}
+}

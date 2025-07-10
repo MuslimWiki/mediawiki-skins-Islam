@@ -1,0 +1,24 @@
+<div class="islam-userInfo">
+	<div class="islam-userInfo-title">
+		{{#title}}<div>{{.}}</div>{{/title}}
+		{{#data-user-page}}{{>Menu}}{{/data-user-page}}
+	</div>
+	<div class="islam-userInfo-text">
+		{{#text}}<div>{{.}}</div>{{/text}}
+		{{#data-user-groups}}
+			<ul class="islam-userInfo-usergroups">
+					{{#array-list-items}}{{>MenuListItem}}{{/array-list-items}}
+			</ul>
+		{{/data-user-groups}}
+	</div>
+	{{#data-user-stats}}
+		<div class="islam-userInfo-stats">
+			{{#array-stats-items}}
+				<div class="islam-userInfo-stats-item">
+					<div class="islam-userInfo-stats-item-label">{{label}}</div>
+					<div class="islam-userInfo-stats-item-value">{{{value}}}</div>
+				</div>
+			{{/array-stats-items}}
+		</div>
+	{{/data-user-stats}}
+</div>

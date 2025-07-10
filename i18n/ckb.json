@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"language": "Central Kurdish (Sorani)",
+		"language_code": "ckb",
+		"direction": "rtl",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Alistair3149"
+		],
+		"note": "Central Kurdish (Sorani) language spoken in Iraqi Kurdistan."
+	},
+	"skinname-islam": "ئیسلام",
+	"islam-skin-desc": "پێستێکی پاک و وەڵامدەرەوەی میدیاویکی کە بۆ [https://muslim.wiki MuslimWiki] پەرەی پێدراوە. تایبەتمەندی ڕووکارێکی ئینتێلێکتیڤی هەیە کە باشتر کراوە بۆ هاوبەشکردنی زانیاری ئیسلامی لە سەرانسەری ئامێرەکاندا.",
+	"islam-drawer-toggle": "داخستن و کردنەوەی پێڕست",
+	"islam-usermenu-toggle": "داخستن و کردنەوەی پێڕستی کەسی",
+	"islam-search-toggle": "داخستن و کردنەوەی گەڕان",
+	"islam-languages-toggle": "زمانی زیاتر",
+	"islam-actions-more-toggle": "کرداری زیاتر",
+	"islam-sitestats-articles-label": "وتارەکان",
+	"islam-sitestats-images-label": "پەڕگەکان",
+	"islam-sitestats-users-label": "بەکارهێنەران",
+	"islam-sitestats-edits-label": "دەستکاریکردنەکان",
+	"islam-footer-desc": "دەستکاری ئەم دەقە لەسەر [[MediaWiki:Islam-footer-desc]]",
+	"islam-footer-tagline": "دەستکاری ئەم دەقە لەسەر [[MediaWiki:Islam-footer-tagline]]",
+	"islam-action-addsection": "بابەت دابنێ",
+	"islam-jumptotop": "گەڕانەوە بۆ سەرەوە",
+	"islam-search-fulltext": "گەڕان لە ناوەڕۆکی لاپەڕەکان",
+	"islam-search-empty-desc": "بنوسە بۆ گەڕان",
+	"islam-tagline-ns-talk": "لاپەڕەی گفتوگۆی {{SUBJECTPAGENAME}}",
+	"islam-tagline-ns-project": "زانیاری لەبارەی {{SITENAME}}",
+	"islam-tagline-ns-file": "پەڕگە لەسەر {{SITENAME}}",
+	"islam-tagline-ns-mediawiki": "پەڕەی ڕووکاری میدیاویکی",
+	"islam-tagline-ns-template": "لاپەڕەی ڕووکار",
+	"islam-tagline-ns-help": "لاپەڕەی یارمەتی",
+	"islam-tagline-ns-category": "لاپەڕەی هاوپۆل"
+}

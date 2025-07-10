@@ -1,0 +1,67 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:UniversalLanguageSelector
+ * Module: ext.uls.common
+ * Version: MLEB 2021.12
+ *
+ * Date: 2022-05-17
+*/
+
+@import '../../../resources/variables.less';
+@import 'ext.uls.mixins.less';
+
+.uls-menu {
+	// Prevent ULS scrolling the page to the bottom
+	top: var( --space-md ) !important;
+	border-radius: var( --border-radius-medium );
+}
+
+.uls-search,
+.uls-language-settings-close-block {
+	border-top-left-radius: var( --border-radius-medium );
+	border-top-right-radius: var( --border-radius-medium );
+}
+
+.uls-language-list {
+	border-bottom-right-radius: var( --border-radius-medium );
+	border-bottom-left-radius: var( --border-radius-medium );
+}
+
+.uls-menu.callout {
+	.caret();
+}
+
+.uls-icon-back {
+	border-right: 0; // filter invert does not like it
+	opacity: var( --opacity-icon-base );
+	filter: var( --filter-invert );
+
+	&:hover {
+		opacity: var( --opacity-icon-base--hover );
+	}
+
+	&:active {
+		opacity: var( --opacity-icon-base--selected );
+	}
+}
+
+.uls-menu .uls-no-results-view {
+	.uls-no-found-more {
+		background-color: var( --color-surface-1 );
+	}
+
+	h3 {
+		color: var( --color-subtle );
+	}
+}
+
+// Responsive
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	.uls-menu {
+		right: var( --padding-page ) !important;
+		left: var( --padding-page ) !important;
+		max-height: 60vh;
+		overflow: auto;
+	}
+}

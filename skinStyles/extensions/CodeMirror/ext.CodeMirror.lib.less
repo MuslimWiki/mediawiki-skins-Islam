@@ -1,0 +1,201 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:CodeMirror
+ * Module: ext.CodeMirror.lib
+ * Version: REL1_35 a326407
+ *
+ * Date: 2023-05-24
+*/
+
+.CodeMirror {
+	font-family: var( --font-family-monospace );
+	color: var( --color-base );
+	background-color: var( --color-surface-0 );
+
+	&-scrollbar,
+	&-gutter {
+		&-filler {
+			background-color: var( --color-surface-0 );
+		}
+	}
+
+	&-gutters {
+		background-color: var( --color-surface-0 );
+		border-color: transparent;
+	}
+
+	&-linenumber {
+		padding: 0 16px; // Give more space since there is no border and background
+		color: var( --color-subtle );
+	}
+
+	&-guttermarker {
+		color: var( --color-base );
+
+		&-subtle {
+			color: var( --color-subtle );
+		}
+	}
+
+	&-cursor {
+		border-left-color: var( --color-emphasized );
+	}
+
+	div.CodeMirror-secondarycursor {
+		border-left-color: var( --color-base );
+	}
+
+	&-ruler {
+		border-left-color: var( --border-color-base );
+	}
+
+	&-composing {
+		border-bottom-color: var( --border-color-base );
+	}
+
+	&-selected {
+		background: var( --background-color-progressive-subtle );
+	}
+
+	&-focused .CodeMirror-selected {
+		background: var( --background-color-progressive-subtle );
+	}
+
+	&-line {
+		&::selection,
+		> span::selection,
+		> span > span::selection {
+			color: var( --color-inverted-primary );
+			background-color: var( --color-progressive );
+		}
+	}
+}
+
+// Default theme
+.cm {
+	&-s-default {
+		.cm {
+			&-header {
+				color: var( --color-syntax-blue );
+			}
+
+			&-quote {
+				color: var( --color-syntax-green );
+			}
+
+			&-keyword {
+				color: var( --color-syntax-purple );
+			}
+
+			&-atom {
+				color: var( --color-syntax-pink );
+			}
+
+			&-number {
+				color: var( --color-syntax-orange );
+			}
+
+			&-def {
+				color: var( --color-syntax-blue );
+			}
+
+			&-variable {
+				color: var( --color-syntax-red );
+			}
+
+			&-variable-2 {
+				color: var( --color-base );
+			}
+
+			&-variable-3,
+			&-type {
+				color: var( --color-syntax-yellow );
+			}
+
+			&-comment {
+				color: var( --color-syntax-gray );
+			}
+
+			&-string {
+				color: var( --color-syntax-green );
+			}
+
+			&-string-2 {
+				color: var( --color-syntax-red );
+			}
+
+			&-meta {
+				color: var( --color-syntax-yellow );
+			}
+
+			&-qualifier {
+				color: var( --color-syntax-yellow );
+			}
+
+			&-builtin {
+				color: var( --color-syntax-yellow );
+			}
+
+			&-bracket {
+				color: var( --color-syntax-grey );
+			}
+
+			&-tag {
+				color: var( --color-syntax-pink );
+			}
+
+			&-attribute {
+				color: var( --color-syntax-purple );
+			}
+
+			&-hr {
+				color: var( --color-syntax-blue );
+			}
+
+			&-link {
+				color: var( --color-syntax-blue );
+			}
+
+			&-error {
+				color: var( --color-destructive );
+			}
+
+			&-property {
+				color: var( --color-syntax-purple );
+			}
+
+			&-operator {
+				color: var( --color-syntax-cyan );
+			}
+
+			&-punctuation {
+				color: var( --color-syntax-cyan );
+			}
+		}
+
+		&-negative {
+			color: var( --color-destructive );
+		}
+
+		&-positive {
+			color: var( --color-success );
+		}
+
+		&-invalidchar {
+			color: var( --color-destructive );
+		}
+	}
+}
+
+div.CodeMirror {
+	span.CodeMirror {
+		&-matchingbracket {
+			color: var( --color-success );
+		}
+
+		&-nonmatchingbracket {
+			color: var( --color-destructive );
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"language": "Saraiki (Arabic script)",
+		"language_code": "skr-arab",
+		"direction": "rtl",
+		"authors": [
+			"[https://muslim.wiki/wiki/User:Abdullah Khalid ibn Mika'il Abdullah]",
+			"Saraiki"
+		],
+		"note": "Saraiki language using Arabic script."
+	},
+	"islam-search-poweredby-mediawiki": "میڈیا وکی",
+	"islam-search-keyhint-exit": "ڳولݨ وچوں نکلو",
+	"islam-search-keyhint-open": "ڳولݨ کھولو",
+	"islam-search-keyhint-select": "آئٹم چݨو",
+	"islam-sitestats-articles-label": "مضمون",
+	"islam-sitestats-images-label": "فائلاں",
+	"islam-sitestats-users-label": "ورتݨ آلے",
+	"islam-sitestats-edits-label": "تبدیلیاں",
+	"islam-page-info-credits": "کریڈٹ",
+	"islam-search-advancedsearch": "ودھائی ڳول",
+	"islam-feature-autohide-navigation-0-label": "بند",
+	"islam-feature-autohide-navigation-1-label": "آن",
+	"islam-feature-custom-font-size-xlarge-label": "ٻہوں وݙا",
+	"islam-user-info-edits-label": "تبدیلیاں",
+	"islam-command-palette-heading-recent": "حالیہ",
+	"islam-command-palette-heading-related": "متعلقہ",
+	"islam-command-palette-keyhint-enter-select": "چݨو",
+	"islam-command-palette-keyhint-enter-open": "کھولو",
+	"islam-command-palette-keyhint-enter-search": "ڳولو",
+	"islam-command-palette-keyhint-navigate": "نیویگیٹ",
+	"islam-command-palette-keyhint-exit": "نکلو",
+	"islam-command-palette-keyhint-actions": "عمل",
+	"islam-command-palette-keyhint-return": "ولدا واپس",
+	"islam-command-palette-type-page": "ورقہ",
+	"islam-command-palette-type-namespace": "ناں جاہ",
+	"islam-command-palette-type-command": "کمانڈ",
+	"islam-command-palette-type-special-page": "خاص ورقہ",
+	"islam-command-palette-type-user": "ورتݨ آلا"
+}

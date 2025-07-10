@@ -1,0 +1,24 @@
+{{!
+	string msg-islam-drawer-toggle The label used by the drawer button.
+	string msg-sitetitle the contents of the sitesubtitle message key
+}}
+<div class="islam-drawer islam-header__item islam-dropdown">
+	<details class="islam-dropdown-details">
+		{{>Drawer__button}}
+	</details>
+	<div id="islam-drawer__card" class="islam-drawer__card islam-menu__card">
+		<div class="islam-menu__card-backdrop"></div>
+		<div class="islam-menu__card-content">
+			<header class="islam-drawer__header">
+				{{>Drawer__logo}}
+				<div class="islam-drawer__siteinfo">
+					{{#data-site-stats}}{{>SiteStats}}{{/data-site-stats}}
+					{{>Wordmark}}
+				</div>
+			</header>
+			{{#data-main-menu}}
+				{{>MainMenu}}
+			{{/data-main-menu}}
+		</div>
+	</div>
+</div>

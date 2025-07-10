@@ -1,0 +1,180 @@
+/*
+ * Islam
+ *
+ * SkinStyles for Extension:CodeMirror
+ * Module: ext.CodeMirror.mode.mediawiki, ext.CodeMirror.v6.mode.mediawiki
+ * Version: REL1_43
+*/
+
+@import '../../../resources/mixins.less';
+
+.cm-mw {
+	&-matching {
+		background-color: var( --color-syntax-yellow );
+	}
+
+	&-skipformatting {
+		background-color: var( --color-syntax-cyan );
+	}
+
+	&-doubleUnderscore,
+	&-double-underscore,
+	&-signature,
+	&-hr {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-purple ) );
+		background-color: transparent;
+	}
+
+	&-list,
+	&-indenting {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+	}
+
+	&-mnemonic,
+	&-html-entity {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-green ) );
+	}
+
+	&-comment {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-grey ) );
+	}
+
+	&-apostrophes-bold,
+	&-apostrophes-italic {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+	}
+
+	&-section {
+		&-1,
+		&-2,
+		&-3,
+		&-4,
+		&-5,
+		&-6 {
+			span:not( .cm-mw-section-header ) {
+				.mixin-islam-css-theme-clientpref-all( color, var( --color-emphasized ) );
+			}
+		}
+	}
+
+	&-section-header {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+	}
+
+	&-template,
+	&-templatevariable,
+	&-parserfunction {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-emphasized ) );
+
+		&-name {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-blue ) );
+		}
+
+		&-delimiter {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+		}
+
+		&-bracket {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-purple ) );
+		}
+	}
+
+	&-template {
+		&-name-mnemonic {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-blue ) );
+		}
+
+		&-argument-name {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-red ) );
+		}
+	}
+
+	&-exttag,
+	&-htmltag {
+		&-name {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-red ) );
+		}
+
+		&-bracket {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+		}
+
+		&-attribute {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-yellow ) );
+		}
+	}
+
+	&-link {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive ) );
+
+		&-pagename {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive ) );
+		}
+
+		&-tosection {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive--hover ) );
+		}
+
+		&-text {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-green ) );
+		}
+
+		&-bracket {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive ) );
+		}
+
+		&-delimiter {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+		}
+
+		&-ground {
+			background-color: transparent;
+		}
+	}
+
+	&-extlink,
+	&-free-extlink {
+		.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive ) );
+
+		&-protocol {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-orange ) );
+		}
+
+		&-text {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-green ) );
+		}
+
+		&-bracket {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-progressive ) );
+		}
+	}
+
+	&-table {
+		&-bracket {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-pink ) );
+		}
+
+		&-delimiter {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-cyan ) );
+		}
+
+		&-definition {
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-syntax-yellow ) );
+		}
+
+		&-caption {
+			font-weight: var( --font-weight-normal );
+			.mixin-islam-css-theme-clientpref-all( color, var( --color-emphasized ) );
+		}
+	}
+}

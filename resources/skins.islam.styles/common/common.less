@@ -1,0 +1,164 @@
+html {
+	box-sizing: border-box;
+	font-size: 100%;
+	scroll-padding-top: ~'calc( var( --height-sticky-header ) + var( --space-xl ) )';
+}
+
+body {
+	min-height: ~'calc( 100vh - env( safe-area-inset-bottom,0 ) - env( safe-area-inset-top,0 ) )';
+	min-height: 100dvh;
+	color: var( --color-base );
+	background: var( --color-surface-0 );
+
+	@supports ( accent-color: var( --accent-color-base ) ) {
+		accent-color: var( --accent-color-base );
+	}
+}
+
+// Apply border-box universally unless overwritten
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	border-color: var( --border-color-base );
+	border-style: solid;
+	border-width: 0;
+}
+
+:focus {
+	outline-color: var( --color-progressive );
+}
+
+::placeholder {
+	color: var( --color-placeholder );
+}
+
+@supports selector( ::selection ) {
+	::selection {
+		color: var( --color-inverted-primary );
+		background-color: var( --color-progressive );
+	}
+}
+
+input,
+select,
+textarea {
+	color: var( --color-emphasized );
+	background-color: transparent;
+	border: var( --border-width-base ) solid var( --border-color-interactive );
+}
+
+select option {
+	background-color: var( --color-surface-1 );
+}
+
+textarea {
+	width: 100%;
+}
+
+blockquote {
+	margin: var( --space-md );
+	color: var( --color-subtle );
+
+	cite {
+		display: block;
+		margin-top: var( --space-sm );
+
+		&::before {
+			content: '— ';
+		}
+	}
+}
+
+button {
+	font-family: var( --font-family-base );
+	color: var( --color-base );
+}
+
+th {
+	font-weight: var( --font-weight-semi-bold );
+	color: var( --color-emphasized );
+}
+
+/* Remove outer margin in table cell */
+th,
+td {
+	> p,
+	> ul,
+	> ol {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.hidden,
+.sr-only {
+	.mixin-islam-screen-reader-only;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.islam-button {
+	padding: 0;
+	appearance: none;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+}
+
+.islam-sitenotice-container {
+	background-color: var( --color-surface-2 );
+}
+
+.mw-body,
+.parsoid-body {
+	direction: ltr;
+}
+
+#mw-content-text {
+	margin-block-start: var( --space-md );
+}
+
+// TODO: Think of better places to put indicators;
+.mw-indicators {
+	display: flex;
+	column-gap: var( --space-xs );
+	align-items: center;
+	padding-inline-start: var( --space-xs );
+	margin-inline-start: var( --space-xs );
+	font-size: var( --font-size-small );
+	border-inline-start: var( --border-width-base ) solid var( --border-color-base );
+}
+
+// Hide the text in the help indicator
+#mw-indicator-mw-helplink a {
+	font-size: 0;
+}
+
+video {
+	max-width: 100%; // Prevent overflow
+}
+
+@media ( hover: none ) {
+	a,
+	button,
+	label {
+		// Remove the 300ms delay in click event (T118509)
+		touch-action: manipulation;
+	}
+}
+
+@media ( max-width: @max-width-breakpoint-tablet ) {
+	.mw-body,
+	.parsoid-body {
+		overflow-x: hidden; // fallback if clip is not supported
+		overflow-x: clip; // avoid breaking layout in smaller screen sizes
+	}
+}
