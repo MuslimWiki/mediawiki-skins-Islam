@@ -1,0 +1,16 @@
+{
+  "*.md": [
+    "prettier --write",
+    "markdownlint --config .markdownlint.json",
+    "git add"
+  ],
+  "*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint --fix",
+    "git add"
+  ],
+  "*.{json,css,scss,html}": [
+    "prettier --write",
+    "git add"
+  ]
+}

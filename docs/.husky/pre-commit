@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# Run lint-staged
+npx lint-staged --quiet
+
+# Run tests if there are staged Markdown files
+STAGED_MD_FILES=$(git diff --cached --name-only --diff-filter=ACM "*.md" | tr '\n' ' ')
+if [ -n "$STAGED_MD_FILES" ]; then
+  echo "📄 Found staged Markdown files, running tests..."
+  npm test -- --staged
+fi
+
+echo "✅ Pre-commit checks passed"

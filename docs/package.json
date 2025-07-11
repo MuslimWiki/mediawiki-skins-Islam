@@ -1,0 +1,46 @@
+{
+  "name": "muslimwiki-docs",
+  "version": "1.0.0",
+  "description": "Documentation for Islam Skin and IslamDashboard",
+  "scripts": {
+    "search:index": "node _scripts/generate-search-index.js",
+    "toc:generate": "node _scripts/generate-toc.js",
+    "toc:update": "node _scripts/generate-toc.js",
+    "toc:file": "node _scripts/generate-toc.js",
+    "docs:build": "npm run search:index && npm run toc:generate",
+    "docs:serve": "echo 'Documentation can be served using any static file server'",
+    "test": "node test/test-docs.js",
+    "test:lint": "markdownlint '**/*.md' --ignore-path .gitignore --config .markdownlint.json",
+    "test:links": "markdown-link-check --config .markdown-link-check.json",
+    "test:examples": "node test/validate-examples.js",
+    "test:ci": "npm run test:lint && npm run test:links && npm run test:examples",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "lunr": "^2.3.9",
+    "markdown-toc": "^1.2.0"
+  },
+  "devDependencies": {
+    "markdown-link-check": "^3.12.0",
+    "markdownlint": "^0.29.0",
+    "markdownlint-cli": "^0.35.0",
+    "prettier": "^2.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "keywords": [
+    "documentation",
+    "islam",
+    "mediawiki",
+    "skin",
+    "dashboard"
+  ],
+  "author": "MuslimWiki Team",
+  "license": "GPL-3.0-or-later"
+}

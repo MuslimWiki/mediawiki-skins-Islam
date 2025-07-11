@@ -15,6 +15,8 @@ A modern, responsive, and accessible MediaWiki skin specifically designed for Is
 - **Performance Optimized**: Fast loading with minimal overhead
 - **Modern UI**: Clean, intuitive interface with customizable components
 - **Multilingual**: Comprehensive i18n support with template for new translations
+- **Comprehensive Documentation**: Detailed guides, references, and examples
+- **Developer Friendly**: Well-documented components and templates
 
 ## 🚀 Installation
 
@@ -77,6 +79,36 @@ Or edit these messages in the wiki:
 ### CSS/JS Customization
 - JavaScript: `MediaWiki:Islam.js`
 - CSS: `MediaWiki:Islam.css`
+
+## 📖 Documentation
+
+Comprehensive documentation is included in the `docs/` directory, covering:
+
+- Getting Started guides
+- Component documentation
+- Template reference
+- Architecture overview
+- Development guidelines
+
+To view the documentation locally:
+
+1. Navigate to the `docs` directory
+2. Start a PHP development server:
+   ```bash
+   php -S localhost:8000
+   ```
+3. Open `http://localhost:8000` in your browser
+
+For the latest documentation, visit our [Documentation Hub](https://muslim.wiki/IslamSkin).
+
+## 📜 Versioning
+
+This project uses [Semantic Versioning](https://semver.org/). For the versions available, see the [tags on this repository](https://github.com/MuslimWiki/mediawiki-skins-Islam/tags).
+
+### Versioning Documentation
+
+- [Versioning Quick Start](docs/getting-started/versioning-quickstart.md) - Basic versioning guide for all contributors
+- [Complete Versioning Guide](docs/development/versioning.md) - Detailed versioning and release process
 
 ## 🤝 Contributing
 

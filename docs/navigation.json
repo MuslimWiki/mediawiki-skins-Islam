@@ -1,0 +1,69 @@
+[
+    { "title": "Home", "file": "README.md" },
+    { 
+        "title": "Getting Started",
+        "children": [
+            { "title": "Quick Start", "file": "getting-started/quick-start.md" },
+            { "title": "Configuration", "file": "getting-started/configuration.md" }
+        ]
+    },
+    { 
+        "title": "Architecture",
+        "file": "architecture/overview.md",
+        "children": [
+            { "title": "Component Interaction", "file": "architecture/component-interaction.md" },
+            { "title": "Data Flow", "file": "architecture/data-flow.md" },
+            { "title": "Styling", "file": "architecture/styling.md" }
+        ]
+    },
+    { 
+        "title": "Components",
+        "file": "components/index.md",
+        "children": [
+            { "title": "Link", "file": "components/link.md" },
+            { 
+                "title": "Menu",
+                "file": "components/menu/overview.md",
+                "children": [
+                    { "title": "Menu Items", "file": "components/menu/menu-item.md" }
+                ]
+            },
+            { "title": "User Info", "file": "components/user-info.md" }
+        ]
+    },
+    { 
+        "title": "Templates",
+        "file": "templates/index.md"
+    },
+    { 
+        "title": "IslamDashboard",
+        "children": [
+            { "title": "Requirements", "file": "islam-dashboard/islamdashboard-requirements.md" },
+            { "title": "Technical Design", "file": "islam-dashboard/islamdashboard-technical-design.md" },
+            { "title": "Roadmap", "file": "islam-dashboard/islamdashboard-roadmap.md" }
+        ]
+    },
+    { 
+        "title": "Development",
+        "file": "development/index.md",
+        "children": [
+            { "title": "Style Guide", "file": "development/style-guide.md" },
+            { "title": "Versioning", "file": "development/versioning.md" },
+            { "title": "Link Checking", "file": "development/link-checking.md" },
+            { "title": "Commit Guide", "file": "development/commit-guide.md" },
+            { "title": "WebView Issues", "file": "development/webview-issues.md" }
+        ]
+    },
+    { 
+        "title": "About",
+        "file": "about/index.md",
+        "children": [
+            { "title": "Project Summary", "file": "about/project-summary.md" },
+            { "title": "Roadmap", "file": "about/roadmap.md" },
+            { "title": "Code of Conduct", "file": "about/code-of-conduct.md" },
+            { "title": "Contributing", "file": "development/contributing.md" },
+            { "title": "Review Checklist", "file": "about/review-checklist.md" }
+        ]
+    },
+    { "title": "Search", "file": "search.md" }
+]

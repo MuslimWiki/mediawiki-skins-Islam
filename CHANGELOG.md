@@ -2,11 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [0.0.2](https://github.com/MuslimWiki/mediawiki-skins-Islam/compare/v0.0.1...v0.0.2) (2025-07-09)
+## [0.0.2](https://github.com/MuslimWiki/mediawiki-skins-Islam/compare/v0.0.1...v0.0.2) (2025-07-11)
 
-### Bug Fixes
-- Fixed minor styling issues in mobile view
-- Improved compatibility with various MediaWiki extensions
+### Added
+- Comprehensive documentation for the Islam skin, including:
+  - Component and template reference
+  - Development guidelines
+  - Architecture overview
+  - Getting started guides
+  - API documentation
+- Initial development of interactive documentation viewer (experimental)
+- Automated documentation link checking
+
+### Changed
+- Reorganized project structure for better modularity:
+  - Moved `IslamDashboard/` to `modules/IslamDashboard/`
+  - Moved `docs/islam-dashboard/` to `docs/modules/islam-dashboard/`
+- Reorganized documentation into logical sections
+- Standardized documentation formatting and style
+- Improved cross-referencing between documents
+- Enhanced code examples and usage guides
+- Updated README with documentation setup instructions
+- Improved mobile responsiveness of documentation
+- Updated development dependencies
+
+### Known Issues
+- Documentation viewer webview has known issues with link handling
+- Some navigation features may not work as expected
+- These issues will be addressed in a future release
 
 ## [0.0.1](https://github.com/MuslimWiki/mediawiki-skins-Islam/compare/v0.0.0...v0.0.1) (2025-07-08)
 

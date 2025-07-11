@@ -1,0 +1,51 @@
+# Documentation configuration
+
+# Site settings
+title: Islam Skin & IslamDashboard Documentation
+description: Comprehensive documentation for the Islam Skin and IslamDashboard extension for MediaWiki
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "https://muslim.wiki" # the base hostname & protocol for your site
+
+# Search configuration
+search:
+  enabled: true
+  provider: lunr  # Options: lunr, algolia, google
+  placeholder: "Search documentation..."
+  button_text: "Search"
+  search_page: "search.html"
+
+# Table of Contents
+toc:
+  enabled: true
+  min_level: 2
+  max_level: 4
+  list_number: false
+
+# Navigation
+nav:
+  - title: "Getting Started"
+    children:
+      - title: "Introduction"
+        url: "/"
+      - title: "Installation"
+        url: "/installation"
+      - title: "Configuration"
+        url: "/configuration"
+
+  - title: "Development"
+    children:
+      - title: "Setup Guide"
+        url: "/development/setup"
+      - title: "Code Style"
+        url: "/development/code-style"
+      - title: "Testing"
+        url: "/development/testing"
+
+  - title: "Contributing"
+    children:
+      - title: "How to Contribute"
+        url: "/contributing"
+      - title: "Code of Conduct"
+        url: "/code-of-conduct"
+      - title: "Pull Request Guide"
+        url: "/pull-requests"
